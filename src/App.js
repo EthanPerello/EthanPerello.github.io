@@ -54,7 +54,7 @@ const projects = [
   },
 ];
 
-export default function Portfolio() {
+export default function App() {
   return (
     <div className="p-4 max-w-screen-xl mx-auto">
       <h1 className="text-4xl font-bold mb-8 text-center">My Projects</h1>
