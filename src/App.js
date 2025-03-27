@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
+import nycImage from "./images/NYC_School_Closures.png";
+import marchMadnessImage from "./images/March_Madness_Predictor.png";
+import cityBuilderImage from "./images/City_Builder_Game.png";
+import rpgImage from "./images/Midieval_Fantasy_RPG.png";
+import spaceGameImage from "./images/Space_Game.png";
 
 const mainProjects = [
   {
-    title: "NYC School Closures Prediction",
-    image: "placeholder-image-url",
+    title: "NYC School Closure Risk Predictor",
+    image: nycImage,
     description: `
 In this data science project, I analyzed student outcome data and school closures in New York City. I gathered data from public sources including the NYC Department of Education, focusing on metrics such as graduation rates, dropout percentages, and GED attainment across racial, gender, and socioeconomic subgroups.
 
@@ -12,8 +17,8 @@ I discovered stark disparities in student performance and identified dropout rat
     github: "https://github.com/yourusername/nyc-closures",
   },
   {
-    title: "March Madness Predictor",
-    image: "placeholder-image-url",
+    title: "March Madness Outcome Predictor",
+    image: marchMadnessImage,
     description: `
 This project involved building machine learning models to predict NCAA March Madness tournament outcomes. I collected data from past seasons, including team ratings (KenPom, FiveThirtyEight), seedings, and even scraped betting odds for extra context.
 
@@ -22,8 +27,8 @@ I engineered features like seed difference, win percentage, average margin of vi
     github: "https://github.com/yourusername/march-madness",
   },
   {
-    title: "City Builder Game (Dojo)",
-    image: "placeholder-image-url",
+    title: "On-Chain City Builder Game",
+    image: cityBuilderImage,
     description: `
 A blockchain-integrated multiplayer city-building game developed in Unity and powered by the Dojo engine. Players manage in-game currency, purchase land tiles on a dynamically expanding grid, and construct residential, industrial, and commercial buildings.
 
@@ -32,8 +37,8 @@ Each tile has its own internal build grid, and structures affect resident happin
     github: "https://github.com/yourusername/city-builder",
   },
   {
-    title: "Space Game",
-    image: "placeholder-image-url",
+    title: "Space Adventure Game",
+    image: spaceGameImage,
     description: `
 A 3D action-adventure game made in Unity for Harvard's edX Game Development course. Features real-time combat, AI-driven enemies, gem collection, health bars, game state transitions, and UI integration.
 
@@ -42,7 +47,7 @@ Players explore a space-themed map, collect items, and destroy enemies while nav
   },
   {
     title: "Medieval Fantasy RPG",
-    image: "placeholder-image-url",
+    image: rpgImage,
     description: `
 A fully featured Unity RPG game with Blender-crafted characters, AI combat, leveling system, quest tracking, and customizable character appearance. Players battle goblins and skeletons, gain experience, upgrade stats, and accept quests from NPCs.
 
@@ -83,14 +88,12 @@ const miniProjects = [
       "A React app simulating a US election survey. Users vote for candidates across multiple races and see summarized results.",
   },
   {
-    title: "Dojo Engine Blockchain Game",
+    title: "Dojo Player Wallet Manager",
     image: "placeholder-dojo",
     description:
-      "Web3 game using Dojo and Starknet. Features on-chain position tracking, player wallets, and real-time entity updates.",
+      "A Web3 utility app using Dojo and Starknet for managing burner wallet creation, login sessions, and player account initialization on-chain. Built to test identity flows and real-time wallet state updates.",
   },
 ];
-
-// === Components ===
 
 const ExpandableProject = ({ project }) => {
   const [expanded, setExpanded] = useState(false);
@@ -142,7 +145,6 @@ const MiniProjectCard = ({ project }) => (
 );
 
 export default function App() {
-  // Set page title
   useEffect(() => {
     document.title = "Ethan Perello Projects";
   }, []);
