@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-// MAIN PROJECTS (detailed with expand/collapse)
 const mainProjects = [
   {
     title: "NYC School Closures Prediction",
@@ -52,85 +51,49 @@ Includes ranged and melee combat, persistent object states, pet companions, inve
   },
 ];
 
-// MINI PROJECTS
-const miniGameProjects = [
+const miniProjects = [
   {
     title: "3D Helicopter Side-Scroller",
     image: "placeholder-helicopter",
     description:
-      "Unity 3D side-scroller where players pilot a helicopter, dodge enemies, and survive scrolling terrain.",
+      "Unity 3D game where players fly a helicopter through scrolling terrain, dodging obstacles in a fast-paced environment.",
   },
   {
-    title: "Simplified Pokémon",
+    title: "Simplified Pokémon (LÖVE2D)",
     image: "placeholder-pokemon",
     description:
-      "Turn-based RPG built in Lua/LÖVE2D, inspired by early Pokémon mechanics including wild encounters and map traversal.",
+      "Turn-based RPG inspired by Pokémon. Built using Lua and LÖVE2D with overworld navigation, battle logic, and wild encounters.",
   },
   {
-    title: "Retro Game Pack",
-    image: "placeholder-retro",
-    description:
-      "Collection of simplified classics using Lua/LÖVE2D: Mario, Zelda, Angry Birds, Pong, Match-3, Breakout, and more.",
-  },
-  {
-    title: "Arcade Shooter",
+    title: "Arcade Shooter Game",
     image: "placeholder-arcade",
     description:
-      "Space shooter game with blaster mechanics, asteroid collision, and local storage high scores.",
+      "React-based space shooter featuring blaster mechanics, asteroid collisions, multiple screens, and local high score tracking.",
   },
   {
     title: "Grid Navigation Game",
     image: "placeholder-grid",
     description:
-      "Tile-based movement game with win/lose conditions and timed random tile spawns.",
-  },
-  {
-    title: "Platformer Collectathon",
-    image: "placeholder-platformer",
-    description:
-      "Arrow-key controlled platformer with score-boosting collectibles and enemies.",
-  },
-];
-
-const miniWebApps = [
-  {
-    title: "User Management System",
-    image: "placeholder-user",
-    description:
-      "React app using React Query for real-time user listing, form validation, and toast notifications.",
+      "Tile-based movement game built in React with random tile generation, name input, win/lose conditions, and simple game state logic.",
   },
   {
     title: "Election Survey App",
     image: "placeholder-election",
     description:
-      "Survey app for simulating U.S. election votes. Users select candidates, submit, and view results.",
+      "A React app simulating a US election survey. Users vote for candidates across multiple races and see summarized results.",
   },
   {
-    title: "Restaurant Website",
-    image: "placeholder-food",
+    title: "Dojo Engine Blockchain Game",
+    image: "placeholder-dojo",
     description:
-      "Multi-page responsive site with menus, nutrition info, contact form, and location details.",
+      "Web3 game using Dojo and Starknet. Features on-chain position tracking, player wallets, and real-time entity updates.",
   },
 ];
 
-const miniWeb3Projects = [
-  {
-    title: "Dojo Engine Game",
-    image: "placeholder-dojo",
-    description:
-      "Blockchain-based game using Dojo + Starknet. Movement, wallet integration, and on-chain position updates.",
-  },
-  {
-    title: "Web3 Auth App",
-    image: "placeholder-auth",
-    description:
-      "Simple DApp with account creation, login, and protected route display inside a mock game interface.",
-  },
-];
+// === Components ===
 
 const ExpandableProject = ({ project }) => {
   const [expanded, setExpanded] = useState(false);
-
   return (
     <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col">
       <img
@@ -178,12 +141,17 @@ const MiniProjectCard = ({ project }) => (
   </div>
 );
 
-export default function ProjectsPage() {
+export default function App() {
+  // Set page title
+  useEffect(() => {
+    document.title = "Ethan Perello Projects";
+  }, []);
+
   return (
     <div className="p-4 max-w-screen-xl mx-auto">
-      <h1 className="text-4xl font-bold mb-10 text-center">Projects</h1>
+      <h1 className="text-4xl font-bold mb-10 text-center">Ethan Perello Projects</h1>
 
-      {/* === MAIN PROJECTS === */}
+      {/* === Main Projects === */}
       <section>
         <h2 className="text-2xl font-semibold mb-6">Main Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -193,34 +161,16 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* === MINI PROJECTS === */}
+      {/* === Mini Projects === */}
       <section>
         <h2 className="text-2xl font-semibold mb-4">Mini Projects</h2>
         <p className="text-gray-600 mb-6">
-          A mix of smaller creative experiments and focused technical builds across game dev, frontend, and blockchain.
+          A curated selection of smaller creative and technical builds—from game development to blockchain applications—each focused, polished, and showcasing diverse skills.
         </p>
 
-        {/* Game Dev */}
-        <h3 className="text-xl font-semibold mb-4">🎮 Game Development</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {miniGameProjects.map((project, i) => (
-            <MiniProjectCard key={i} project={project} />
-          ))}
-        </div>
-
-        {/* Web Apps */}
-        <h3 className="text-xl font-semibold mb-4">💻 Web Applications</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {miniWebApps.map((project, i) => (
-            <MiniProjectCard key={i} project={project} />
-          ))}
-        </div>
-
-        {/* Web3 */}
-        <h3 className="text-xl font-semibold mb-4">🔗 Blockchain & Web3</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {miniWeb3Projects.map((project, i) => (
-            <MiniProjectCard key={i} project={project} />
+          {miniProjects.map((project, index) => (
+            <MiniProjectCard key={index} project={project} />
           ))}
         </div>
       </section>
