@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Build output (ignored locally, deployed via gh-pages)
+build/
+
+# Deployment script
+deploy.sh
+
+# Optional: environment variables or temp files
+.env
+.DS_Store
