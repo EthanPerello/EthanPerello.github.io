@@ -15,7 +15,7 @@ This data science project was a school project at Tulane, where I analyzed stude
 I discovered stark disparities in student performance and identified dropout rates among male and Black students as strong indicators of school closures. I built a logistic regression model with 99.1% accuracy using 2015 data and applied it to 2021 schools to identify potential at-risk closures. This project demonstrated the impact of predictive modeling in education policy, showing that while student outcomes provide valuable insight, closures are also influenced by budget, charter transitions, and administrative decisions.
     `,
     github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
-    live: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
+    website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
   },
   {
     title: "March Madness Outcome Predictor",
@@ -36,7 +36,7 @@ This project started as a submission for a Dojo Game Jam and evolved into a full
 Each tile has its own internal build grid, and structures affect resident happiness and income rates. Players compete for profitability and tile control in a persistent online world. All game data including player balance, tile ownership, and building states is recorded on-chain using Dojo and Starknet. Includes full camera controls, building menus, real-time economy simulation, and an interactive leaderboard.
     `,
     github: "https://github.com/EthanPerello/DojoCityBuilder",
-    play: "https://github.com/EthanPerello/DojoCityBuilder",
+    play: "https://ethanperello.github.io/DojoCityBuilder/",
     video: "https://www.youtube.com/watch?v=lORypXL-UwA"
   },
   {
@@ -132,8 +132,8 @@ const ExpandableProject = ({ project }) => {
         {project.video && (
           <a href={project.video} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Video</a>
         )}
-        {project.live && (
-          <a href={project.live} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Live</a>
+        {project.website && (
+          <a href={project.website} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Website</a>
         )}
         {project.kaggle && (
           <a href={project.kaggle} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Kaggle</a>
