@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e54e5b7f.css",
-    "main.js": "/static/js/main.d0bdfc99.js",
+    "main.js": "/static/js/main.43b82c14.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
     "static/media/Space_Game.png": "/static/media/Space_Game.5f7759de03e920e27416.png",
     "static/media/Midieval_Fantasy_RPG.png": "/static/media/Midieval_Fantasy_RPG.84b9d9fad778046a73de.png",
@@ -10,11 +10,11 @@
     "static/media/March_Madness_Predictor.png": "/static/media/March_Madness_Predictor.a5ba7e1c0de477768c48.png",
     "index.html": "/index.html",
     "main.e54e5b7f.css.map": "/static/css/main.e54e5b7f.css.map",
-    "main.d0bdfc99.js.map": "/static/js/main.d0bdfc99.js.map",
+    "main.43b82c14.js.map": "/static/js/main.43b82c14.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e54e5b7f.css",
-    "static/js/main.d0bdfc99.js"
+    "static/js/main.43b82c14.js"
   ]
 }
