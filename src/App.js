@@ -15,72 +15,6 @@ import fastFoodImage from "./images/fast-food-chain.svg";
 import emailSystemImage from "./images/email-design-system-no-code.svg";
 import wellValidationImage from "./images/well-validation-system-no-code.svg";
 
-const featuredGames = [
-  {
-    title: "On-Chain City Builder",
-    image: cityBuilderImage,
-    description: `This project started as a submission for a Dojo Game Jam and evolved into a full game. It is a blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. Players manage in-game currency, purchase land tiles on a dynamically expanding grid, and construct residential, industrial, and commercial buildings.
-
-Each tile has its own internal build grid, and structures affect resident happiness and income rates. Players compete for profitability and tile control in a persistent online world. All game data including player balance, tile ownership, and building states is recorded on-chain using Dojo and Starknet. Includes full camera controls, building menus, real-time economy simulation, and an interactive leaderboard.`,
-    github: "https://github.com/EthanPerello/DojoCityBuilder",
-    play: "https://ethanperello.github.io/DojoCityBuilder/",
-    video: "https://www.youtube.com/watch?v=lORypXL-UwA"
-  },
-  {
-    title: "Space Adventure",
-    image: spaceGameImage,
-    description: `A 3D action-adventure game made in Unity for Harvard's edX Game Development course. Features real-time combat, AI-driven enemies, gem collection, health bars, game state transitions, and UI integration.
-
-Players explore a space-themed map, collect items, and destroy enemies while navigating through multiple game scenes like menus, win/game-over screens. Enemies use Unity's NavMesh AI to wander and attack the player. Built with animator triggers, collider logic, sound effects, and persistent music systems.`,
-    video: "https://www.youtube.com/watch?v=CufS2USIR1Y",
-    github: "https://github.com/EthanPerello/SpaceGame",
-    play: "https://ethanperello.itch.io/space-game"
-  },
-  {
-    title: "Medieval Fantasy RPG",
-    image: rpgImage,
-    description: `A fully featured Unity RPG game with Blender-crafted characters, AI combat, leveling system, quest tracking, and customizable character appearance. Players battle goblins and skeletons, gain experience, upgrade stats, and accept quests from NPCs.
-
-Includes ranged and melee combat, persistent object states, pet companions, inventory/equipment system, and a dynamic UI that updates in real time. Game logic is modular and scalable for future expansion (bosses, new zones, advanced items). Demonstrates game design, AI architecture, and C# systems integration.`
-  }
-];
-
-const mlProjects = [
-  {
-    title: "NYC School Closure Predictor",
-    image: nycImage,
-    description: `This data science project was a school project at Tulane, where I analyzed student outcome data and school closures in New York City. I gathered data from public sources including the NYC Department of Education, focusing on metrics such as graduation rates, dropout percentages, and GED attainment across racial, gender, and socioeconomic subgroups.
-
-I discovered stark disparities in student performance and identified dropout rates among male and Black students as strong indicators of school closures. I built a logistic regression model with 99.1% accuracy using 2015 data and applied it to 2021 schools to identify potential at-risk closures. This project demonstrated the impact of predictive modeling in education policy, showing that while student outcomes provide valuable insight, closures are also influenced by budget, charter transitions, and administrative decisions.`,
-    github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
-    website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
-  },
-  {
-    title: "March Madness Outcome Predictor",
-    image: marchMadnessImage,
-    description: `This project was part of a Kaggle competition involving building machine learning models to predict NCAA March Madness tournament outcomes. I collected data from past seasons, including team ratings (KenPom, FiveThirtyEight), seedings, and scraped betting odds for extra context.
-
-I engineered features like seed difference, win percentage, average margin of victory, and betting line movement. I trained and validated logistic regression and XGBoost models using season-by-season cross-validation. My top model, an XGBoost classifier with betting odds and power rankings, achieved strong log-loss performance and reflected real-world predictive patterns. This project taught me feature engineering, ensemble modeling, and the value of external signals like market sentiment in sports prediction.`,
-    kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
-  }
-];
-
-const miniGames = [
-  { title: "Dungeon Explorer", image: dungeonExplorerImage, description: "React roguelike with authentication, procedural maps, keyboard control, and state-based UI." },
-  { title: "Space Shooter", image: spaceShooterImage, description: "Classic arcade shooter with score tracking, physics movement, and particle-based effects." },
-  { title: "Match-3 Puzzle Game", image: match3Image, description: "React/TypeScript game with combo scoring, special tiles, and tested hook-based architecture." }
-];
-
-const miniWebApps = [
-  { title: "Grid Resource Management", image: gridBuilderImage, description: "Tile-based game for managing and harvesting grid resources." },
-  { title: "Election Simulation", image: electionSimImage, description: "Polling simulation app with randomized candidates and result tallying." },
-  { title: "User Manager Dashboard", image: userManagerImage, description: "React/TypeScript admin panel with toast messages and role-based control." },
-  { title: "Restaurant Website", image: restaurantImage, description: "Multi-page site with menu display, routing, and contact location features." },
-  { title: "Fast Food Finder", image: fastFoodImage, description: "Mobile-first app with nutrition info, store locator, and adaptive design." },
-  { title: "Email Design System", image: emailSystemImage, description: "Responsive email builder with cross-client tested templates." },
-  { title: "Well Validation Toolkit", image: wellValidationImage, description: "Data visualizer for oil well time series forecasting using PyTorch." }
-];
-
 const Layout = ({ children }) => (
   <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans">
     <div className="max-w-screen-xl mx-auto px-4 py-10">
@@ -124,6 +58,65 @@ const CollapsibleSection = ({ title, children }) => {
   );
 };
 
+const featuredGames = [
+  {
+    title: "On-Chain City Builder",
+    image: cityBuilderImage,
+    description: `Blockchain-integrated multiplayer city-building game using Unity and Dojo. Persistent online world with on-chain economy, real-time simulation, tile management, and strategic gameplay.`,
+    github: "https://github.com/EthanPerello/DojoCityBuilder",
+    play: "https://ethanperello.github.io/DojoCityBuilder/",
+    video: "https://www.youtube.com/watch?v=lORypXL-UwA"
+  },
+  {
+    title: "Space Adventure",
+    image: spaceGameImage,
+    description: `3D Unity action-adventure with AI enemies, item collection, health and UI systems. Players navigate multi-scene space environments with persistent audio and polished combat.`,
+    github: "https://github.com/EthanPerello/SpaceGame",
+    play: "https://ethanperello.itch.io/space-game",
+    video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
+  },
+  {
+    title: "Medieval Fantasy RPG",
+    image: rpgImage,
+    description: `Unity RPG with AI combat, leveling system, inventory management, quests, and pet companions. Real-time dynamic UI with scalable code structure.`
+  }
+];
+
+const mlProjects = [
+  {
+    title: "NYC School Closure Predictor",
+    image: nycImage,
+    description: `Logistic regression model predicting NYC school closures using demographic outcome data. Achieved 99.1% accuracy on 2015 data, applied model to 2021 schools for at-risk detection.`,
+    github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
+    website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
+  },
+  {
+    title: "March Madness Outcome Predictor",
+    image: marchMadnessImage,
+    description: `XGBoost and logistic regression models predicting NCAA results using betting odds, power rankings, and seed data. Validated with Kaggle competition cross-validation techniques.`,
+    kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
+  }
+];
+
+const miniGames = [
+  { title: "Dungeon Explorer", image: dungeonExplorerImage, description: "React roguelike with authentication, procedural maps, keyboard control, and state-based UI." },
+  { title: "Space Shooter", image: spaceShooterImage, description: "Classic arcade shooter with score tracking, physics movement, and particle-based effects." },
+  { title: "Match-3 Puzzle Game", image: match3Image, description: "React/TypeScript game with combo scoring, special tiles, and tested hook-based architecture." },
+  { title: "Café Dash", description: "Time management game where players serve customers across multiple stations. Includes scoring, difficulty scaling, and drag/drop serving." },
+  { title: "Asteroid Patrol", description: "Vector space shooter with momentum-based controls, UFO enemies, and asteroid splitting. Wraparound screen, classic mechanics." }
+];
+
+const cs50Games = [
+  { title: "Flappy Bird", description: "Recreation of the viral mobile game using LÖVE2D. Features procedural pipes, parallax backgrounds, and single-button gameplay." },
+  { title: "Breakout", description: "Modern take on the classic Atari game. Includes powerups, multiball, paddle modifiers, and scoring combos." },
+  { title: "Match-3", description: "Tile-matching puzzle game inspired by Bejeweled. Features cascading matches, power tiles, and level system." },
+  { title: "Pokémon", description: "Turn-based RPG inspired by the Pokémon franchise. Type matchups, experience leveling, status effects, and animated health bars." },
+  { title: "The Legend of Zelda", description: "Top-down dungeon adventure with puzzles, room transitions, enemies, and collectible items." },
+  { title: "Super Mario Bros", description: "Classic side-scrolling platformer with physics-based jumping, enemies, and collectible coins and powerups." },
+  { title: "Angry Birds", description: "Physics-based puzzle game with destructible environments and different projectile abilities." }
+];
+
+// App component
 export default function App() {
   useEffect(() => {
     document.title = "Ethan Perello Projects";
@@ -131,17 +124,27 @@ export default function App() {
 
   return (
     <Layout>
+      <p className="text-center text-gray-600 text-lg mb-8">A showcase of my software engineering portfolio across game development, data science, and web applications. Built with React, Tailwind, and real-world development practices.</p>
+
       <CollapsibleSection title="🔥 Featured Game Projects">
+        <p className='text-gray-600 mb-6'>My most complex Unity and on-chain games, featuring rich simulations, AI, combat systems, and multiplayer infrastructure.</p>
         {featuredGames.map((project, i) => <ProjectCard key={i} project={project} />)}
       </CollapsibleSection>
       <CollapsibleSection title="🧠 Machine Learning & Data Science">
+        <p className='text-gray-600 mb-6'>Projects involving predictive modeling, feature engineering, and real-world data from education and sports analytics.</p>
         {mlProjects.map((project, i) => <ProjectCard key={i} project={project} />)}
       </CollapsibleSection>
       <CollapsibleSection title="🎮 Mini Game Projects">
+        <p className='text-gray-600 mb-6'>Smaller interactive games developed with React, Unity, and other engines, showcasing quick mechanics and polished execution.</p>
         {miniGames.map((project, i) => <ProjectCard key={i} project={project} />)}
       </CollapsibleSection>
       <CollapsibleSection title="🌐 Web Applications & Tools">
+        <p className='text-gray-600 mb-6'>Web utilities and responsive sites using React, TypeScript, and modern design systems to build full-stack features and UIs.</p>
         {miniWebApps.map((project, i) => <ProjectCard key={i} project={project} />)}
+      </CollapsibleSection>
+      <CollapsibleSection title="👾 CS50 Game Development Projects">
+        <p className='text-gray-600 mb-6'>Built as part of Harvard's CS50G course. Remakes and inspired versions of classic games demonstrating AI, physics, and game architecture.</p>
+        {cs50Games.map((project, i) => <ProjectCard key={i} project={project} />)}
       </CollapsibleSection>
     </Layout>
   );
