@@ -1,20 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.1841f770.css",
-    "main.js": "/static/js/main.4b831727.js",
+    "main.css": "/static/css/main.d35af1bd.css",
+    "main.js": "/static/js/main.54c9ae16.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
     "static/media/Space_Game.png": "/static/media/Space_Game.5f7759de03e920e27416.png",
     "static/media/Midieval_Fantasy_RPG.png": "/static/media/Midieval_Fantasy_RPG.84b9d9fad778046a73de.png",
     "static/media/City_Builder_Game.png": "/static/media/City_Builder_Game.6c07c567e962ba0572a2.png",
     "static/media/NYC_School_Closures.png": "/static/media/NYC_School_Closures.f2654022b0eee03763bb.png",
     "static/media/March_Madness_Predictor.png": "/static/media/March_Madness_Predictor.a5ba7e1c0de477768c48.png",
+    "static/media/well-validation-system-no-code.svg": "/static/media/well-validation-system-no-code.ecfd69e2f5187912a06ce1b205350588.svg",
+    "static/media/grid-resource-management.svg": "/static/media/grid-resource-management.cd7dfdee238c0aed23bd6acee833cbd1.svg",
+    "static/media/email-design-system-no-code.svg": "/static/media/email-design-system-no-code.632ab37055f3ffaf1c29548764fdc98e.svg",
+    "static/media/user-management.svg": "/static/media/user-management.10d47951d46872da592a8179e19b0645.svg",
+    "static/media/fast-food-chain.svg": "/static/media/fast-food-chain.e4c9bc7c17bc456ceba94642404d300a.svg",
+    "static/media/match-3-puzzle.svg": "/static/media/match-3-puzzle.45f6fe9085edf4da48d6342c0144e075.svg",
+    "static/media/election-simulation.svg": "/static/media/election-simulation.63535dfa0e90758f1765b9e26aa581cc.svg",
+    "static/media/restaurant-website.svg": "/static/media/restaurant-website.aa25b59d34f7064cacd58b61bae51fbc.svg",
+    "static/media/space-shooter.svg": "/static/media/space-shooter.1c87b5c39ab4fe51cbe2d42fd9401eac.svg",
+    "static/media/dungeon-explorer.svg": "/static/media/dungeon-explorer.cabc7dc69f0db346d8b4f40dc112af19.svg",
     "index.html": "/index.html",
-    "main.1841f770.css.map": "/static/css/main.1841f770.css.map",
-    "main.4b831727.js.map": "/static/js/main.4b831727.js.map",
+    "main.d35af1bd.css.map": "/static/css/main.d35af1bd.css.map",
+    "main.54c9ae16.js.map": "/static/js/main.54c9ae16.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1841f770.css",
-    "static/js/main.4b831727.js"
+    "static/css/main.d35af1bd.css",
+    "static/js/main.54c9ae16.js"
   ]
 }
