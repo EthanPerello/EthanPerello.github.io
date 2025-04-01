@@ -5,15 +5,97 @@ import cityBuilderImage from "./images/City_Builder_Game.png";
 import rpgImage from "./images/Midieval_Fantasy_RPG.png";
 import spaceGameImage from "./images/Space_Game.png";
 
-const mainProjects = [
+const featuredGames = [
+  {
+    title: "On-Chain City Builder",
+    image: cityBuilderImage,
+    description: `
+A blockchain-integrated multiplayer city-building game developed in Unity using Dojo. Players manage currency, purchase land, and construct zones with effects on in-game economy and happiness. Real-time simulation, leaderboard, and fully on-chain data persistence.`,
+    github: "https://github.com/EthanPerello/DojoCityBuilder",
+    play: "https://ethanperello.github.io/DojoCityBuilder/",
+    video: "https://www.youtube.com/watch?v=lORypXL-UwA"
+  },
+  {
+    title: "Space Adventure",
+    image: spaceGameImage,
+    description: `
+A 3D Unity action-adventure game featuring AI enemies, combat, item collection, and multiple scenes. Players navigate a space environment with real-time movement, animated transitions, health and UI systems, and persistent audio.`,
+    video: "https://www.youtube.com/watch?v=CufS2USIR1Y",
+    github: "https://github.com/EthanPerello/SpaceGame",
+    play: "https://ethanperello.itch.io/space-game"
+  },
+  {
+    title: "Medieval Fantasy RPG",
+    image: rpgImage,
+    description: `
+A full-featured Unity RPG game with AI combat, leveling system, pet companions, quests, inventory, and custom characters. Includes real-time UI updates, persistent states, and scalable architecture.`
+  }
+];
+
+const miniGameProjects = [
+  {
+    title: "Dungeon Explorer",
+    description: `
+A React roguelike with secure user authentication, procedurally generated dungeons, keyboard movement, and state machine logic. Includes Tailwind-styled responsive UI.`
+  },
+  {
+    title: "Space Shooter",
+    description: `
+Arcade-style shooter with physics movement, local high score storage, difficulty scaling, explosion effects, and multiple states.`
+  },
+  {
+    title: "Match-3 Puzzle Game",
+    description: `
+Advanced puzzle game built with React/TypeScript. Features combo multipliers, special tiles, custom hooks, and tested logic.`
+  },
+  {
+    title: "Bird Bounce",
+    description: `
+A Flappy Bird-style game built in LÖVE2D. Includes one-button controls, procedural obstacles, score tracking, and scrolling parallax background.`
+  },
+  {
+    title: "Brick Blaster",
+    description: `
+Brick-breaking arcade game with power-ups, multi-ball mechanics, particle effects, and dynamic levels using LÖVE2D.`
+  },
+  {
+    title: "Gem Crafter",
+    description: `
+Bejeweled-style Match-3 built in LÖVE2D. Supports cascading matches, score combos, timer mode, and level progression.`
+  },
+  {
+    title: "Creature Clash",
+    description: `
+Turn-based RPG inspired by Pokémon. Includes AI battles, type advantages, experience leveling, and animated health bars.`
+  },
+  {
+    title: "Dungeon Puzzle Quest",
+    description: `
+Zelda-inspired top-down adventure with enemy AI, item usage, room transitions, and health/puzzle systems.`
+  },
+  {
+    title: "Platform Jumper",
+    description: `
+Side-scrolling platformer with coin collection, variable jump physics, enemy patterns, and retro-style level design.`
+  },
+  {
+    title: "Projectile Puzzler",
+    description: `
+Physics-based destruction puzzle game inspired by Angry Birds. Features projectile aiming, destructible environments, and level-based progression.`
+  },
+  {
+    title: "Grid Navigation Challenge",
+    description: `
+Tile-based logic game built in React. Features random grid generation, movement rules, win/lose conditions, and name entry.`
+  }
+];
+
+const featuredOtherProjects = [
   {
     title: "NYC School Closure Risk Predictor",
     image: nycImage,
     description: `
-This data science project was a school project at Tulane, where I analyzed student outcome data and school closures in New York City. I gathered data from public sources including the NYC Department of Education, focusing on metrics such as graduation rates, dropout percentages, and GED attainment across racial, gender, and socioeconomic subgroups.
-
-I discovered stark disparities in student performance and identified dropout rates among male and Black students as strong indicators of school closures. I built a logistic regression model with 99.1% accuracy using 2015 data and applied it to 2021 schools to identify potential at-risk closures. This project demonstrated the impact of predictive modeling in education policy, showing that while student outcomes provide valuable insight, closures are also influenced by budget, charter transitions, and administrative decisions.
-    `,
+Data science project analyzing student outcomes across subgroups to predict school closures. Built a logistic regression model with 99.1% accuracy and applied to current data to identify at-risk schools.`,
     github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
     website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
   },
@@ -21,81 +103,26 @@ I discovered stark disparities in student performance and identified dropout rat
     title: "March Madness Outcome Predictor",
     image: marchMadnessImage,
     description: `
-This project was part of a Kaggle competition involving building machine learning models to predict NCAA March Madness tournament outcomes. I collected data from past seasons, including team ratings (KenPom, FiveThirtyEight), seedings, and scraped betting odds for extra context.
-
-I engineered features like seed difference, win percentage, average margin of victory, and betting line movement. I trained and validated logistic regression and XGBoost models using season-by-season cross-validation. My top model, an XGBoost classifier with betting odds and power rankings, achieved strong log-loss performance and reflected real-world predictive patterns. This project taught me feature engineering, ensemble modeling, and the value of external signals like market sentiment in sports prediction.
-    `,
+ML models using seed data, power rankings, and scraped betting odds to predict NCAA tournament results. Top-performing XGBoost model with cross-validation and ensemble features.`,
     kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
-  },
-  {
-    title: "On-Chain City Builder Game",
-    image: cityBuilderImage,
-    description: `
-This project started as a submission for a Dojo Game Jam and evolved into a full game. It is a blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. Players manage in-game currency, purchase land tiles on a dynamically expanding grid, and construct residential, industrial, and commercial buildings.
-
-Each tile has its own internal build grid, and structures affect resident happiness and income rates. Players compete for profitability and tile control in a persistent online world. All game data including player balance, tile ownership, and building states is recorded on-chain using Dojo and Starknet. Includes full camera controls, building menus, real-time economy simulation, and an interactive leaderboard.
-    `,
-    github: "https://github.com/EthanPerello/DojoCityBuilder",
-    play: "https://ethanperello.github.io/DojoCityBuilder/",
-    video: "https://www.youtube.com/watch?v=lORypXL-UwA"
-  },
-  {
-    title: "Space Adventure Game",
-    image: spaceGameImage,
-    description: `
-A 3D action-adventure game made in Unity for Harvard's edX Game Development course. Features real-time combat, AI-driven enemies, gem collection, health bars, game state transitions, and UI integration.
-
-Players explore a space-themed map, collect items, and destroy enemies while navigating through multiple game scenes like menus, win/game-over screens. Enemies use Unity's NavMesh AI to wander and attack the player. Built with animator triggers, collider logic, sound effects, and persistent music systems.
-    `,
-    video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
-  },
-  {
-    title: "Medieval Fantasy RPG",
-    image: rpgImage,
-    description: `
-A fully featured Unity RPG game with Blender-crafted characters, AI combat, leveling system, quest tracking, and customizable character appearance. Players battle goblins and skeletons, gain experience, upgrade stats, and accept quests from NPCs.
-
-Includes ranged and melee combat, persistent object states, pet companions, inventory/equipment system, and a dynamic UI that updates in real time. Game logic is modular and scalable for future expansion (bosses, new zones, advanced items). Demonstrates game design, AI architecture, and C# systems integration.
-    `
   }
 ];
 
-const miniProjects = [
+const miniOtherProjects = [
   {
-    title: "3D Helicopter Side-Scroller",
-    image: "placeholder-helicopter",
-    description:
-      "Unity 3D game where players fly a helicopter through scrolling terrain, dodging obstacles in a fast-paced environment."
-  },
-  {
-    title: "Simplified Pokémon (LÖVE2D)",
-    image: "placeholder-pokemon",
-    description:
-      "Turn-based RPG inspired by Pokémon. Built using Lua and LÖVE2D with overworld navigation, battle logic, and wild encounters."
-  },
-  {
-    title: "Arcade Shooter Game",
-    image: "placeholder-arcade",
-    description:
-      "React-based space shooter featuring blaster mechanics, asteroid collisions, multiple screens, and local high score tracking."
-  },
-  {
-    title: "Grid Navigation Game",
-    image: "placeholder-grid",
-    description:
-      "Tile-based movement game built in React with random tile generation, name input, win/lose conditions, and simple game state logic."
+    title: "Restaurant Website",
+    description: `
+Full React/TypeScript restaurant website with multi-page routing, interactive food menu, location finder, and WCAG accessibility.`
   },
   {
     title: "Election Survey App",
-    image: "placeholder-election",
-    description:
-      "A React app simulating a US election survey. Users vote for candidates across multiple races and see summarized results."
+    description: `
+React app that simulates multi-race voting with user choices and aggregate result summaries.`
   },
   {
     title: "Dojo Player Wallet Manager",
-    image: "placeholder-dojo",
-    description:
-      "A Web3 utility app using Dojo and Starknet for managing burner wallet creation, login sessions, and player account initialization on-chain. Built to test identity flows and real-time wallet state updates."
+    description: `
+Web3 utility for managing burner wallets using Dojo and Starknet. Real-time wallet state management and on-chain identity tools.`
   }
 ];
 
@@ -103,11 +130,9 @@ const ExpandableProject = ({ project }) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col">
-      <img
-        src={project.image}
-        alt={project.title}
-        className="rounded-xl mb-4 object-cover h-48 w-full"
-      />
+      {project.image && (
+        <img src={project.image} alt={project.title} className="rounded-xl mb-4 object-cover h-48 w-full" />
+      )}
       <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
       <p
         className={`text-sm text-gray-700 whitespace-pre-line mb-4 ${
@@ -143,17 +168,20 @@ const ExpandableProject = ({ project }) => {
   );
 };
 
-const MiniProjectCard = ({ project }) => (
-  <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col">
-    <img
-      src={project.image}
-      alt={project.title}
-      className="rounded-xl mb-4 object-cover h-40 w-full"
-    />
-    <h2 className="text-lg font-semibold mb-1">{project.title}</h2>
-    <p className="text-sm text-gray-600">{project.description}</p>
-  </div>
-);
+const CollapsibleSection = ({ title, children }) => {
+  const [open, setOpen] = useState(true);
+  return (
+    <div className="mb-10">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left text-2xl font-semibold mb-4 bg-gray-100 px-4 py-2 rounded-xl hover:bg-gray-200"
+      >
+        {open ? `▼ ${title}` : `▶ ${title}`}
+      </button>
+      {open && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{children}</div>}
+    </div>
+  );
+};
 
 export default function App() {
   useEffect(() => {
@@ -164,29 +192,30 @@ export default function App() {
     <div className="p-4 max-w-screen-xl mx-auto">
       <h1 className="text-4xl font-bold mb-10 text-center">Ethan Perello Projects</h1>
 
-      {/* === Main Projects === */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-6">Main Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {mainProjects.map((project, index) => (
+      <CollapsibleSection title="🎮 Game Development Projects">
+        <CollapsibleSection title="🔥 Featured Games">
+          {featuredGames.map((project, index) => (
             <ExpandableProject key={index} project={project} />
           ))}
-        </div>
-      </section>
-
-      {/* === Mini Projects === */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Mini Projects</h2>
-        <p className="text-gray-600 mb-6">
-          A curated selection of smaller creative and technical builds, each focused, polished, and showcasing diverse skills.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {miniProjects.map((project, index) => (
-            <MiniProjectCard key={index} project={project} />
+        </CollapsibleSection>
+        <CollapsibleSection title="🎮 Mini Game Projects">
+          {miniGameProjects.map((project, index) => (
+            <ExpandableProject key={index} project={project} />
           ))}
-        </div>
-      </section>
+        </CollapsibleSection>
+      </CollapsibleSection>
+
+      <CollapsibleSection title="🧠 Data Science & Machine Learning">
+        {featuredOtherProjects.map((project, index) => (
+          <ExpandableProject key={index} project={project} />
+        ))}
+      </CollapsibleSection>
+
+      <CollapsibleSection title="🌐 Web Applications">
+        {miniOtherProjects.map((project, index) => (
+          <ExpandableProject key={index} project={project} />
+        ))}
+      </CollapsibleSection>
     </div>
   );
 }
