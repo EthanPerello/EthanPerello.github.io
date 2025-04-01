@@ -1,3 +1,5 @@
+// FULLY UPDATED FILE WITH FINAL STRUCTURE
+
 import React, { useEffect, useState } from "react";
 import nycImage from "./images/NYC_School_Closures.png";
 import marchMadnessImage from "./images/March_Madness_Predictor.png";
@@ -9,7 +11,7 @@ const featuredGames = [
   {
     title: "On-Chain City Builder",
     image: cityBuilderImage,
-    description: `A blockchain-integrated multiplayer city-building game developed in Unity using Dojo. Players manage currency, purchase land, and construct zones with effects on in-game economy and happiness. Real-time simulation, leaderboard, and fully on-chain data persistence.`,
+    description: `Blockchain-integrated multiplayer city-building game using Unity and Dojo. Persistent online world with on-chain economy, real-time simulation, tile management, and strategic gameplay.`,
     github: "https://github.com/EthanPerello/DojoCityBuilder",
     play: "https://ethanperello.github.io/DojoCityBuilder/",
     video: "https://www.youtube.com/watch?v=lORypXL-UwA"
@@ -17,7 +19,7 @@ const featuredGames = [
   {
     title: "Space Adventure",
     image: spaceGameImage,
-    description: `A 3D Unity action-adventure game featuring AI enemies, combat, item collection, and multiple scenes. Players navigate a space environment with real-time movement, animated transitions, health and UI systems, and persistent audio.`,
+    description: `3D Unity action-adventure with AI enemies, item collection, health and UI systems. Players navigate multi-scene space environments with persistent audio and polished combat.`,
     video: "https://www.youtube.com/watch?v=CufS2USIR1Y",
     github: "https://github.com/EthanPerello/SpaceGame",
     play: "https://ethanperello.itch.io/space-game"
@@ -25,111 +27,69 @@ const featuredGames = [
   {
     title: "Medieval Fantasy RPG",
     image: rpgImage,
-    description: `A full-featured Unity RPG game with AI combat, leveling system, pet companions, quests, inventory, and custom characters. Includes real-time UI updates, persistent states, and scalable architecture.`
+    description: `Unity RPG with AI combat, leveling system, inventory management, quests, and pet companions. Real-time dynamic UI with scalable code structure.`
   }
 ];
 
-const miniGameProjects = [
+const mlProjects = [
   {
-    title: "Dungeon Explorer",
-    description: `A React roguelike with secure user authentication, procedurally generated dungeons, keyboard movement, and state machine logic. Includes Tailwind-styled responsive UI.`
-  },
-  {
-    title: "Space Shooter",
-    description: `Arcade-style shooter with physics movement, local high score storage, difficulty scaling, explosion effects, and multiple states.`
-  },
-  {
-    title: "Match-3 Puzzle Game",
-    description: `Advanced puzzle game built with React/TypeScript. Features combo multipliers, special tiles, custom hooks, and tested logic.`
-  },
-  {
-    title: "Bird Bounce",
-    description: `A Flappy Bird-style game built in LÖVE2D. Includes one-button controls, procedural obstacles, score tracking, and scrolling parallax background.`
-  },
-  {
-    title: "Brick Blaster",
-    description: `Brick-breaking arcade game with power-ups, multi-ball mechanics, particle effects, and dynamic levels using LÖVE2D.`
-  },
-  {
-    title: "Gem Crafter",
-    description: `Bejeweled-style Match-3 built in LÖVE2D. Supports cascading matches, score combos, timer mode, and level progression.`
-  },
-  {
-    title: "Creature Clash",
-    description: `Turn-based RPG inspired by Pokémon. Includes AI battles, type advantages, experience leveling, and animated health bars.`
-  },
-  {
-    title: "Dungeon Puzzle Quest",
-    description: `Zelda-inspired top-down adventure with enemy AI, item usage, room transitions, and health/puzzle systems.`
-  },
-  {
-    title: "Platform Jumper",
-    description: `Side-scrolling platformer with coin collection, variable jump physics, enemy patterns, and retro-style level design.`
-  },
-  {
-    title: "Projectile Puzzler",
-    description: `Physics-based destruction puzzle game inspired by Angry Birds. Features projectile aiming, destructible environments, and level-based progression.`
-  },
-  {
-    title: "Grid Navigation Challenge",
-    description: `Tile-based logic game built in React. Features random grid generation, movement rules, win/lose conditions, and name entry.`
-  }
-];
-
-const featuredOtherProjects = [
-  {
-    title: "NYC School Closure Risk Predictor",
+    title: "NYC School Closure Predictor",
     image: nycImage,
-    description: `Data science project analyzing student outcomes across subgroups to predict school closures. Built a logistic regression model with 99.1% accuracy and applied to current data to identify at-risk schools.`,
+    description: `Logistic regression model predicting NYC school closures using demographic outcome data. Achieved 99.1% accuracy on 2015 data, applied model to 2021 schools for at-risk detection.`,
     github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
     website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
   },
   {
     title: "March Madness Outcome Predictor",
     image: marchMadnessImage,
-    description: `ML models using seed data, power rankings, and scraped betting odds to predict NCAA tournament results. Top-performing XGBoost model with cross-validation and ensemble features.`,
+    description: `XGBoost and logistic regression models predicting NCAA results using betting odds, power rankings, and seed data. Validated with Kaggle competition cross-validation techniques.`,
     kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
   }
 ];
 
-const miniOtherProjects = [
-  {
-    title: "Restaurant Website",
-    description: `Full React/TypeScript restaurant website with multi-page routing, interactive food menu, location finder, and WCAG accessibility.`
-  },
-  {
-    title: "Election Survey App",
-    description: `React app that simulates multi-race voting with user choices and aggregate result summaries.`
-  },
-  {
-    title: "Dojo Player Wallet Manager",
-    description: `Web3 utility for managing burner wallets using Dojo and Starknet. Real-time wallet state management and on-chain identity tools.`
-  }
+const miniGames = [
+  { title: "Dungeon Explorer", description: "React roguelike with authentication, procedural maps, keyboard control, and state-based UI." },
+  { title: "Space Shooter", description: "Classic arcade shooter with score tracking, physics movement, and particle-based effects." },
+  { title: "Match-3 Puzzle Game", description: "React/TypeScript game with combo scoring, special tiles, and tested hook-based architecture." },
+  { title: "Tile Survival", description: "Strategic grid game with timed hazards, player tracking, and dynamic win/loss conditions." },
+  { title: "Pig Shooters", description: "Target game with grid logic, animal sprites, shooting mechanics, and score-based difficulty." },
+  { title: "Hopper Man", description: "Platformer with keyboard control, procedurally timed levels, and classic arcade physics." },
+  { title: "Asteroid Patrol", description: "Vector space shooter with asteroid splitting, wraparound screen, and enemy AI UFOs." },
+  { title: "Café Dash", description: "Restaurant time manager with multiple stations, score system, and rising difficulty." },
+  { title: "Grid Resource Builder", description: "Tile-based economy game with resource harvesting, inventory system, and tile upgrades." },
+  { title: "Bird Bounce", description: "Flappy-style game with procedural pipes, parallax scrolling, and single-button input." },
+  { title: "Brick Blaster", description: "Breakout-style arcade game with powerups, multiball, and particle animations." },
+  { title: "Gem Crafter", description: "Gem matching puzzle with chaining, power tiles, and progressive board layouts." },
+  { title: "Creature Clash", description: "Turn-based battle game with XP, AI moves, health bar UI, and type effectiveness." },
+  { title: "Dungeon Puzzle Quest", description: "Top-down dungeon puzzler with key items, enemies, and room-based exploration." },
+  { title: "Platform Jumper", description: "Side-scroller with jump physics, coins, obstacles, and level win conditions." },
+  { title: "Projectile Puzzler", description: "Destruction puzzler with physics, aiming, and multiple projectile abilities." },
+  { title: "Grid Navigation Challenge", description: "React tile navigation game with randomized board, name input, and goal state." }
+];
+
+const miniWebApps = [
+  { title: "Restaurant Website", description: "Multi-page site with menu display, routing, and contact location features." },
+  { title: "Fast Food Finder", description: "Mobile-first app with nutrition info, store locator, and adaptive design." },
+  { title: "Election Simulator", description: "Vote simulator with randomized candidates, dynamic ballot input, and results tally." },
+  { title: "User Manager Dashboard", description: "Admin panel with role-based controls, toast alerts, and form validation via React Query." },
+  { title: "React Email System", description: "Table-based responsive email template system with style encapsulation and fallback logic." },
+  { title: "Well Validation Toolkit", description: "Oil well data visualizer with time-series prediction, boundary logic, and PyTorch forecasting." },
+  { title: "Wallet Manager", description: "Web3 burner wallet utility with Dojo/Starknet identity state syncing and session persistence." }
 ];
 
 const ProjectCard = ({ project }) => (
-  <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+  <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col hover:shadow-lg transform hover:scale-[1.02] transition-transform duration-200">
     {project.image && (
       <img src={project.image} alt={project.title} className="rounded-xl mb-4 object-cover h-48 w-full" />
     )}
     <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
     <p className="text-sm text-gray-700 whitespace-pre-line mb-4">{project.description}</p>
     <div className="flex flex-wrap gap-2">
-      {project.github && (
-        <a href={project.github} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">GitHub</a>
-      )}
-      {project.play && (
-        <a href={project.play} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Play</a>
-      )}
-      {project.video && (
-        <a href={project.video} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Video</a>
-      )}
-      {project.website && (
-        <a href={project.website} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Website</a>
-      )}
-      {project.kaggle && (
-        <a href={project.kaggle} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank" rel="noopener noreferrer">Kaggle</a>
-      )}
+      {project.github && <a href={project.github} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank">GitHub</a>}
+      {project.play && <a href={project.play} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank">Play</a>}
+      {project.video && <a href={project.video} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank">Video</a>}
+      {project.website && <a href={project.website} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank">Website</a>}
+      {project.kaggle && <a href={project.kaggle} className="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300" target="_blank">Kaggle</a>}
     </div>
   </div>
 );
@@ -158,25 +118,20 @@ export default function App() {
     <div className="p-4 max-w-screen-xl mx-auto">
       <h1 className="text-4xl font-bold mb-10 text-center">Ethan Perello Projects</h1>
 
-      <CollapsibleSection title="🎮 Game Development Projects">
-        {featuredGames.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-        {miniGameProjects.map((project, index) => (
-          <ProjectCard key={`mini-${index}`} project={project} />
-        ))}
+      <CollapsibleSection title="🔥 Featured Game Projects">
+        {featuredGames.map((project, index) => <ProjectCard key={index} project={project} />)}
       </CollapsibleSection>
 
-      <CollapsibleSection title="🧠 Data Science & Machine Learning">
-        {featuredOtherProjects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+      <CollapsibleSection title="🧠 Machine Learning & Data Science">
+        {mlProjects.map((project, index) => <ProjectCard key={index} project={project} />)}
       </CollapsibleSection>
 
-      <CollapsibleSection title="🌐 Web Applications">
-        {miniOtherProjects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+      <CollapsibleSection title="🎮 Mini Game Projects">
+        {miniGames.map((project, index) => <ProjectCard key={index} project={project} />)}
+      </CollapsibleSection>
+
+      <CollapsibleSection title="🌐 Web Applications & Tools">
+        {miniWebApps.map((project, index) => <ProjectCard key={index} project={project} />)}
       </CollapsibleSection>
     </div>
   );
