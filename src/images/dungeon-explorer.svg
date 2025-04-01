@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Dark dungeon background -->
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  
+  <!-- Dungeon grid -->
+  <g stroke="#3a3a5c" stroke-width="1">
+    <line x1="0" y1="50" x2="400" y2="50"/>
+    <line x1="0" y1="100" x2="400" y2="100"/>
+    <line x1="0" y1="150" x2="400" y2="150"/>
+    <line x1="0" y1="200" x2="400" y2="200"/>
+    <line x1="0" y1="250" x2="400" y2="250"/>
+    
+    <line x1="50" y1="0" x2="50" y2="300"/>
+    <line x1="100" y1="0" x2="100" y2="300"/>
+    <line x1="150" y1="0" x2="150" y2="300"/>
+    <line x1="200" y1="0" x2="200" y2="300"/>
+    <line x1="250" y1="0" x2="250" y2="300"/>
+    <line x1="300" y1="0" x2="300" y2="300"/>
+    <line x1="350" y1="0" x2="350" y2="300"/>
+  </g>
+  
+  <!-- Dungeon walls -->
+  <rect x="50" y="50" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="150" y="50" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="250" y="50" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="100" y="100" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="200" y="100" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="300" y="100" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="50" y="150" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="150" y="150" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="250" y="150" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="100" y="200" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="200" y="200" width="50" height="50" fill="#3a3a5c"/>
+  <rect x="300" y="200" width="50" height="50" fill="#3a3a5c"/>
+  
+  <!-- Player character -->
+  <circle cx="125" cy="175" r="15" fill="#ffd700"/>
+  
+  <!-- Treasure -->
+  <rect x="325" y="75" width="20" height="20" fill="#ff6b6b"/>
+  
+  <!-- Enemy -->
+  <circle cx="275" cy="225" r="15" fill="#9b59b6"/>
+  
+  <!-- Login/account UI element -->
+  <rect x="10" y="10" width="80" height="30" rx="5" fill="#4a4a7c" stroke="#6a6a9c" stroke-width="2"/>
+  <text x="20" y="30" font-family="Arial" font-size="12" fill="white">Account</text>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Game background -->
+  <rect width="400" height="300" fill="#8bc34a"/>
+  
+  <!-- Sky background -->
+  <rect width="400" height="200" fill="#64b5f6"/>
+  
+  <!-- Sun -->
+  <circle cx="350" cy="50" r="30" fill="#ffeb3b"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="100" cy="60" rx="30" ry="20" fill="#ecf0f1"/>
+  <ellipse cx="120" cy="70" rx="35" ry="15" fill="#ecf0f1"/>
+  <ellipse cx="80" cy="70" rx="25" ry="15" fill="#ecf0f1"/>
+  
+  <ellipse cx="250" cy="40" rx="25" ry="15" fill="#ecf0f1"/>
+  <ellipse cx="270" cy="50" rx="30" ry="20" fill="#ecf0f1"/>
+  <ellipse cx="230" cy="50" rx="20" ry="10" fill="#ecf0f1"/>
+  
+  <!-- Game grid for pigs -->
+  <rect x="50" y="100" width="300" height="150" fill="#8bc34a" stroke="#558b2f" stroke-width="2"/>
+  
+  <!-- Grid lines -->
+  <line x1="100" y1="100" x2="100" y2="250" stroke="#558b2f" stroke-width="1"/>
+  <line x1="150" y1="100" x2="150" y2="250" stroke="#558b2f" stroke-width="1"/>
+  <line x1="200" y1="100" x2="200" y2="250" stroke="#558b2f" stroke-width="1"/>
+  <line x1="250" y1="100" x2="250" y2="250" stroke="#558b2f" stroke-width="1"/>
+  <line x1="300" y1="100" x2="300" y2="250" stroke="#558b2f" stroke-width="1"/>
+  
+  <line x1="50" y1="150" x2="350" y2="150" stroke="#558b2f" stroke-width="1"/>
+  <line x1="50" y1="200" x2="350" y2="200" stroke="#558b2f" stroke-width="1"/>
+  
+  <!-- Pigs -->
+  <g transform="translate(175, 125)">
+    <!-- Pig body -->
+    <ellipse cx="0" cy="0" rx="20" ry="15" fill="#ffb6c1"/>
+    <!-- Pig ears -->
+    <path d="M-15,-5 L-25,-15 L-18,-3 Z" fill="#ffb6c1"/>
+    <path d="M15,-5 L25,-15 L18,-3 Z" fill="#ffb6c1"/>
+    <!-- Pig snout -->
+    <ellipse cx="0" cy="5" rx="8" ry="6" fill="#f8bbd0"/>
+    <!-- Pig nostrils -->
+    <ellipse cx="-3" cy="5" rx="1.5" ry="1" fill="#e91e63"/>
+    <ellipse cx="3" cy="5" rx="1.5" ry="1" fill="#e91e63"/>
+    <!-- Pig eyes -->
+    <circle cx="-8" cy="-3" r="2" fill="#212121"/>
+    <circle cx="8" cy="-3" r="2" fill="#212121"/>
+  </g>
+  
+  <g transform="translate(275, 175)">
+    <!-- Pig body -->
+    <ellipse cx="0" cy="0" rx="20" ry="15" fill="#ffb6c1"/>
+    <!-- Pig ears -->
+    <path d="M-15,-5 L-25,-15 L-18,-3 Z" fill="#ffb6c1"/>
+    <path d="M15,-5 L25,-15 L18,-3 Z" fill="#ffb6c1"/>
+    <!-- Pig snout -->
+    <ellipse cx="0" cy="5" rx="8" ry="6" fill="#f8bbd0"/>
+    <!-- Pig nostrils -->
+    <ellipse cx="-3" cy="5" rx="1.5" ry="1" fill="#e91e63"/>
+    <ellipse cx="3" cy="5" rx="1.5" ry="1" fill="#e91e63"/>
+    <!-- Pig eyes -->
+    <circle cx="-8" cy="-3" r="2" fill="#212121"/>
+    <circle cx="8" cy="-3" r="2" fill="#212121"/>
+  </g>
+  
+  <g transform="translate(75, 225)">
+    <!-- Pig body -->
+    <ellipse cx="0" cy="0" rx="20" ry="15" fill="#ffb6c1"/>
+    <!-- Pig ears -->
+    <path d="M-15,-5 L-25,-15 L-18,-3 Z" fill="#ffb6c1"/>
+    <path d="M15,-5 L25,-15 L18,-3 Z" fill="#ffb6c1"/>
+    <!-- Pig snout -->
+    <ellipse cx="0" cy="5" rx="8" ry="6" fill="#f8bbd0"/>
+    <!-- Pig nostrils -->
+    <ellipse cx="-3" cy="5" rx="1.5" ry="1" fill="#e91e63"/>
+    <ellipse cx="3" cy="5" rx="1.5" ry="1" fill="#e91e63"/>
+    <!-- Pig eyes -->
+    <circle cx="-8" cy="-3" r="2" fill="#212121"/>
+    <circle cx="8" cy="-3" r="2" fill="#212121"/>
+  </g>
+  
+  <!-- Crosshair/targeting system -->
+  <circle cx="175" cy="125" r="25" fill="none" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="175" y1="100" x2="175" y2="150" stroke="#e53935" stroke-width="2"/>
+  <line x1="150" y1="125" x2="200" y2="125" stroke="#e53935" stroke-width="2"/>
+  
+  <!-- Game UI - Score -->
+  <rect x="10" y="10" width="100" height="30" rx="5" fill="rgba(0,0,0,0.5)"/>
+  <text x="20" y="30" font-family="Arial" font-size="16" fill="white">Score: 120</text>
+  
+  <!-- Game UI - Timer -->
+  <rect x="290" y="10" width="100" height="30" rx="5" fill="rgba(0,0,0,0.5)"/>
+  <text x="300" y="30" font-family="Arial" font-size="16" fill="white">Time: 45s</text>
+  
+  <!-- Game UI - Control hints -->
+  <rect x="110" y="270" width="180" height="25" rx="5" fill="rgba(0,0,0,0.5)"/>
+  <text x="120" y="288" font-family="Arial" font-size="12" fill="white">Click on pigs to score points!</text>
+</svg>

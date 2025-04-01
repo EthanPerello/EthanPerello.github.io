@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Space background -->
+  <rect width="400" height="300" fill="#090b2a"/>
+  
+  <!-- Stars -->
+  <circle cx="30" cy="40" r="1" fill="white"/>
+  <circle cx="70" cy="60" r="1.5" fill="white"/>
+  <circle cx="120" cy="30" r="1" fill="white"/>
+  <circle cx="180" cy="80" r="1.5" fill="white"/>
+  <circle cx="220" cy="40" r="1" fill="white"/>
+  <circle cx="270" cy="70" r="1.5" fill="white"/>
+  <circle cx="320" cy="50" r="1" fill="white"/>
+  <circle cx="350" cy="90" r="1.5" fill="white"/>
+  <circle cx="50" cy="120" r="1" fill="white"/>
+  <circle cx="90" cy="170" r="1.5" fill="white"/>
+  <circle cx="150" cy="150" r="1" fill="white"/>
+  <circle cx="210" cy="190" r="1.5" fill="white"/>
+  <circle cx="250" cy="140" r="1" fill="white"/>
+  <circle cx="300" cy="180" r="1.5" fill="white"/>
+  <circle cx="340" cy="130" r="1" fill="white"/>
+  <circle cx="370" cy="160" r="1.5" fill="white"/>
+  <circle cx="60" cy="220" r="1" fill="white"/>
+  <circle cx="110" cy="250" r="1.5" fill="white"/>
+  <circle cx="170" cy="230" r="1" fill="white"/>
+  <circle cx="230" cy="260" r="1.5" fill="white"/>
+  <circle cx="280" cy="210" r="1" fill="white"/>
+  <circle cx="330" cy="240" r="1.5" fill="white"/>
+  <circle cx="380" cy="220" r="1" fill="white"/>
+  
+  <!-- Player spaceship -->
+  <polygon points="200,260 190,280 210,280" fill="#3498db"/>
+  <rect x="195" y="250" width="10" height="15" fill="#3498db"/>
+  <circle cx="200" cy="250" r="8" fill="#5dade2"/>
+  
+  <!-- Enemies/asteroids -->
+  <circle cx="150" cy="60" r="15" fill="#7f8c8d"/>
+  <circle cx="250" cy="80" r="12" fill="#7f8c8d"/>
+  <circle cx="100" cy="120" r="18" fill="#7f8c8d"/>
+  <circle cx="300" cy="140" r="10" fill="#7f8c8d"/>
+  
+  <!-- Blaster shots -->
+  <rect x="199" y="150" width="2" height="10" fill="#e74c3c"/>
+  <rect x="199" y="180" width="2" height="10" fill="#e74c3c"/>
+  <rect x="199" y="210" width="2" height="10" fill="#e74c3c"/>
+  
+  <!-- Explosion -->
+  <circle cx="300" cy="80" r="15" fill="#e67e22"/>
+  <circle cx="300" cy="80" r="10" fill="#f39c12"/>
+  <circle cx="300" cy="80" r="5" fill="#ffffff"/>
+  
+  <!-- Score display -->
+  <rect x="10" y="10" width="80" height="25" rx="5" fill="rgba(52, 73, 94, 0.7)"/>
+  <text x="20" y="27" font-family="Arial" font-size="14" fill="white">SCORE: 1280</text>
+  
+  <!-- Lives display -->
+  <rect x="310" y="10" width="80" height="25" rx="5" fill="rgba(52, 73, 94, 0.7)"/>
+  <text x="320" y="27" font-family="Arial" font-size="14" fill="white">LIVES: 3</text>
+</svg>
