@@ -132,6 +132,11 @@ I engineered features like seed difference, win percentage, average margin of vi
 
 const miniGames = [
   {
+    title: "Grid Resource Management",
+    image: gridBuilderImage,
+    description: "Strategy simulation with tile harvesting, inventory tracking, and context menu interactions."
+  },
+  {
     title: "Dungeon Explorer",
     image: dungeonExplorerImage,
     description: "React roguelike with user authentication, procedural dungeon generation, keyboard movement, and Tailwind UI."
@@ -142,7 +147,7 @@ const miniGames = [
     description: "Arcade-style blaster with asteroid collisions, particle effects, and high score tracking."
   },
   {
-    title: "Match-3 Puzzle Game",
+    title: "Matching Puzzle Game",
     image: match3Image,
     description: "React/TypeScript game with combo scoring, power tiles, and unit-tested logic using custom hooks."
   },
@@ -154,11 +159,6 @@ const miniGames = [
 ];
 
 const miniWebApps = [
-  {
-    title: "Grid Resource Management",
-    image: gridBuilderImage,
-    description: "Strategy simulation with tile harvesting, inventory tracking, and context menu interactions."
-  },
   {
     title: "Election Simulation",
     image: electionSimImage,
@@ -267,7 +267,7 @@ export default function App() {
     <Layout>
       <CollapsibleSection
         title="🔥 Featured Game Projects"
-        description="Top-tier Unity and blockchain-integrated games demonstrating system design, AI, multiplayer, and polished gameplay."
+        description="Featured Unity and blockchain-integrated games demonstrating system design, AI, multiplayer, and polished gameplay."
       >
         {featuredGames.map((project, i) => (
           <ProjectCard key={i} project={project} />
