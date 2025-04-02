@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 
 // === Image Imports ===
@@ -25,13 +24,12 @@ import zeldaImage from "./images/zelda.png";
 import marioImage from "./images/mario.png";
 import angryBirdsImage from "./images/angry-birds.png";
 import cafeDashImage from "./images/cafe-dash.svg";
-import asteroidPatrolImage from "./images/space-shooter.svg";
 import dreadHallsImage from "./images/dreadhalls.png";
 import portalsImage from "./images/portals.png";
 import helicopterImage from "./images/helicopter.png";
 import pongImage from "./images/pong.png";
 
-// COMPONENTS
+// === Components ===
 const Layout = ({ children }) => (
   <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans">
     <div className="max-w-screen-xl mx-auto px-4 py-10">
@@ -80,70 +78,224 @@ const CollapsibleSection = ({ title, description, children }) => {
   );
 };
 
+const featuredGames = [
+  {
+    title: "On-Chain City Builder",
+    image: cityBuilderImage,
+    description: `Blockchain-integrated multiplayer city-building game using Unity and Dojo. Persistent online world with on-chain economy, real-time simulation, tile management, and strategic gameplay.`,
+    github: "https://github.com/EthanPerello/DojoCityBuilder",
+    play: "https://ethanperello.github.io/DojoCityBuilder/",
+    video: "https://www.youtube.com/watch?v=lORypXL-UwA"
+  },
+  {
+    title: "Space Adventure",
+    image: spaceGameImage,
+    description: `3D Unity action-adventure with AI enemies, item collection, health and UI systems. Players navigate multi-scene space environments with persistent audio and polished combat.`,
+    github: "https://github.com/EthanPerello/SpaceGame",
+    play: "https://ethanperello.itch.io/space-game",
+    video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
+  },
+  {
+    title: "Medieval Fantasy RPG",
+    image: rpgImage,
+    description: `Unity RPG with AI combat, leveling system, inventory management, quests, and pet companions. Real-time dynamic UI with scalable code structure.`
+  }
+];
+
+const mlProjects = [
+  {
+    title: "NYC School Closure Predictor",
+    image: nycImage,
+    description: `Logistic regression model predicting NYC school closures using demographic outcome data. Achieved 99.1% accuracy on 2015 data, applied model to 2021 schools for at-risk detection.`,
+    github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
+    website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
+  },
+  {
+    title: "March Madness Outcome Predictor",
+    image: marchMadnessImage,
+    description: `XGBoost and logistic regression models predicting NCAA results using betting odds, power rankings, and seed data. Validated with Kaggle competition cross-validation techniques.`,
+    kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
+  }
+];
+
+const miniGames = [
+  {
+    title: "Dungeon Explorer",
+    image: dungeonExplorerImage,
+    description: "React roguelike with user authentication, procedural dungeon generation, keyboard movement, and Tailwind UI."
+  },
+  {
+    title: "Space Shooter",
+    image: spaceShooterImage,
+    description: "Arcade-style blaster with asteroid collisions, particle effects, and high score tracking."
+  },
+  {
+    title: "Match-3 Puzzle Game",
+    image: match3Image,
+    description: "React/TypeScript game with combo scoring, power tiles, and unit-tested logic using custom hooks."
+  },
+  {
+    title: "Café Dash",
+    image: cafeDashImage,
+    description: "Time management restaurant game where players serve customers, juggle stations, and optimize workflow."
+  }
+];
+
+const miniWebApps = [
+  {
+    title: "Grid Resource Management",
+    image: gridBuilderImage,
+    description: "Strategy simulation with tile harvesting, inventory tracking, and context menu interactions."
+  },
+  {
+    title: "Election Simulation",
+    image: electionSimImage,
+    description: "Interactive polling and vote simulator with randomized candidates, result display, and responsive UI."
+  },
+  {
+    title: "User Manager Dashboard",
+    image: userManagerImage,
+    description: "TypeScript React admin dashboard with toast feedback, access control, and editable user profiles."
+  },
+  {
+    title: "Restaurant Website",
+    image: restaurantImage,
+    description: "Fully responsive React Router site with food menu, location finder, and accessible design."
+  },
+  {
+    title: "Fast Food Finder",
+    image: fastFoodImage,
+    description: "Multi-location menu site with nutritional breakdowns and mobile-first adaptive layouts."
+  },
+  {
+    title: "Email Design System",
+    image: emailSystemImage,
+    description: "Responsive email builder with cross-client tested table layouts and CSS-in-JS styles."
+  },
+  {
+    title: "Well Validation Toolkit",
+    image: wellValidationImage,
+    description: "Time series forecasting and PyTorch integration for oil well hydration depth validation."
+  }
+];
+const cs50Games = [
+  {
+    title: "Flappy Bird",
+    image: flappyBirdImage,
+    video: "https://www.youtube.com/watch?v=cguqEUa7aKc",
+    description: "A recreation of the viral mobile game using LÖVE2D. One-button controls, procedural pipes, parallax backgrounds, and score tracking."
+  },
+  {
+    title: "Breakout",
+    image: breakoutImage,
+    video: "https://www.youtube.com/watch?v=sVcEJVXvUBk&t=76s&pp=0gcJCb8Ag7Wk3p_U",
+    description: "A brick-breaking arcade clone featuring multiple levels, power-ups, particle effects, and score multipliers."
+  },
+  {
+    title: "Match-3",
+    image: match3CS50Image,
+    video: "https://www.youtube.com/watch?v=uRAvr6jjvD4&t=2s",
+    description: "Bejeweled-inspired gem-matching puzzle game with cascades, timers, and board-clearing combos."
+  },
+  {
+    title: "Pokémon",
+    image: pokemonImage,
+    video: "https://www.youtube.com/watch?v=vpGzT32EYfo&t=15s",
+    description: "Turn-based battle system inspired by Pokémon. Type advantages, health bars, leveling, and animated sequences."
+  },
+  {
+    title: "The Legend of Zelda",
+    image: zeldaImage,
+    video: "https://www.youtube.com/watch?v=grg8zPM8IXQ",
+    description: "Top-down dungeon crawler with puzzle rooms, enemy AI, heart-based health, and item collection."
+  },
+  {
+    title: "Super Mario Bros",
+    image: marioImage,
+    video: "https://www.youtube.com/watch?v=EtEtVQGwuf4",
+    description: "Side-scrolling platformer with coins, pipes, power-ups, and Goomba-stomping physics."
+  },
+  {
+    title: "Angry Birds",
+    image: angryBirdsImage,
+    video: "https://www.youtube.com/watch?v=O5gGkmil-Qg",
+    description: "Physics-based puzzle game with projectile launching, destructible environments, and enemy clearing objectives."
+  },
+  {
+    title: "Dread Halls",
+    image: dreadHallsImage,
+    video: "https://www.youtube.com/watch?v=K3X_o2Jlahg&t=2s",
+    description: "First-person horror game with procedural level generation, sound-driven AI, and stealth mechanics."
+  },
+  {
+    title: "Portals",
+    image: portalsImage,
+    video: "https://www.youtube.com/watch?v=wftNRio_PEk",
+    description: "A logic puzzle platformer inspired by Portal. Players teleport between areas to solve spatial puzzles."
+  },
+  {
+    title: "3D Helicopter Game",
+    image: helicopterImage,
+    video: "https://www.youtube.com/watch?v=l4muAD4axtU",
+    description: "Unity 3D side-scrolling helicopter flight game. Navigate through obstacles with realistic physics."
+  },
+  {
+    title: "Pong",
+    image: pongImage,
+    video: "https://www.youtube.com/watch?v=r5pTh3Sn_Pk",
+    description: "Classic Pong clone with two-player controls, ball speed logic, and score tracking."
+  }
+];
 export default function App() {
   useEffect(() => {
     document.title = "Ethan Perello Projects";
   }, []);
 
-  const featuredGames = [
-    { title: "On-Chain City Builder", image: cityBuilderImage, description: "...", github: "...", play: "...", video: "..." },
-    { title: "Space Adventure", image: spaceGameImage, description: "...", github: "...", play: "...", video: "..." },
-    { title: "Medieval Fantasy RPG", image: rpgImage, description: "..." }
-  ];
-
-  const mlProjects = [
-    { title: "NYC School Closure Predictor", image: nycImage, description: "...", github: "...", website: "..." },
-    { title: "March Madness Outcome Predictor", image: marchMadnessImage, description: "...", kaggle: "..." }
-  ];
-
-  const miniGames = [
-    { title: "Dungeon Explorer", image: dungeonExplorerImage, description: "..." },
-    { title: "Space Shooter", image: spaceShooterImage, description: "..." },
-    { title: "Match-3 Puzzle Game", image: match3Image, description: "..." },
-    { title: "Café Dash", image: cafeDashImage, description: "..." },
-    { title: "Asteroid Patrol", image: asteroidPatrolImage, description: "..." }
-  ];
-
-  const miniWebApps = [
-    { title: "Grid Resource Management", image: gridBuilderImage, description: "..." },
-    { title: "Election Simulation", image: electionSimImage, description: "..." },
-    { title: "User Manager Dashboard", image: userManagerImage, description: "..." },
-    { title: "Restaurant Website", image: restaurantImage, description: "..." },
-    { title: "Fast Food Finder", image: fastFoodImage, description: "..." },
-    { title: "Email Design System", image: emailSystemImage, description: "..." },
-    { title: "Well Validation Toolkit", image: wellValidationImage, description: "..." }
-  ];
-
-  const cs50Games = [
-    { title: "Flappy Bird", image: flappyBirdImage, description: "..." },
-    { title: "Breakout", image: breakoutImage, description: "..." },
-    { title: "Match-3", image: match3CS50Image, description: "..." },
-    { title: "Pokémon", image: pokemonImage, description: "..." },
-    { title: "The Legend of Zelda", image: zeldaImage, description: "..." },
-    { title: "Super Mario Bros", image: marioImage, description: "..." },
-    { title: "Angry Birds", image: angryBirdsImage, description: "..." },
-    { title: "Dread Halls", image: dreadHallsImage, description: "..." },
-    { title: "Portals", image: portalsImage, description: "..." },
-    { title: "3D Helicopter Game", image: helicopterImage, description: "..." },
-    { title: "Pong", image: pongImage, description: "..." }
-  ];
-
   return (
     <Layout>
-      <CollapsibleSection title="🔥 Featured Game Projects" description="Top-tier Unity and blockchain-integrated games.">
-        {featuredGames.map((p, i) => <ProjectCard key={i} project={p} />)}
+      <CollapsibleSection
+        title="🔥 Featured Game Projects"
+        description="Top-tier Unity and blockchain-integrated games demonstrating system design, AI, multiplayer, and polished gameplay."
+      >
+        {featuredGames.map((project, i) => (
+          <ProjectCard key={i} project={project} />
+        ))}
       </CollapsibleSection>
-      <CollapsibleSection title="🧠 Machine Learning & Data Science" description="Real-world data projects using predictive modeling.">
-        {mlProjects.map((p, i) => <ProjectCard key={i} project={p} />)}
+
+      <CollapsibleSection
+        title="🧠 Machine Learning & Data Science"
+        description="Real-world data projects using predictive modeling, cross-validation, and data visualization."
+      >
+        {mlProjects.map((project, i) => (
+          <ProjectCard key={i} project={project} />
+        ))}
       </CollapsibleSection>
-      <CollapsibleSection title="🎮 Mini Game Projects" description="Quick-hit gameplay with strong mechanics and polish.">
-        {miniGames.map((p, i) => <ProjectCard key={i} project={p} />)}
+
+      <CollapsibleSection
+        title="🎮 Mini Game Projects"
+        description="Smaller games built with strong mechanics and fast iteration. Arcade shooters, puzzle games, and UI polish."
+      >
+        {miniGames.map((project, i) => (
+          <ProjectCard key={i} project={project} />
+        ))}
       </CollapsibleSection>
-      <CollapsibleSection title="🌐 Web Applications & Tools" description="Frontend tools and dashboards with React, TypeScript, and design systems.">
-        {miniWebApps.map((p, i) => <ProjectCard key={i} project={p} />)}
+
+      <CollapsibleSection
+        title="🌐 Web Applications & Tools"
+        description="Frontend and full-stack apps including admin tools, simulations, dashboards, and production-quality interfaces."
+      >
+        {miniWebApps.map((project, i) => (
+          <ProjectCard key={i} project={project} />
+        ))}
       </CollapsibleSection>
-      <CollapsibleSection title="👾 CS50 Game Development Projects" description="Games built during Harvard’s CS50 course using LÖVE2D.">
-        {cs50Games.map((p, i) => <ProjectCard key={i} project={p} />)}
+
+      <CollapsibleSection
+        title="👾 CS50 Game Development Projects"
+        description="Games built during Harvard's CS50 Game Dev course using LÖVE2D. Each game recreates core mechanics from a classic title."
+      >
+        {cs50Games.map((project, i) => (
+          <ProjectCard key={i} project={project} />
+        ))}
       </CollapsibleSection>
     </Layout>
   );
