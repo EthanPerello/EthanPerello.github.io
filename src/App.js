@@ -183,7 +183,9 @@ Players explore a space-themed map, collect items, and destroy enemies while nav
     image: rpgImage,
     description: `A fully featured Unity RPG game with Blender-crafted characters, AI combat, leveling system, quest tracking, and customizable character appearance. Players battle goblins and skeletons, gain experience, upgrade stats, and accept quests from NPCs.
 
-Includes ranged and melee combat, persistent object states, pet companions, inventory/equipment system, and a dynamic UI that updates in real time. Game logic is modular and scalable for future expansion (bosses, new zones, advanced items). Demonstrates game design, AI architecture, and C# systems integration.`
+Includes ranged and melee combat, persistent object states, pet companions, inventory/equipment system, and a dynamic UI that updates in real time. Game logic is modular and scalable for future expansion (bosses, new zones, advanced items). Demonstrates game design, AI architecture, and C# systems integration.`,
+    github: "https://github.com/EthanPerello/MidievalFantasyRPG",
+    play: "https://ethanperello.itch.io/midieval-fantasy-rpg"
   }
 ];
 
