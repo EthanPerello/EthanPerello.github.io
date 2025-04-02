@@ -40,9 +40,9 @@ const Layout = ({ children }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans flex">
-      {/* Navigation Menu */}
-      <div className="w-64 bg-white shadow-md fixed h-screen overflow-auto p-4 hidden md:block">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans flex flex-col md:flex-row">
+      {/* Navigation Menu - Fixed on left for larger screens, hidden on mobile */}
+      <div className="md:w-64 md:min-w-64 bg-white shadow-md md:h-screen md:sticky md:top-0 overflow-auto p-4 hidden md:block">
         <h2 className="text-xl font-bold text-blue-900 mb-6">Navigation</h2>
         <ul className="space-y-2">
           {sections.map(section => (
@@ -58,7 +58,24 @@ const Layout = ({ children }) => {
         </ul>
       </div>
       
-      <div className="md:ml-64 w-full">
+      {/* Mobile Navigation Dropdown - Only visible on small screens */}
+      <div className="bg-white p-3 shadow-md sticky top-0 z-40 md:hidden">
+        <select 
+          onChange={(e) => window.location.hash = e.target.value} 
+          className="w-full p-2 border rounded text-blue-800 bg-white"
+          defaultValue=""
+        >
+          <option value="" disabled>Jump to section...</option>
+          {sections.map(section => (
+            <option key={section.id} value={`#${section.id}`}>
+              {section.title}
+            </option>
+          ))}
+        </select>
+      </div>
+      
+      {/* Main Content */}
+      <div className="flex-1">
         <div className="max-w-screen-xl mx-auto px-4 py-10">
           <h1 className="text-4xl font-extrabold text-center mb-12 text-blue-900 drop-shadow-sm">
             Ethan Perello Projects
@@ -74,22 +91,33 @@ const Layout = ({ children }) => {
 const ProjectModal = ({ project, isOpen, onClose }) => {
   if (!isOpen) return null;
   
+  // Click outside to close
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      onClose();
+    }
+  };
+  
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-90vh overflow-auto">
-        <div className="p-6">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 modal-overlay overflow-auto"
+      onClick={handleOutsideClick}
+    >
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-auto">
+        <div className="p-4 sm:p-6">
           <div className="flex justify-between items-start mb-4">
-            <h2 className="text-2xl font-bold text-blue-800">{project.title}</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-blue-800">{project.title}</h2>
             <button 
               onClick={onClose}
               className="bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
+              aria-label="Close"
             >
               ✕
             </button>
           </div>
           
           {project.image && (
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-4 sm:mb-6">
               <img 
                 src={project.image} 
                 alt={project.title} 
@@ -98,7 +126,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </div>
           )}
           
-          <div className="text-gray-700 whitespace-pre-line mb-6">{project.description}</div>
+          <div className="text-gray-700 whitespace-pre-line mb-4 sm:mb-6">{project.description}</div>
           
           <div className="flex flex-wrap gap-2">
             {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">GitHub</a>}
@@ -161,19 +189,9 @@ const featuredGames = [
   {
     title: "On-Chain City Builder",
     image: cityBuilderImage,
-    description: `This project is a blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. Initially created for a Dojo Game Jam, I expanded it into a full-featured game that demonstrates sophisticated systems integration between Unity and blockchain technologies.
+    description: `A blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. Players purchase land tiles, construct buildings, and compete for profitability in a persistent online world.
 
-The game is built around a dynamic, expanding grid system where players purchase tiles, each containing its own internal build grid for construction. Players strategically place residential, commercial, and industrial buildings that affect resident happiness and income generation rates. Buildings must be placed adjacent to roads, creating natural city planning constraints.
-
-Key technical implementations include:
-• Fully on-chain data storage via Dojo and Starknet for player balances, tile ownership, and building states
-• Real-time economy simulation with continuous income generation based on resident happiness
-• NavMesh-based AI for resident movement patterns
-• Dynamic board expansion that creates new tiles when the existing grid is fully purchased
-• Comprehensive camera controls (WASD movement, R/F zoom, T/G tilt)
-• Responsive UI with real-time leaderboard displaying player rankings
-
-The game features intricate economic balancing where resident happiness depends on proximity to jobs and entertainment, affecting income generation rates. Players compete for profitability in a persistent online world, demonstrating both blockchain integration skills and game design expertise.`,
+Key features include dynamic grid expansion, real-time economy simulation based on resident happiness, and full integration with blockchain for persistent data storage. All game data including player balance, tile ownership, and building states are recorded on-chain using Dojo and Starknet.`,
     github: "https://github.com/EthanPerello/DojoCityBuilder",
     play: "https://ethanperello.github.io/DojoCityBuilder/",
     video: "https://www.youtube.com/watch?v=lORypXL-UwA"
@@ -181,20 +199,9 @@ The game features intricate economic balancing where resident happiness depends 
   {
     title: "Space Adventure",
     image: spaceGameImage,
-    description: `A complete 3D action-adventure game built in Unity as a final project for Harvard's edX Game Development course. This project showcases comprehensive Unity development skills including player mechanics, AI systems, UI development, and scene management.
+    description: `A 3D action-adventure game built in Unity for Harvard's edX Game Development course. Demonstrates comprehensive Unity development skills with player mechanics, AI systems, and level design.
 
-Key technical implementations:
-• Player systems with animation state management via Unity's Animator, collision detection, health tracking, and attack mechanics
-• NavMesh-driven enemy AI with multiple behavior states (wandering, chasing, attacking) based on proximity detection
-• Dynamic UI elements including responsive health bars and collectible counters
-• Comprehensive game state management with transitions between main menu, gameplay, win, and game over screens
-• Coroutine-based timing systems for attack cooldowns, animation sequencing, and scene transitions
-• Physics-based interactions using Unity's collision system for attacks, damage, and item collection
-• Audio management with persistent background music across scene transitions and contextual sound effects
-
-The game features a complete gameplay loop where players navigate a 3D environment, engage in real-time combat with AI enemies, collect gems to progress, and manage health resources. Enemy encounters utilize Unity's NavMesh for pathfinding, showcasing AI implementation skills. Each enemy destroyed produces particle effects, plays sound effects, and contributes to the player's progression.
-
-This project demonstrates strong foundational skills in Unity development, C# programming, and game design principles, all built independently from scratch.`,
+Features include NavMesh-driven enemy AI with multiple behavior states, dynamic UI elements, game state management across multiple scenes, and physics-based interactions for combat and item collection.`,
     github: "https://github.com/EthanPerello/SpaceGame",
     play: "https://ethanperello.itch.io/space-game",
     video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
@@ -202,23 +209,9 @@ This project demonstrates strong foundational skills in Unity development, C# pr
   {
     title: "Medieval Fantasy RPG",
     image: rpgImage,
-    description: `A feature-rich RPG built in Unity featuring comprehensive character progression, AI systems, and custom assets. This project demonstrates advanced game development skills including complex state management, character customization, combat mechanics, and quest systems.
+    description: `A feature-rich RPG built in Unity showcasing character progression, AI systems, and custom assets. Players can battle enemies, complete quests, and level up characters in a medieval world.
 
-Key technical implementations:
-• Character customization system with selectable gender, hairstyles, facial hair, skin color, and equipment, all dynamically affecting the player model
-• Sophisticated combat mechanics supporting both melee (swords) and ranged weapons (bow) with projectile physics
-• Advanced enemy AI for multiple enemy types (goblins, skeletons, bosses) with NavMesh-based movement, patrol patterns, chase behaviors, and attack sequences
-• Complete progression system with experience points, leveling mechanics, and stat improvements
-• Quest management system with objectives, rewards, and dynamic updates
-• AI companion pets that follow players and assist in gameplay using NavMesh pathfinding
-• Persistent data management across game sessions using Unity's PlayerPrefs system
-• Inventory and equipment system with items affecting gameplay stats and combat effectiveness
-• Physics-based environmental interactions using Unity's Rigidbody system
-• Responsive third-person character controller with Cinemachine integration
-
-The game integrates custom Blender-crafted models and animations with sophisticated game systems, creating a cohesive and immersive medieval fantasy experience. Players can battle enemies, complete quests for NPCs, manage inventory, and progress their character through a comprehensive leveling system.
-
-This project showcases strong architecture skills through modular, expandable code design that enables future content expansion while maintaining system integrity.`,
+Implementation includes combat mechanics supporting both melee and ranged weapons, enemy AI with NavMesh-based movement, quest management system, and character customization options.`,
     github: "https://github.com/EthanPerello/MidievalFantasyRPG",
     play: "https://ethanperello.itch.io/midieval-fantasy-rpg"
   }
@@ -229,42 +222,18 @@ const mlProjects = [
   {
     title: "NYC School Closure Predictor",
     image: nycImage,
-    description: `In this data science project, I conducted an extensive analysis of New York high school student outcomes and school closures. The project's primary goal was to explore whether student performance data could predict school closures and understand how different student subgroups performed relative to each other.
+    description: `An analysis of New York high school student outcomes and school closures using data science techniques. Created a logistic regression model to predict school closures based on student performance metrics.
 
-Key technical implementation:
-• Data acquisition from multiple authoritative sources (New York State Education System and City of New York databases)
-• Comprehensive exploratory data analysis revealing significant performance disparities across demographic subgroups
-• Data transformation and preprocessing to convert subgroup-specific metrics into variables suitable for statistical analysis
-• Correlation analysis identifying key relationships between specific demographic performance metrics and school closure likelihood
-• Development of a logistic regression predictive model achieving 99.1% accuracy in cross-validation tests
-• Application of the trained model to new data (2021) to identify at-risk schools
-• Comparative analysis between model predictions and historical closures to validate findings
-
-The analysis revealed that dropout rates among male students and Black/African American students had stronger correlations with school closures than other metrics. The project demonstrated sophisticated predictive modeling techniques while acknowledging the limitations of statistical prediction in policy contexts.
-
-This work showcases skills in data collection, transformation, statistical analysis, machine learning model development, and interpretation of results in a socially relevant context.`,
+The analysis revealed that dropout rates among specific demographic groups had stronger correlations with closure likelihood. The model achieved 99.1% accuracy in cross-validation tests and was applied to 2021 data to identify at-risk schools.`,
     github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
     website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
   },
   {
     title: "March Madness Outcome Predictor",
     image: marchMadnessImage,
-    description: `In this project, I participated in the Kaggle machine learning competition focused on predicting NCAA March Madness basketball tournament outcomes. This annual single-elimination tournament features 68 Division I teams and represents a significant predictive challenge due to its notorious unpredictability.
+    description: `A Kaggle competition project predicting NCAA basketball tournament outcomes using machine learning. Combined historical tournament data, team statistics, and betting odds to create predictive models.
 
-Key technical implementations:
-• Comprehensive data collection combining historical tournament data, team statistics, seedings, and ratings from FiveThirtyEight and KenPom
-• Custom web scraper development to obtain pre-tournament betting data and historical ratings extending back to 2002
-• Feature engineering creating predictive variables including seed differences, team ratings differences, win percentage discrepancies, average margin of victory, and championship probability disparities
-• Implementation of multiple machine learning approaches including Logistic Regression, Linear Regression, and XGBoost
-• Rigorous validation using k-fold methods structured with season-by-season validation to prevent data leakage
-• Hyperparameter optimization for XGBoost models, adjusting tree depth, learning rates, and regularization terms
-• Integration of betting odds data to capture real-world insights about team injuries, rankings, and public sentiment
-• Model performance evaluation using log-loss metrics, the competition's official scoring method
-• Iterative model refinement based on validation performance
-
-The project's most significant innovation was incorporating betting odds data, which substantially improved predictive accuracy by capturing market insights. The final submission included two top-performing models: a Logistic Regression model and an XGBoost classification model.
-
-This project demonstrates skills in data acquisition, feature engineering, machine learning model development, validation strategies, and applying domain knowledge to improve predictive performance.`,
+Implemented multiple machine learning approaches including Logistic Regression and XGBoost, with validation using season-by-season cross-validation. The integration of betting odds data significantly improved predictive accuracy by capturing market insights about teams.`,
     kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
   }
 ];
@@ -274,27 +243,27 @@ const miniGames = [
   {
     title: "Grid Resource Management",
     image: gridBuilderImage,
-    description: "A strategic simulation game focused on resource collection and grid transformation. Players interact with diverse tile types (water, grass, mountains, forest) to harvest resources and modify the environment. Implements a robust inventory system tracking multiple resource types with maximum capacities, a context menu system for tile interactions, and a balanced economic model for resource allocation. Demonstrates skills in state management, grid-based game design, and UI/UX development."
+    description: "A strategic simulation game focused on resource collection and tile management. Players interact with different tile types to harvest resources and modify the environment. Features include resource tracking, context menu interaction systems, and balanced game economy."
   },
   {
     title: "Dungeon Explorer",
     image: dungeonExplorerImage,
-    description: "A React-based roguelike dungeon crawler featuring procedural level generation and user authentication. Implements secure credential storage with password validation, algorithmic dungeon generation creating unique layouts each playthrough, and grid-based movement using keyboard controls. The project utilizes React state management for game states (exploration, combat, inventory), local storage for progress tracking, and Tailwind CSS for responsive UI design. Demonstrates full-stack development skills combining front-end interfaces with backend authentication."
+    description: "A React-based roguelike featuring procedural dungeon generation and keyboard controls. Implements user authentication with secure credential storage and generated dungeon layouts that change with each playthrough."
   },
   {
     title: "Space Shooter",
     image: spaceShooterImage,
-    description: "An arcade-style space shooter with realistic physics simulation. Implements Newton's laws for movement, creating authentic momentum and inertia for both player ships and enemies. Features comprehensive local storage for high score persistence, progressive difficulty scaling, and particle systems for visual effects (explosions, engine thrust, weapon fire). Game state management handles transitions between menu, gameplay, and high score screens. Showcases skills in physics implementation, visual effects programming, and game progression design."
+    description: "An arcade-style space shooter with physics-based movement and particle effects. Features include high score tracking with local storage, progressive difficulty scaling, and visual effects for explosions and weapon fire."
   },
   {
     title: "Matching Puzzle Game",
     image: match3Image,
-    description: "A sophisticated React/TypeScript puzzle game with advanced scoring and combo mechanics. Players match tiles to create cascading effects with multipliers for consecutive matches and special tile combinations. Implements special power tiles activated through specific match patterns, comprehensive unit testing covering all game mechanics, and state management using custom React hooks. The TypeScript implementation ensures type safety throughout the codebase, while the component architecture follows best practices for reusability and maintenance."
+    description: "A React/TypeScript puzzle game with scoring and combo mechanics. Players match tiles to create cascading effects with multipliers for consecutive matches. Implements custom React hooks for state management with TypeScript for type safety."
   },
   {
     title: "Café Dash",
     image: cafeDashImage,
-    description: "A time-management simulation game inspired by Diner Dash. Players manage multiple customers simultaneously, each with patience meters requiring strategic prioritization. Gameplay involves multi-stage service processes: taking orders, preparing food, serving, and cleaning tables. Features progressive difficulty with customer arrival timing, dynamic scoring based on efficiency and satisfaction, and visual feedback showing customer emotional states. Demonstrates skills in complex state management, timing-based gameplay mechanics, and resource allocation algorithms."
+    description: "A time-management game where players serve customers and manage restaurant workflow. Features customer patience mechanics, multi-stage service processes, and progressive difficulty with increasing customer frequency."
   }
 ];
 
@@ -302,32 +271,32 @@ const miniWebApps = [
   {
     title: "Election Simulation",
     image: electionSimImage,
-    description: "An interactive polling and vote simulation platform featuring statistical analysis of election outcomes. Users can create simulated elections with dynamically generated candidates for multiple political positions. The system implements randomization algorithms for candidate generation, real-time vote tabulation, and visual representation of results. Features include position-specific voting options, \"None of the above\" selections, and comprehensive result analytics. Built with responsive design principles to ensure consistent functionality across device sizes, demonstrating skills in dynamic content generation, data visualization, and user interface design."
+    description: "An interactive election simulator with polling and vote tabulation features. Users can create simulated elections with dynamically generated candidates for different political positions and view real-time vote counts with visual representations of results."
   },
   {
     title: "User Manager Dashboard",
     image: userManagerImage,
-    description: "A comprehensive TypeScript React admin dashboard for user administration. Implements user creation with form validation for required fields and data formats, role-based access control with permission levels, and React Query for efficient data fetching with caching. Features include state management that preserves filters and pagination between sessions, toast notifications for successful operations, clear error handling, and fully responsive design that works across all device sizes. Demonstrates expertise in TypeScript, modern React patterns, state management, and secure user interface design principles."
+    description: "A TypeScript React admin dashboard for user management with form validation and role-based access control. Features include efficient data fetching with React Query, toast notifications for operation feedback, and responsive design across device sizes."
   },
   {
     title: "Restaurant Website",
     image: restaurantImage,
-    description: "A complete restaurant website built with React Router and TypeScript featuring seamless client-side routing. The site includes detailed menu sections with comprehensive nutritional information organized by category, an interactive location finder displaying restaurant branches with contact details, and accessibility-focused design adhering to WCAG guidelines. The component architecture follows best practices with reusable UI elements and proper type definitions. Demonstrates skills in modern front-end architecture, route management, responsive design, and accessibility implementation."
+    description: "A React Router restaurant website with food menu categories, nutritional information, and location finder. Implements client-side routing for seamless navigation and accessibility-focused design adhering to WCAG guidelines."
   },
   {
-    title: "Fast Food Chain Site",
+    title: "Fast Food Finder",
     image: fastFoodImage,
-    description: "A modern fast-food restaurant interface with responsive design showcasing menu items with high-quality images and detailed descriptions. Each food item links to comprehensive nutritional facts pages with dietary information. Features include a location finder with geolocation to show nearby restaurants on interactive maps, mobile-responsive layouts that adapt for smaller screens, and a consistent component system for UI elements. This project demonstrates skills in geolocation integration, responsive design techniques, and component-based architecture."
+    description: "A restaurant interface featuring detailed menu items with nutritional information and location services. Implements responsive layouts that adapt to different screen sizes and consistent component design across the application."
   },
   {
     title: "Email Design System",
     image: emailSystemImage,
-    description: "A comprehensive system for building responsive email templates using React components. Features reusable components specifically designed for email client compatibility including headers, footers, content sections, and CTA buttons. Each component is cross-tested in major email clients to ensure consistent rendering. Implements responsive design techniques functioning within email HTML constraints and includes visual preview capabilities for different devices. The system exports email-compatible HTML working across Gmail, Outlook, Apple Mail and other clients, demonstrating expertise in the challenging area of email template development."
+    description: "A system for building responsive email templates with React components. Features reusable, email-client compatible components that render consistently across Gmail, Outlook, and Apple Mail with responsive design for different devices."
   },
   {
     title: "Well Validation Toolkit",
     image: wellValidationImage,
-    description: "A data processing application for analyzing oil well measurements with advanced visualization capabilities. The system processes complex well data including depth measurements, gamma ray readings, and porosity values. Implements anomaly detection algorithms to identify potential issues in well data, interactive graphs with zoom capabilities for detailed analysis, and multi-well comparison features to identify patterns across locations. Features data validation checks to ensure measurement accuracy and flag suspicious readings. Demonstrates skills in complex data processing, scientific visualization techniques, and building interfaces for technical specialists."
+    description: "A data visualization application for analyzing oil well measurements. Features interactive graphs with zoom capabilities, multi-well comparison functionality, and anomaly detection to identify potential issues in measurement data."
   }
 ];
 const cs50Games = [
@@ -335,67 +304,67 @@ const cs50Games = [
     title: "Flappy Bird",
     image: flappyBirdImage,
     video: "https://www.youtube.com/watch?v=cguqEUa7aKc",
-    description: "A LÖVE2D recreation of the viral mobile game focusing on core gameplay mechanics. Implements procedural pipe generation with randomized heights, physics-based gravity simulation for bird movement, parallax scrolling backgrounds for depth perception, and frame-independent gameplay ensuring consistent difficulty across devices. Features collision detection systems, state machine architecture for game states, and responsive audio feedback. This project demonstrates skills in procedural content generation and physics implementation in Lua."
+    description: "A LÖVE2D recreation of the viral mobile game with procedural pipe generation, gravity physics, and parallax scrolling backgrounds. Features collision detection and responsive control systems."
   },
   {
     title: "Breakout",
     image: breakoutImage,
     video: "https://www.youtube.com/watch?v=sVcEJVXvUBk&t=76s&pp=0gcJCb8Ag7Wk3p_U",
-    description: "A fully-featured brick-breaking arcade game featuring multiple levels with increasing difficulty. Implements varied power-up systems that modify paddle size, ball speed, and multi-ball effects. Features particle systems for visual feedback during brick destruction, score multipliers based on consecutive hits, and progressive level generation. Includes robust collision detection with directional response, paddle physics affecting ball trajectory based on hit position, and state persistence between levels. Demonstrates skills in game physics programming and progressive difficulty design."
+    description: "A brick-breaking arcade game featuring multiple levels with power-ups and particle effects. Implements ball physics where hit position on the paddle affects trajectory."
   },
   {
     title: "Match-3",
     image: match3CS50Image,
     video: "https://www.youtube.com/watch?v=uRAvr6jjvD4&t=2s",
-    description: "A Bejeweled-inspired matching puzzle game with sophisticated match detection and cascade systems. Implements grid-based tile management with swap validation, match detection algorithms for identifying patterns (horizontal, vertical, and special combinations), and cascading effects when matches clear space for new matches. Features include timer-based gameplay with visual countdown, scoring system with multipliers for consecutive matches, and board-clearing special combinations. The project demonstrates algorithm design for pattern recognition and animation sequencing skills."
+    description: "A Bejeweled-inspired matching puzzle game with cascading match effects. Features timed gameplay, scoring systems with match multipliers, and pattern recognition algorithms."
   },
   {
     title: "Pokémon",
     image: pokemonImage,
     video: "https://www.youtube.com/watch?v=vpGzT32EYfo&t=15s",
-    description: "A turn-based battle system inspired by the Pokémon franchise. Implements comprehensive battle mechanics including type advantages/weaknesses affecting damage calculations, status effects altering gameplay, and leveling systems with experience points. Features health bars with animated transitions, turn order management, and specially-animated attack sequences. The project includes a state machine for battle phases, a basic AI for computer-controlled opponents, and text system for battle narration. Demonstrates skills in complex game system design and turn-based mechanics implementation."
+    description: "A turn-based battle system with type advantages affecting damage calculations. Implements health bars, experience points, and animated attack sequences."
   },
   {
     title: "The Legend of Zelda",
     image: zeldaImage,
     video: "https://www.youtube.com/watch?v=grg8zPM8IXQ",
-    description: "A top-down dungeon crawler inspired by The Legend of Zelda. Features room-based dungeon generation with puzzle elements, pathfinding AI for enemies with different behavior patterns, heart-based health system with collectible power-ups, and inventory management for collected items. Implements collision systems for environmental obstacles, combat mechanics with directional sword attacks, and state persistence between dungeon rooms. This project demonstrates skills in top-down gameplay design, AI implementation, and interconnected room-based level design."
+    description: "A top-down dungeon crawler with interconnected puzzle rooms and enemy AI. Features heart-based health, item collection, and directional combat mechanics."
   },
   {
     title: "Super Mario Bros",
     image: marioImage,
     video: "https://www.youtube.com/watch?v=EtEtVQGwuf4",
-    description: "A side-scrolling platformer recreating core mechanics from Super Mario Bros. Implements sprite-based animation systems for character states (running, jumping, falling), tile-based level design with collision detection, and platform physics including variable jump heights based on button press duration. Features collectible coins with score tracking, special blocks that react to collision from below, power-up systems affecting player abilities, and enemy AI with specific movement patterns. Demonstrates platformer physics programming and tile-based level design skills."
+    description: "A side-scrolling platformer with variable jump heights, coin collection, and enemy interactions. Implements sprite-based animation systems for different character states."
   },
   {
     title: "Angry Birds",
     image: angryBirdsImage,
     video: "https://www.youtube.com/watch?v=O5gGkmil-Qg",
-    description: "A physics-based puzzle game inspired by Angry Birds. Implements a projectile launching system with drag-and-release controls determining trajectory and power, realistic physics simulation for projectile movement, and collision systems for destructible environments. Features multiple projectile types with special abilities, structural integrity calculations for buildings, scoring based on efficiency and destruction percentage, and level progression systems. Demonstrates advanced physics implementation, destructible environment programming, and physics-based puzzle design."
+    description: "A physics-based puzzle game with projectile launching mechanics and destructible environments. Features drag-and-release controls determining trajectory and power."
   },
   {
     title: "Dread Halls",
     image: dreadHallsImage,
     video: "https://www.youtube.com/watch?v=K3X_o2Jlahg&t=2s",
-    description: "A first-person horror game focused on atmosphere and tension. Implements procedural dungeon generation creating unique layouts each playthrough, sound-driven AI that reacts to player noise levels, and stealth mechanics requiring careful movement. Features dynamic lighting systems affecting visibility and mood, resource management with limited supplies, and progressive difficulty scaling as players progress deeper. The 3D environment uses Unity's navigation systems for enemy pathfinding. Demonstrates 3D environment design, procedural generation, and audio-reactive AI implementation."
+    description: "A first-person horror game with procedurally generated layouts. Features sound-based enemy AI that responds to player movement and stealth mechanics."
   },
   {
     title: "Portals",
     image: portalsImage,
     video: "https://www.youtube.com/watch?v=wftNRio_PEk",
-    description: "A puzzle platformer inspired by Portal's spatial mechanics. Implements a portal system allowing players to create linked teleportation points, physics continuity ensuring momentum preservation through portals, and puzzle rooms requiring creative use of portals to solve. Features object-portal interactions allowing items to be transported, button-and-door mechanisms for progression, and multiple puzzle types with increasing complexity. Demonstrates advanced spatial reasoning implementation and physics-based puzzle design."
+    description: "A puzzle game based on spatial teleportation mechanics. Implements linked portals allowing players to solve puzzles by repositioning themselves and objects."
   },
   {
     title: "3D Helicopter Game",
     image: helicopterImage,
     video: "https://www.youtube.com/watch?v=l4muAD4axtU",
-    description: "A Unity-based 3D side-scrolling helicopter flight game. Implements realistic flight physics with lift, drag, and gravity forces, obstacle generation with increasing difficulty patterns, and collision detection with appropriate physical responses. Features camera systems that smoothly follow player movement, particle effects for engine exhaust and collisions, and scoring based on distance traveled and obstacles avoided. This project demonstrates 3D physics programming, procedural obstacle generation, and Unity's physics system utilization."
+    description: "A Unity 3D side-scrolling flight game with obstacle avoidance. Implements flight physics with gravity and lift forces and procedural obstacle generation."
   },
   {
     title: "Pong",
     image: pongImage,
     video: "https://www.youtube.com/watch?v=r5pTh3Sn_Pk",
-    description: "A recreation of the classic arcade game Pong. Implements paddle physics affecting ball trajectory based on hit position, ball speed acceleration as rallies continue, and two-player control systems. Features score tracking with visual and audio feedback, dynamic difficulty adjustment based on player performance, and AI for single-player mode with predictive movement. This foundational project demonstrates core game loop design, collision response systems, and basic game physics implementation."
+    description: "A recreation of the classic arcade game with two-player controls. Features ball physics that respond to paddle hit position and progressive ball speed acceleration."
   }
 ];
 export default function App() {
