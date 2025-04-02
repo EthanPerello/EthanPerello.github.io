@@ -6,16 +6,16 @@ import spaceGameImage from "./images/Space_Game.png";
 import rpgImage from "./images/Midieval_Fantasy_RPG.png";
 import nycImage from "./images/NYC_School_Closures.png";
 import marchMadnessImage from "./images/March_Madness_Predictor.png";
-import dungeonExplorerImage from "./images/dungeon-explorer.svg";
-import spaceShooterImage from "./images/space-shooter.svg";
-import match3Image from "./images/match-3-puzzle.svg";
-import gridBuilderImage from "./images/grid-resource-management.svg";
-import electionSimImage from "./images/election-simulation.svg";
-import userManagerImage from "./images/user-management.svg";
-import restaurantImage from "./images/restaurant-website.svg";
-import fastFoodImage from "./images/fast-food-chain.svg";
-import emailSystemImage from "./images/email-design-system-no-code.svg";
-import wellValidationImage from "./images/well-validation-system-no-code.svg";
+import dungeonExplorerImage from "./images/dungeon-explorer.png";
+import spaceShooterImage from "./images/space-shooter.png";
+import match3Image from "./images/match-3-puzzle.png";
+import gridBuilderImage from "./images/grid-resource-management.png";
+import electionSimImage from "./images/election-simulation.png";
+import userManagerImage from "./images/user-management.png";
+import restaurantImage from "./images/restaurant-website.png";
+import fastFoodImage from "./images/fast-food-chain.png";
+import emailSystemImage from "./images/email-design-system-no-code.png";
+import wellValidationImage from "./images/well-validation-system-no-code.png";
 import flappyBirdImage from "./images/flappy-bird.png";
 import breakoutImage from "./images/breakout.png";
 import match3CS50Image from "./images/match3.png";
@@ -23,7 +23,7 @@ import pokemonImage from "./images/pokemon.png";
 import zeldaImage from "./images/zelda.png";
 import marioImage from "./images/mario.png";
 import angryBirdsImage from "./images/angry-birds.png";
-import cafeDashImage from "./images/cafe-dash.svg";
+import cafeDashImage from "./images/cafe-dash.png";
 import dreadHallsImage from "./images/dreadhalls.png";
 import portalsImage from "./images/portals.png";
 import helicopterImage from "./images/helicopter.png";
@@ -93,7 +93,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="rounded-xl object-contain max-h-80 w-auto" 
+                className="rounded-xl w-full" 
               />
             </div>
           )}
@@ -119,13 +119,11 @@ const ProjectCard = ({ project, onClick }) => (
     onClick={() => onClick(project)}
   >
     {project.image && (
-      <div className="h-48 mb-4 overflow-hidden rounded-xl">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-full object-contain" 
-        />
-      </div>
+      <img 
+        src={project.image} 
+        alt={project.title} 
+        className="rounded-xl mb-4 w-full" 
+      />
     )}
     <h2 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h2>
     <p className="text-sm text-gray-700 whitespace-pre-line mb-4 line-clamp-3">{project.description}</p>

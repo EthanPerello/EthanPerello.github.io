@@ -13,7 +13,7 @@
   
   <!-- Presidential section -->
   <rect x="30" y="70" width="340" height="80" rx="3" fill="#f1f2f6"/>
-  <text x="35" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#2f3542">President & Vice President</text>
+  <text x="35" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#2f3542">President &amp; Vice President</text>
   
   <!-- President dropdown -->
   <rect x="35" y="100" width="150" height="30" rx="3" fill="white" stroke="#a4b0be" stroke-width="1"/>
