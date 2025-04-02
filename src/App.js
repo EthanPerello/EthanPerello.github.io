@@ -189,9 +189,11 @@ const featuredGames = [
   {
     title: "On-Chain City Builder",
     image: cityBuilderImage,
-    description: `A blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. Players purchase land tiles, construct buildings, and compete for profitability in a persistent online world.
+    description: `A blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. Originally created for a Dojo Game Jam and expanded into a full game, this project combines city simulation with blockchain technology.
 
-Key features include dynamic grid expansion, real-time economy simulation based on resident happiness, and full integration with blockchain for persistent data storage. All game data including player balance, tile ownership, and building states are recorded on-chain using Dojo and Starknet.`,
+Players purchase land tiles on a dynamically expanding grid and construct residential, commercial, and industrial buildings that affect resident happiness and income rates. The game features real-time economy simulation where buildings must be strategically placed adjacent to roads.
+
+All game data including player balances, tile ownership, and building states are recorded on-chain using Dojo and Starknet. The game includes comprehensive camera controls, building menus, and an interactive leaderboard where players compete for profitability in a persistent online world.`,
     github: "https://github.com/EthanPerello/DojoCityBuilder",
     play: "https://ethanperello.github.io/DojoCityBuilder/",
     video: "https://www.youtube.com/watch?v=lORypXL-UwA"
@@ -199,9 +201,11 @@ Key features include dynamic grid expansion, real-time economy simulation based 
   {
     title: "Space Adventure",
     image: spaceGameImage,
-    description: `A 3D action-adventure game built in Unity for Harvard's edX Game Development course. Demonstrates comprehensive Unity development skills with player mechanics, AI systems, and level design.
+    description: `A 3D action-adventure game built in Unity for Harvard's edX Game Development course. This project demonstrates comprehensive Unity development with player mechanics, AI systems, and level design.
 
-Features include NavMesh-driven enemy AI with multiple behavior states, dynamic UI elements, game state management across multiple scenes, and physics-based interactions for combat and item collection.`,
+The game features NavMesh-driven enemy AI with multiple behavior states (wandering, chasing, attacking) based on proximity detection. Players navigate a 3D environment, engage in real-time combat with enemies, collect gems to progress, and manage their health resources.
+
+Implemented systems include animation state management, collision detection for combat, UI elements like health bars and collectible counters, and game state transitions between menu, gameplay, win, and game over screens. Audio management includes persistent background music and contextual sound effects for player actions and enemy encounters.`,
     github: "https://github.com/EthanPerello/SpaceGame",
     play: "https://ethanperello.itch.io/space-game",
     video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
@@ -209,9 +213,11 @@ Features include NavMesh-driven enemy AI with multiple behavior states, dynamic 
   {
     title: "Medieval Fantasy RPG",
     image: rpgImage,
-    description: `A feature-rich RPG built in Unity showcasing character progression, AI systems, and custom assets. Players can battle enemies, complete quests, and level up characters in a medieval world.
+    description: `A feature-rich RPG built in Unity showcasing character progression, AI systems, and custom assets. Players can battle enemies, complete quests, and level up characters in a medieval fantasy world.
 
-Implementation includes combat mechanics supporting both melee and ranged weapons, enemy AI with NavMesh-based movement, quest management system, and character customization options.`,
+The game features a comprehensive character customization system with selectable appearance options and equipment that affect gameplay stats. Combat mechanics support both melee weapons (swords) and ranged weapons (bows) with appropriate animations and projectile physics.
+
+Enemy AI is implemented using Unity's NavMesh system, providing goblins and skeletons with patrol patterns, chase behaviors, and attack sequences. The game also includes quests with objectives and rewards, an inventory system, and AI companion pets that follow the player and assist in gameplay.`,
     github: "https://github.com/EthanPerello/MidievalFantasyRPG",
     play: "https://ethanperello.itch.io/midieval-fantasy-rpg"
   }
@@ -222,18 +228,22 @@ const mlProjects = [
   {
     title: "NYC School Closure Predictor",
     image: nycImage,
-    description: `An analysis of New York high school student outcomes and school closures using data science techniques. Created a logistic regression model to predict school closures based on student performance metrics.
+    description: `An analysis of New York high school student outcomes and school closures using data science techniques. This project explored whether student performance data could predict school closures and analyzed how different student subgroups performed relative to each other.
 
-The analysis revealed that dropout rates among specific demographic groups had stronger correlations with closure likelihood. The model achieved 99.1% accuracy in cross-validation tests and was applied to 2021 data to identify at-risk schools.`,
+Data was collected from the New York State Education System and City of New York databases, providing detailed metrics on graduation rates, dropout percentages, and GED attainment across demographic subgroups. Exploratory analysis revealed significant performance disparities between genders and racial groups.
+
+The project identified dropout rates among male students and Black/African American students as stronger predictors of school closures. A logistic regression model trained on 2015 data achieved 99.1% accuracy in cross-validation tests and was applied to 2021 school data to identify potentially at-risk institutions.`,
     github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
     website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
   },
   {
     title: "March Madness Outcome Predictor",
     image: marchMadnessImage,
-    description: `A Kaggle competition project predicting NCAA basketball tournament outcomes using machine learning. Combined historical tournament data, team statistics, and betting odds to create predictive models.
+    description: `A Kaggle competition project focused on predicting NCAA March Madness basketball tournament outcomes. The project combined historical tournament data, team statistics, and pre-tournament betting odds to create predictive models for game results.
 
-Implemented multiple machine learning approaches including Logistic Regression and XGBoost, with validation using season-by-season cross-validation. The integration of betting odds data significantly improved predictive accuracy by capturing market insights about teams.`,
+Feature engineering created predictive variables including seed differences, team ratings differences, win percentage discrepancies, and average margin of victory. Multiple machine learning approaches were implemented including Logistic Regression and XGBoost with rigorous validation using season-by-season cross-validation.
+
+The project's most significant innovation was incorporating betting odds data, which substantially improved predictive accuracy by capturing market insights about team strengths, injuries, and public sentiment. The final submission included two top-performing models evaluated using the competition's log-loss metric.`,
     kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
   }
 ];
