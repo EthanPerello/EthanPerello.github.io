@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a0ea7d03.css",
-    "main.js": "/static/js/main.e6c356ab.js",
+    "main.js": "/static/js/main.75d51df5.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
     "static/media/match3.png": "/static/media/match3.62a90ab23f8ace71d5ca.png",
     "static/media/zelda.png": "/static/media/zelda.0b1ff2ce81d31cd98a8d.png",
@@ -32,11 +32,11 @@
     "static/media/dungeon-explorer.svg": "/static/media/dungeon-explorer.cabc7dc69f0db346d8b4f40dc112af19.svg",
     "index.html": "/index.html",
     "main.a0ea7d03.css.map": "/static/css/main.a0ea7d03.css.map",
-    "main.e6c356ab.js.map": "/static/js/main.e6c356ab.js.map",
+    "main.75d51df5.js.map": "/static/js/main.75d51df5.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0ea7d03.css",
-    "static/js/main.e6c356ab.js"
+    "static/js/main.75d51df5.js"
   ]
 }
