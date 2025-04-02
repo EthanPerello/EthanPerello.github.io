@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 // === Image Imports ===
 import cityBuilderImage from "./images/City_Builder_Game.png";
@@ -30,38 +30,119 @@ import helicopterImage from "./images/helicopter.png";
 import pongImage from "./images/pong.png";
 
 // === Components ===
-const Layout = ({ children }) => (
-  <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans">
-    <div className="max-w-screen-xl mx-auto px-4 py-10">
-      <h1 className="text-4xl font-extrabold text-center mb-12 text-blue-900 drop-shadow-sm">
-        Ethan Perello Projects
-      </h1>
-      {children}
-    </div>
-  </div>
-);
+const Layout = ({ children }) => {
+  const sections = [
+    { id: "featured-games", title: "Featured Game Projects" },
+    { id: "ml-projects", title: "Machine Learning & Data Science" },
+    { id: "mini-games", title: "Mini Game Projects" },
+    { id: "web-apps", title: "Web Applications & Tools" },
+    { id: "cs50-games", title: "CS50 Game Development Projects" }
+  ];
 
-const ProjectCard = ({ project }) => (
-  <div className="bg-white rounded-2xl shadow-xl p-4 flex flex-col transition duration-200 transform hover:scale-105">
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans flex">
+      {/* Navigation Menu */}
+      <div className="w-64 bg-white shadow-md fixed h-screen overflow-auto p-4 hidden md:block">
+        <h2 className="text-xl font-bold text-blue-900 mb-6">Navigation</h2>
+        <ul className="space-y-2">
+          {sections.map(section => (
+            <li key={section.id}>
+              <a 
+                href={`#${section.id}`} 
+                className="block px-4 py-2 rounded hover:bg-blue-100 text-blue-800 transition duration-200"
+              >
+                {section.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div className="md:ml-64 w-full">
+        <div className="max-w-screen-xl mx-auto px-4 py-10">
+          <h1 className="text-4xl font-extrabold text-center mb-12 text-blue-900 drop-shadow-sm">
+            Ethan Perello Projects
+          </h1>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Project Modal Component
+const ProjectModal = ({ project, isOpen, onClose }) => {
+  if (!isOpen) return null;
+  
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-90vh overflow-auto">
+        <div className="p-6">
+          <div className="flex justify-between items-start mb-4">
+            <h2 className="text-2xl font-bold text-blue-800">{project.title}</h2>
+            <button 
+              onClick={onClose}
+              className="bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
+            >
+              ✕
+            </button>
+          </div>
+          
+          {project.image && (
+            <div className="flex justify-center mb-6">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="rounded-xl object-contain max-h-80 w-auto" 
+              />
+            </div>
+          )}
+          
+          <div className="text-gray-700 whitespace-pre-line mb-6">{project.description}</div>
+          
+          <div className="flex flex-wrap gap-2">
+            {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">GitHub</a>}
+            {project.play && <a href={project.play} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Play</a>}
+            {project.video && <a href={project.video} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Video</a>}
+            {project.website && <a href={project.website} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Website</a>}
+            {project.kaggle && <a href={project.kaggle} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Kaggle</a>}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProjectCard = ({ project, onClick }) => (
+  <div 
+    className="bg-white rounded-2xl shadow-xl p-4 flex flex-col transition duration-200 transform hover:scale-105 cursor-pointer"
+    onClick={() => onClick(project)}
+  >
     {project.image && (
-      <img src={project.image} alt={project.title} className="rounded-xl mb-4 object-cover h-48 w-full" />
+      <div className="h-48 mb-4 overflow-hidden rounded-xl">
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className="w-full h-full object-contain" 
+        />
+      </div>
     )}
     <h2 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h2>
-    <p className="text-sm text-gray-700 whitespace-pre-line mb-4">{project.description}</p>
-    <div className="flex flex-wrap gap-2">
-      {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">GitHub</a>}
-      {project.play && <a href={project.play} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Play</a>}
-      {project.video && <a href={project.video} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Video</a>}
-      {project.website && <a href={project.website} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Website</a>}
-      {project.kaggle && <a href={project.kaggle} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Kaggle</a>}
+    <p className="text-sm text-gray-700 whitespace-pre-line mb-4 line-clamp-3">{project.description}</p>
+    <div className="flex flex-wrap gap-2 mt-auto">
+      {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>GitHub</a>}
+      {project.play && <a href={project.play} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Play</a>}
+      {project.video && <a href={project.video} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Video</a>}
+      {project.website && <a href={project.website} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Website</a>}
+      {project.kaggle && <a href={project.kaggle} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Kaggle</a>}
     </div>
   </div>
 );
 
-const CollapsibleSection = ({ title, description, children }) => {
+const CollapsibleSection = ({ title, description, children, id }) => {
   const [open, setOpen] = useState(true);
   return (
-    <div className="mb-10">
+    <div className="mb-10" id={id}>
       <button
         onClick={() => setOpen(!open)}
         className="w-full text-left text-2xl font-semibold mb-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-xl hover:bg-blue-200"
@@ -259,56 +340,80 @@ const cs50Games = [
   }
 ];
 export default function App() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     document.title = "Ethan Perello Projects";
   }, []);
 
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <Layout>
       <CollapsibleSection
+        id="featured-games"
         title="🔥 Featured Game Projects"
         description="Featured Unity and blockchain-integrated games demonstrating system design, AI, multiplayer, and polished gameplay."
       >
         {featuredGames.map((project, i) => (
-          <ProjectCard key={i} project={project} />
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
 
       <CollapsibleSection
+        id="ml-projects"
         title="🧠 Machine Learning & Data Science"
         description="Real-world data projects using predictive modeling, cross-validation, and data visualization."
       >
         {mlProjects.map((project, i) => (
-          <ProjectCard key={i} project={project} />
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
 
       <CollapsibleSection
+        id="mini-games"
         title="🎮 Mini Game Projects"
         description="Smaller games built with strong mechanics and fast iteration. Arcade shooters, puzzle games, and UI polish."
       >
         {miniGames.map((project, i) => (
-          <ProjectCard key={i} project={project} />
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
 
       <CollapsibleSection
+        id="web-apps"
         title="🌐 Web Applications & Tools"
         description="Frontend and full-stack apps including admin tools, simulations, dashboards, and production-quality interfaces."
       >
         {miniWebApps.map((project, i) => (
-          <ProjectCard key={i} project={project} />
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
 
       <CollapsibleSection
+        id="cs50-games"
         title="👾 CS50 Game Development Projects"
         description="Games built during Harvard's CS50 Game Dev course using LÖVE2D. Each game recreates core mechanics from a classic title."
       >
         {cs50Games.map((project, i) => (
-          <ProjectCard key={i} project={project} />
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
+
+      {/* Project Modal */}
+      <ProjectModal 
+        project={selectedProject} 
+        isOpen={modalOpen} 
+        onClose={closeModal} 
+      />
     </Layout>
   );
 }
