@@ -79,8 +79,8 @@ const Layout = ({ children }) => {
       
       {/* Main Content */}
       <div className="flex-1">
-        <div className="max-w-screen-xl mx-auto px-4 py-10">
-          <h1 className="text-4xl font-extrabold text-center mb-12 text-blue-900 drop-shadow-sm">
+        <div className="w-full px-2 md:pl-4 py-10">
+          <h1 className="text-4xl font-extrabold text-center mb-8 text-blue-900 drop-shadow-sm">
             Ethan Perello Projects
           </h1>
           {children}
@@ -93,9 +93,9 @@ const Layout = ({ children }) => {
 // Profile Section Component
 const ProfileSection = () => {
   return (
-    <div className="mb-16" id="profile">
-      <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
-        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+    <div className="mb-10" id="profile">
+      <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6">
+        <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
           {/* Profile Picture */}
           <div className="w-48 h-48 flex-shrink-0">
             <img 
@@ -119,8 +119,8 @@ const ProfileSection = () => {
             <div className="mb-6">
               <h3 className="text-xl font-semibold text-blue-700 mb-2">Contact Information</h3>
               <p className="text-gray-700">
-                <span className="font-medium">Email:</span> ethan.perello@example.com<br />
-                <span className="font-medium">Location:</span> San Francisco, CA
+                <span className="font-medium">Email:</span> ethanperello@gmail.com<br />
+                <span className="font-medium">Location:</span> New York, New York
               </p>
             </div>
             
@@ -149,7 +149,7 @@ const ProfileSection = () => {
                 GitHub
               </a>
               <a 
-                href="https://linkedin.com/in/ethanperello" 
+                href="http://linkedin.com/in/EthanPerello" 
                 className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition duration-200 flex items-center"
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -258,7 +258,7 @@ const CollapsibleSection = ({ title, description, children, id }) => {
       {open && (
         <>
           {description && <p className="text-gray-600 mb-4">{description}</p>}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{children}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">{children}</div>
         </>
       )}
     </div>
