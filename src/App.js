@@ -28,10 +28,13 @@ import dreadHallsImage from "./images/dreadhalls.png";
 import portalsImage from "./images/portals.png";
 import helicopterImage from "./images/helicopter.png";
 import pongImage from "./images/pong.png";
+// Add your profile picture import
+import profileImage from "./images/profile-photo.jpg"; // You'll need to add this image to your project
 
 // === Components ===
 const Layout = ({ children }) => {
   const sections = [
+    { id: "profile", title: "About Me" }, // Added new section
     { id: "featured-games", title: "Featured Game Projects" },
     { id: "ml-projects", title: "Machine Learning & Data Science" },
     { id: "mini-games", title: "Mini Game Projects" },
@@ -81,6 +84,83 @@ const Layout = ({ children }) => {
             Ethan Perello Projects
           </h1>
           {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Profile Section Component
+const ProfileSection = () => {
+  return (
+    <div className="mb-16" id="profile">
+      <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+          {/* Profile Picture */}
+          <div className="w-48 h-48 flex-shrink-0">
+            <img 
+              src={profileImage} 
+              alt="Ethan Perello" 
+              className="w-full h-full object-cover rounded-full shadow-md"
+            />
+          </div>
+          
+          {/* Bio and Information */}
+          <div className="flex-1">
+            <h2 className="text-2xl font-bold text-blue-800 mb-4">About Me</h2>
+            <p className="text-gray-700 mb-6">
+              Hello! I'm Ethan Perello, a software engineer and game developer with a passion for creating
+              interactive experiences. I specialize in Unity development, React applications, and machine
+              learning projects. With a background in computer science and years of experience in software
+              development, I bring creative solutions to complex problems.
+            </p>
+            
+            {/* Contact Information */}
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">Contact Information</h3>
+              <p className="text-gray-700">
+                <span className="font-medium">Email:</span> ethan.perello@example.com<br />
+                <span className="font-medium">Location:</span> San Francisco, CA
+              </p>
+            </div>
+            
+            {/* Links Section */}
+            <div className="flex flex-wrap gap-3">
+              <a 
+                href="/resume.pdf" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-200 flex items-center"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download Resume
+              </a>
+              <a 
+                href="https://github.com/EthanPerello" 
+                className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg transition duration-200 flex items-center"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
+                </svg>
+                GitHub
+              </a>
+              <a 
+                href="https://linkedin.com/in/ethanperello" 
+                className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition duration-200 flex items-center"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -248,8 +328,6 @@ The project's most significant innovation was incorporating betting odds data, w
   }
 ];
 
-
-
 const miniGames = [
   {
     title: "Grid Resource Management",
@@ -397,6 +475,9 @@ export default function App() {
 
   return (
     <Layout>
+      {/* Added Profile Section */}
+      <ProfileSection />
+      
       <CollapsibleSection
         id="featured-games"
         title="Featured Game Projects"
