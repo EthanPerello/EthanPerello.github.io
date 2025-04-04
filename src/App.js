@@ -228,11 +228,11 @@ const mlProjects = [
   {
     title: "NYC School Closure Predictor",
     image: nycImage,
-    description: `An analysis of New York high school student outcomes and school closures using data science techniques. This project explored whether student performance data could predict school closures and analyzed how different student subgroups performed relative to each other.
-
-Data was collected from the New York State Education System and City of New York databases, providing detailed metrics on graduation rates, dropout percentages, and GED attainment across demographic subgroups. Exploratory analysis revealed significant performance disparities between genders and racial groups.
-
-The project identified dropout rates among male students and Black/African American students as stronger predictors of school closures. A logistic regression model trained on 2015 data achieved 99.1% accuracy in cross-validation tests and was applied to 2021 school data to identify potentially at-risk institutions.`,
+    description: `A data science project analyzing New York high school student outcomes and school closures, created in collaboration with Adam Goodman. This project explored whether performance metrics such as graduation and dropout rates could predict school closures and revealed key subgroup disparities.
+  
+  Data was collected from New York State and NYC databases, focusing on graduation rates, GED attainment, and dropout percentages across race and gender. Dropout rates among male and Black/African American students emerged as strong indicators of future closures.
+  
+  We used logistic regression to train a predictive model on 2015 data, achieving 99.1% accuracy in cross-validation, and applied it to 2021 school data to identify at-risk institutions.`,
     github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
     website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
   },
