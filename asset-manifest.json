@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.da030942.css",
-    "main.js": "/static/js/main.fe812bd7.js",
+    "main.css": "/static/css/main.f7dd419e.css",
+    "main.js": "/static/js/main.a52a1b3f.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
     "static/media/Space_Game.png": "/static/media/Space_Game.9c98c53d66723ada94d5.png",
     "static/media/Midieval_Fantasy_RPG.png": "/static/media/Midieval_Fantasy_RPG.4e2ac0ea8bea7a6ce91a.png",
@@ -31,12 +31,12 @@
     "static/media/dungeon-explorer.png": "/static/media/dungeon-explorer.a843dcf579ccdd08efe7.png",
     "static/media/pong.png": "/static/media/pong.d73a7e6137a838a5f520.png",
     "index.html": "/index.html",
-    "main.da030942.css.map": "/static/css/main.da030942.css.map",
-    "main.fe812bd7.js.map": "/static/js/main.fe812bd7.js.map",
+    "main.f7dd419e.css.map": "/static/css/main.f7dd419e.css.map",
+    "main.a52a1b3f.js.map": "/static/js/main.a52a1b3f.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da030942.css",
-    "static/js/main.fe812bd7.js"
+    "static/css/main.f7dd419e.css",
+    "static/js/main.a52a1b3f.js"
   ]
 }
