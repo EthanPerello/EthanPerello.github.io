@@ -319,13 +319,15 @@ const mlProjects = [
   {
     title: "March Madness Outcome Predictor",
     image: marchMadnessImage,
-    description: `A Kaggle competition project focused on predicting NCAA March Madness basketball tournament outcomes. The project combined historical tournament data, team statistics, and pre-tournament betting odds to create predictive models for game results.
-
-Feature engineering created predictive variables including seed differences, team ratings differences, win percentage discrepancies, and average margin of victory. Multiple machine learning approaches were implemented including Logistic Regression and XGBoost with rigorous validation using season-by-season cross-validation.
-
-The project's most significant innovation was incorporating betting odds data, which substantially improved predictive accuracy by capturing market insights about team strengths, injuries, and public sentiment. The final submission included two top-performing models evaluated using the competition's log-loss metric.`,
+    description: `A machine learning project predicting NCAA March Madness basketball tournament outcomes using historical data, team stats, and betting odds.
+  
+  We engineered features like seed differences, win percentages, and average margin of victory, and trained models including Logistic Regression and XGBoost. Betting odds significantly boosted accuracy by capturing market sentiment and real-world expectations.
+  
+  Models were evaluated with season-by-season cross-validation and the competition's log-loss metric.`,
+    github: "https://github.com/EthanPerello/march-madness-prediction",
+    website: "https://ethanperello.github.io/march-madness-prediction/",
     kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
-  }
+  }  
 ];
 
 const miniGames = [
