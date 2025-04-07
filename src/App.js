@@ -395,69 +395,81 @@ const cs50Games = [
     title: "Pong",
     image: pongImage,
     video: "https://www.youtube.com/watch?v=r5pTh3Sn_Pk",
+    github: "https://github.com/ethanperello/pong",
     description: "The first project in CS50's Game Development course, implemented in LÖVE2D with Lua. This recreation of the classic Atari game features two-player paddle control, collision detection systems, and basic game state management. The project demonstrates fundamental game development concepts including rendering, input handling, and simple physics."
   },
   {
     title: "Flappy Bird",
     image: flappyBirdImage,
     video: "https://www.youtube.com/watch?v=cguqEUa7aKc",
+    github: "https://github.com/ethanperello/flappy-bird",
     description: "A LÖVE2D recreation of the popular mobile game, incorporating procedural generation for pipes, infinite scrolling, and collision detection. This project focuses on implementing gravity physics, randomized obstacles, and the game's signature one-button control scheme. Includes state machine logic for managing different game states (title screen, gameplay, game over)."
   },
   {
     title: "Breakout",
     image: breakoutImage,
     video: "https://www.youtube.com/watch?v=sVcEJVXvUBk&t=76s&pp=0gcJCb8Ag7Wk3p_U",
+    github: "https://github.com/ethanperello/breakout",
     description: "An implementation of the Atari classic in LÖVE2D, featuring levels of increasing difficulty, brick layouts, powerups, and ball/paddle physics. This project demonstrates more complex game mechanics including bouncing physics based on collision angles and persistent progression between levels."
   },
   {
     title: "Match-3",
     image: match3CS50Image,
     video: "https://www.youtube.com/watch?v=uRAvr6jjvD4&t=2s",
+    github: "https://github.com/ethanperello/match-3",
     description: "A Bejeweled-style matching puzzle game built in LÖVE2D that introduces tile-swapping mechanics, match detection algorithms, and animated transitions. This project focuses on grid-based gameplay and implementing timed game sessions with score tracking."
   },
   {
     title: "Pokémon",
     image: pokemonImage,
     video: "https://www.youtube.com/watch?v=vpGzT32EYfo&t=15s",
+    github: "https://github.com/ethanperello/pokemon",
     description: "A turn-based battle system inspired by Pokémon, built in LÖVE2D. This project focuses on implementing state-based combat logic, menu systems, and entity statistics. Includes basic AI for opponent decisions and text-based battle narration."
   },
   {
     title: "The Legend of Zelda",
     image: zeldaImage,
     video: "https://www.youtube.com/watch?v=grg8zPM8IXQ",
+    github: "https://github.com/ethanperello/legend-of-zelda",
     description: "A top-down adventure game inspired by early Legend of Zelda titles, implemented in LÖVE2D. Features room-based dungeon design, basic enemy AI, and player-world interaction. This project demonstrates tile-based level design and inter-room transitions."
   },
   {
     title: "Super Mario Bros",
     image: marioImage,
     video: "https://www.youtube.com/watch?v=EtEtVQGwuf4",
+    github: "https://github.com/ethanperello/super-mario-bros",
     description: "A side-scrolling platformer based on the NES classic, built in LÖVE2D. This project incorporates tile-based level design, platforming physics with variable jump heights, and basic enemy behavior. Demonstrates techniques for handling sprite animation and scrolling camera systems."
   },
   {
     title: "Angry Birds",
     image: angryBirdsImage,
     video: "https://www.youtube.com/watch?v=O5gGkmil-Qg",
+    github: "https://github.com/ethanperello/angry-birds",
     description: "A physics-based game created in LÖVE2D using Box2D for realistic physics simulation. This project focuses on implementing projectile trajectories, destructible structures, and the slingshot launch mechanic, introducing concepts of rigid body physics in game development."
   },
   {
     title: "Dread Halls",
     image: dreadHallsImage,
     video: "https://www.youtube.com/watch?v=K3X_o2Jlahg&t=2s",
+    github: "https://github.com/ethanperello/dread-halls",
     description: "A first-person horror game built in Unity, marking the transition to 3D game development. Features procedurally generated maze-like environments, atmospheric lighting, and enemy AI. This project demonstrates 3D movement systems and creating tension through limited visibility and audio cues."
   },
   {
     title: "Portals",
     image: portalsImage,
     video: "https://www.youtube.com/watch?v=wftNRio_PEk",
+    github: "https://github.com/ethanperello/portals",
     description: "A Unity-based 3D puzzle game inspired by Portal, focusing on teleportation mechanics and spatial puzzles. This project demonstrates advanced concepts in 3D rendering, teleportation effects, and physics-based puzzle design where objects maintain momentum through portals."
   },
   {
     title: "3D Helicopter Game",
     image: helicopterImage,
     video: "https://www.youtube.com/watch?v=l4muAD4axtU",
+    github: "https://github.com/ethanperello/3d-helicopter-game",
     description: "A Unity 3D helicopter game where players navigate through obstacles. This project introduces rigidbody physics in 3D space, obstacle avoidance gameplay, and particle systems. Features procedurally generated terrain and obstacle courses with increasing difficulty."
   }
 ];
+
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
