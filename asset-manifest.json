@@ -1,8 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.901dbb0c.css",
-    "main.js": "/static/js/main.3bdf423f.js",
+    "main.css": "/static/css/main.1064a721.css",
+    "main.js": "/static/js/main.4fc2eb6f.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
+    "static/media/grand-bowl-montage.mp4": "/static/media/grand-bowl-montage.1f08db0d211d1040a3d8.mp4",
+    "static/media/grand-bowl-strike.mp4": "/static/media/grand-bowl-strike.1ccb2f57db963c74db15.mp4",
+    "static/media/grand-bowl-building-preview.mp4": "/static/media/grand-bowl-building-preview.dd6d1c5cb209dc789dfe.mp4",
+    "static/media/sealand-poster.png": "/static/media/sealand-poster.99b458ef5df20a8c05b6.png",
+    "static/media/sealand-logo-drafts.jpg": "/static/media/sealand-logo-drafts.a79300f0c37112c726ba.jpg",
     "static/media/Space_Game.png": "/static/media/Space_Game.9c98c53d66723ada94d5.png",
     "static/media/Midieval_Fantasy_RPG.png": "/static/media/Midieval_Fantasy_RPG.4e2ac0ea8bea7a6ce91a.png",
     "static/media/match3.png": "/static/media/match3.c23c9f1f4e6583285dae.png",
@@ -29,15 +34,16 @@
     "static/media/March_Madness_Predictor.png": "/static/media/March_Madness_Predictor.fccd98a9baf9597edf06.png",
     "static/media/flappy-bird.png": "/static/media/flappy-bird.71a6e985e13c9361f96e.png",
     "static/media/profile-photo.jpg": "/static/media/profile-photo.0669f183876896125c82.jpg",
+    "static/media/sealand-final-logo.png": "/static/media/sealand-final-logo.2131767c5476194d6f82.png",
     "static/media/dungeon-explorer.png": "/static/media/dungeon-explorer.a843dcf579ccdd08efe7.png",
     "static/media/pong.png": "/static/media/pong.d73a7e6137a838a5f520.png",
     "index.html": "/index.html",
-    "main.901dbb0c.css.map": "/static/css/main.901dbb0c.css.map",
-    "main.3bdf423f.js.map": "/static/js/main.3bdf423f.js.map",
+    "main.1064a721.css.map": "/static/css/main.1064a721.css.map",
+    "main.4fc2eb6f.js.map": "/static/js/main.4fc2eb6f.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.901dbb0c.css",
-    "static/js/main.3bdf423f.js"
+    "static/css/main.1064a721.css",
+    "static/js/main.4fc2eb6f.js"
   ]
 }
