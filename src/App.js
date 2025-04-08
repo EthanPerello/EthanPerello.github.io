@@ -29,17 +29,26 @@ import portalsImage from "./images/portals.png";
 import helicopterImage from "./images/helicopter.png";
 import pongImage from "./images/pong.png";
 // Add your profile picture import
-import profileImage from "./images/profile-photo.jpg"; // You'll need to add this image to your project
+import profileImage from "./images/profile-photo.jpg";
+// New graphic design and video project imports
+import sealandLogoDraftsImage from "./images/sealand-logo-drafts.jpg";
+import sealandFinalLogoImage from "./images/sealand-final-logo.png";
+import sealandPosterImage from "./images/sealand-poster.png";
+// You'll need to create these video files in your project
+import grandBowlMontageVideo from "./videos/grand-bowl-montage.mp4";
+import grandBowlStrikeVideo from "./videos/grand-bowl-strike.mp4";
+import grandBowlBuildingVideo from "./videos/grand-bowl-building-preview.mp4";
 
 // === Components ===
 const Layout = ({ children }) => {
   const sections = [
-    { id: "profile", title: "About Me" }, // Added new section
+    { id: "profile", title: "About Me" },
     { id: "featured-games", title: "Featured Game Projects" },
     { id: "ml-projects", title: "Machine Learning & Data Science" },
     { id: "mini-games", title: "Mini Game Projects" },
     { id: "web-apps", title: "Web Applications & Tools" },
-    { id: "cs50-games", title: "CS50 Game Development Projects" }
+    { id: "cs50-games", title: "CS50 Game Development Projects" },
+    { id: "graphic-projects", title: "Graphic Design & Video Projects" }
   ];
 
   return (
@@ -51,7 +60,7 @@ const Layout = ({ children }) => {
           {sections.map(section => (
             <li key={section.id}>
               <a 
-                href={`#${section.id}`} 
+                href={`#${section.id}`}
                 className="block px-4 py-2 rounded hover:bg-blue-100 text-blue-800 transition duration-200"
               >
                 {section.title}
@@ -265,6 +274,90 @@ const CollapsibleSection = ({ title, description, children, id }) => {
   );
 };
 
+// Project Media Slider Component for graphic design and video projects
+const ProjectMediaSlider = ({ media }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRefs = useRef({});
+  
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? media.length - 1 : prevIndex - 1));
+  };
+  
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === media.length - 1 ? 0 : prevIndex + 1));
+  };
+  
+  const handleMouseEnter = (id) => {
+    if (videoRefs.current[id] && videoRefs.current[id].play) {
+      videoRefs.current[id].play();
+    }
+  };
+  
+  const handleMouseLeave = (id) => {
+    if (videoRefs.current[id] && videoRefs.current[id].pause) {
+      videoRefs.current[id].pause();
+    }
+  };
+  
+  if (!media || media.length === 0) return null;
+  
+  const currentMedia = media[currentIndex];
+  
+  return (
+    <div className="relative w-full bg-white rounded-xl overflow-hidden shadow-md">
+      <div className="relative h-64 md:h-80 overflow-hidden">
+        {currentMedia.type === 'image' ? (
+          <img 
+            src={currentMedia.src} 
+            alt={currentMedia.caption} 
+            className="w-full h-full object-contain"
+          />
+        ) : (
+          <video
+            ref={ref => videoRefs.current[currentMedia.id] = ref}
+            src={currentMedia.src}
+            className="w-full h-full object-contain"
+            loop
+            muted
+            playsInline
+            onMouseEnter={() => handleMouseEnter(currentMedia.id)}
+            onMouseLeave={() => handleMouseLeave(currentMedia.id)}
+          />
+        )}
+        
+        {/* Navigation Arrows */}
+        <button 
+          onClick={handlePrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full w-8 h-8 flex items-center justify-center text-blue-800 shadow-md transition duration-200"
+          aria-label="Previous"
+        >
+          ←
+        </button>
+        <button 
+          onClick={handleNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full w-8 h-8 flex items-center justify-center text-blue-800 shadow-md transition duration-200"
+          aria-label="Next"
+        >
+          →
+        </button>
+      </div>
+      
+      {/* Caption and Progress Indicators */}
+      <div className="p-4">
+        <p className="text-sm text-gray-700 mb-2">{currentMedia.caption}</p>
+        <div className="flex justify-center space-x-1">
+          {media.map((_, index) => (
+            <div 
+              key={index} 
+              className={`h-1.5 rounded-full ${index === currentIndex ? 'w-4 bg-blue-600' : 'w-2 bg-gray-300'}`} 
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const featuredGames = [
   {
     title: "On-Chain City Builder",
@@ -310,9 +403,9 @@ const mlProjects = [
     image: nycImage,
     description: `A data science project analyzing New York high school student outcomes and school closures, created in collaboration with Adam Goodman. This project explored whether performance metrics such as graduation and dropout rates could predict school closures and revealed key subgroup disparities.
   
-  Data was collected from New York State and NYC databases, focusing on graduation rates, GED attainment, and dropout percentages across race and gender. Dropout rates among male and Black/African American students emerged as strong indicators of future closures.
+Data was collected from New York State and NYC databases, focusing on graduation rates, GED attainment, and dropout percentages across race and gender. Dropout rates among male and Black/African American students emerged as strong indicators of future closures.
   
-  We used logistic regression to train a predictive model on 2015 data, achieving 99.1% accuracy in cross-validation, and applied it to 2021 school data to identify at-risk institutions.`,
+We used logistic regression to train a predictive model on 2015 data, achieving 99.1% accuracy in cross-validation, and applied it to 2021 school data to identify at-risk institutions.`,
     github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
     website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
   },
@@ -321,9 +414,9 @@ const mlProjects = [
     image: marchMadnessImage,
     description: `A machine learning project predicting NCAA March Madness basketball tournament outcomes using historical data, team stats, and betting odds.
   
-  We engineered features like seed differences, win percentages, and average margin of victory, and trained models including Logistic Regression and XGBoost. Betting odds significantly boosted accuracy by capturing market sentiment and real-world expectations.
+We engineered features like seed differences, win percentages, and average margin of victory, and trained models including Logistic Regression and XGBoost. Betting odds significantly boosted accuracy by capturing market sentiment and real-world expectations.
   
-  Models were evaluated with season-by-season cross-validation and the competition's log-loss metric.`,
+Models were evaluated with season-by-season cross-validation and the competition's log-loss metric.`,
     github: "https://github.com/EthanPerello/march-madness-prediction",
     website: "https://ethanperello.github.io/march-madness-prediction/",
     kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
@@ -390,6 +483,7 @@ const miniWebApps = [
     description: "A data visualization application for analyzing oil well measurements. Features interactive graphs with zoom capabilities, multi-well comparison functionality, and anomaly detection to identify potential issues in measurement data."
   }
 ];
+
 const cs50Games = [
   {
     title: "Pong",
@@ -470,6 +564,58 @@ const cs50Games = [
   }
 ];
 
+// Graphic Design & Video Projects
+const graphicProjects = [
+  {
+    title: "Sealand Basketball",
+    description: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand. The project included developing a brand identity, logo design, and promotional materials for a youth basketball tournament.",
+    media: [
+      {
+        id: "sealand-logo-drafts",
+        type: "image",
+        src: sealandLogoDraftsImage,
+        caption: "Initial logo concepts exploring various visual directions for the Sealand Basketball brand identity. These sketches explore different typography, icon styles, and color combinations."
+      },
+      {
+        id: "sealand-final-logo",
+        type: "image",
+        src: sealandFinalLogoImage,
+        caption: "The finalized Sealand Basketball logo featuring a basketball with wave elements, representing the maritime heritage of the Principality of Sealand combined with basketball iconography."
+      },
+      {
+        id: "sealand-poster",
+        type: "image",
+        src: sealandPosterImage,
+        caption: "Promotional poster for the Sealand Youth Basketball Tournament, incorporating the brand identity and showcasing event details with dynamic visual elements."
+      }
+    ]
+  },
+  {
+    title: "Tokyo Grand Bowl Video Advertisements",
+    description: "A series of promotional videos designed for exterior display on a Tokyo bowling alley building. This project focused on creating eye-catching motion graphics that communicate the excitement of bowling through dynamic visuals and animations.",
+    media: [
+      {
+        id: "grand-bowl-montage",
+        type: "video",
+        src: grandBowlMontageVideo,
+        caption: "A dynamic compilation of bowling footage showcasing the energy and excitement of the sport. This video was designed to attract attention from passersby with its fast-paced editing and vibrant visuals."
+      },
+      {
+        id: "grand-bowl-strike",
+        type: "video",
+        src: grandBowlStrikeVideo,
+        caption: "Celebratory animation featuring green-screened reactions with animated 'Strike!' text overlay. This video captures the triumphant moment of scoring in bowling with energetic typography."
+      },
+      {
+        id: "grand-bowl-building",
+        type: "video",
+        src: grandBowlBuildingVideo,
+        caption: "Composite rendering showing both videos displayed on the exterior of the Grand Bowl building in Tokyo, demonstrating how the advertisements would appear in their intended context."
+      }
+    ]
+  }
+];
+
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
@@ -540,6 +686,23 @@ export default function App() {
         {cs50Games.map((project, i) => (
           <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
+      </CollapsibleSection>
+      
+      {/* New Graphic Design & Video Projects Section */}
+      <CollapsibleSection
+        id="graphic-projects"
+        title="Graphic Design & Video Projects"
+        description="Multimedia design projects including branding, posters, and promotional video ads."
+      >
+        <div className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {graphicProjects.map((project, i) => (
+            <div key={i} className="bg-white rounded-2xl shadow-xl p-4 flex flex-col">
+              <h2 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h2>
+              <p className="text-sm text-gray-700 mb-4">{project.description}</p>
+              <ProjectMediaSlider media={project.media} />
+            </div>
+          ))}
+        </div>
       </CollapsibleSection>
 
       {/* Project Modal */}
