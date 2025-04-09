@@ -176,104 +176,6 @@ const ProfileSection = () => {
   );
 };
 
-// Project Modal Component
-const ProjectModal = ({ project, isOpen, onClose }) => {
-  if (!isOpen) return null;
-  
-  // Click outside to close
-  const handleOutsideClick = (e) => {
-    if (e.target.classList.contains('modal-overlay')) {
-      onClose();
-    }
-  };
-  
-  return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 modal-overlay overflow-auto"
-      onClick={handleOutsideClick}
-    >
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-auto">
-        <div className="p-4 sm:p-6">
-          <div className="flex justify-between items-start mb-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-blue-800">{project.title}</h2>
-            <button 
-              onClick={onClose}
-              className="bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
-              aria-label="Close"
-            >
-              ✕
-            </button>
-          </div>
-          
-          {project.image && (
-            <div className="flex justify-center mb-4 sm:mb-6">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="rounded-xl w-full" 
-              />
-            </div>
-          )}
-          
-          <div className="text-gray-700 whitespace-pre-line mb-4 sm:mb-6">{project.description}</div>
-          
-          <div className="flex flex-wrap gap-2">
-            {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">GitHub</a>}
-            {project.play && <a href={project.play} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Play</a>}
-            {project.video && <a href={project.video} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Video</a>}
-            {project.website && <a href={project.website} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Website</a>}
-            {project.kaggle && <a href={project.kaggle} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Kaggle</a>}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const ProjectCard = ({ project, onClick }) => (
-  <div 
-    className="bg-white rounded-2xl shadow-xl p-4 flex flex-col transition duration-200 transform hover:scale-105 cursor-pointer"
-    onClick={() => onClick(project)}
-  >
-    {project.image && (
-      <img 
-        src={project.image} 
-        alt={project.title} 
-        className="rounded-xl mb-4 w-full" 
-      />
-    )}
-    <h2 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h2>
-    <p className="text-sm text-gray-700 whitespace-pre-line mb-4 line-clamp-3">{project.description}</p>
-    <div className="flex flex-wrap gap-2 mt-auto">
-      {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>GitHub</a>}
-      {project.play && <a href={project.play} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Play</a>}
-      {project.video && <a href={project.video} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Video</a>}
-      {project.website && <a href={project.website} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Website</a>}
-      {project.kaggle && <a href={project.kaggle} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Kaggle</a>}
-    </div>
-  </div>
-);
-
-const CollapsibleSection = ({ title, description, children, id }) => {
-  const [open, setOpen] = useState(true);
-  return (
-    <div className="mb-10" id={id}>
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full text-left text-2xl font-semibold mb-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-xl hover:bg-blue-200"
-      >
-        {open ? `▼ ${title}` : `▶ ${title}`}
-      </button>
-      {open && (
-        <>
-          {description && <p className="text-gray-600 mb-4">{description}</p>}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">{children}</div>
-        </>
-      )}
-    </div>
-  );
-};
-
 // Project Media Slider Component for graphic design and video projects
 const ProjectMediaSlider = ({ media }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -285,18 +187,6 @@ const ProjectMediaSlider = ({ media }) => {
   
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex === media.length - 1 ? 0 : prevIndex + 1));
-  };
-  
-  const handleMouseEnter = (id) => {
-    if (videoRefs.current[id] && videoRefs.current[id].play) {
-      videoRefs.current[id].play();
-    }
-  };
-  
-  const handleMouseLeave = (id) => {
-    if (videoRefs.current[id] && videoRefs.current[id].pause) {
-      videoRefs.current[id].pause();
-    }
   };
   
   if (!media || media.length === 0) return null;
@@ -317,11 +207,10 @@ const ProjectMediaSlider = ({ media }) => {
             ref={ref => videoRefs.current[currentMedia.id] = ref}
             src={currentMedia.src}
             className="w-full h-full object-contain"
+            autoPlay
             loop
             muted
             playsInline
-            onMouseEnter={() => handleMouseEnter(currentMedia.id)}
-            onMouseLeave={() => handleMouseLeave(currentMedia.id)}
           />
         )}
         
@@ -354,6 +243,133 @@ const ProjectMediaSlider = ({ media }) => {
           ))}
         </div>
       </div>
+    </div>
+  );
+};
+
+// Project Modal Component
+const ProjectModal = ({ project, isOpen, onClose }) => {
+  if (!isOpen) return null;
+  
+  // Click outside to close
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      onClose();
+    }
+  };
+  
+  return (
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 modal-overlay overflow-auto"
+      onClick={handleOutsideClick}
+    >
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-auto">
+        <div className="p-4 sm:p-6">
+          <div className="flex justify-between items-start mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-blue-800">{project.title}</h2>
+            <button 
+              onClick={onClose}
+              className="bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+          
+          {project.media ? (
+            <ProjectMediaSlider media={project.media} />
+          ) : project.image && (
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="rounded-xl w-full" 
+              />
+            </div>
+          )}
+          
+          <div className="text-gray-700 whitespace-pre-line mb-4 sm:mb-6">
+            {project.fullDescription || project.description}
+          </div>
+          
+          <div className="flex flex-wrap gap-2">
+            {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">GitHub</a>}
+            {project.play && <a href={project.play} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Play</a>}
+            {project.video && <a href={project.video} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Video</a>}
+            {project.website && <a href={project.website} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Website</a>}
+            {project.kaggle && <a href={project.kaggle} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer">Kaggle</a>}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProjectCard = ({ project, onClick }) => {
+  const videoRef = useRef(null);
+  
+  // For video thumbnails, ensure they play automatically
+  useEffect(() => {
+    if (videoRef.current && project.image && typeof project.image === 'string' && project.image.includes('.mp4')) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+      });
+    }
+  }, [project.image]);
+
+  return (
+    <div 
+      className="bg-white rounded-2xl shadow-xl p-4 flex flex-col transition duration-200 transform hover:scale-105 cursor-pointer"
+      onClick={() => onClick(project)}
+    >
+      {project.image && (
+        typeof project.image === 'string' && project.image.includes('.mp4') ? (
+          <video
+            ref={videoRef}
+            src={project.image}
+            className="rounded-xl mb-4 w-full h-48 object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="rounded-xl mb-4 w-full" 
+          />
+        )
+      )}
+      <h2 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h2>
+      <p className="text-sm text-gray-700 whitespace-pre-line mb-4 line-clamp-3">{project.description}</p>
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {project.github && <a href={project.github} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>GitHub</a>}
+        {project.play && <a href={project.play} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Play</a>}
+        {project.video && <a href={project.video} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Video</a>}
+        {project.website && <a href={project.website} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Website</a>}
+        {project.kaggle && <a href={project.kaggle} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>Kaggle</a>}
+      </div>
+    </div>
+  );
+};
+
+const CollapsibleSection = ({ title, description, children, id }) => {
+  const [open, setOpen] = useState(true);
+  return (
+    <div className="mb-10" id={id}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left text-2xl font-semibold mb-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-xl hover:bg-blue-200"
+      >
+        {open ? `▼ ${title}` : `▶ ${title}`}
+      </button>
+      {open && (
+        <>
+          {description && <p className="text-gray-600 mb-4">{description}</p>}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">{children}</div>
+        </>
+      )}
     </div>
   );
 };
@@ -564,17 +580,19 @@ const cs50Games = [
   }
 ];
 
-// Graphic Design & Video Projects
+// Updated Graphic Design & Video Projects
 const graphicProjects = [
   {
     title: "Sealand Basketball",
-    description: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand. The project included developing a brand identity, logo design, and promotional materials for a youth basketball tournament.",
+    image: sealandPosterImage,
+    description: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand, featuring logo development and tournament promotional materials.",
+    fullDescription: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand. The project included developing a brand identity from initial concepts through finalization, logo design with maritime elements, and promotional materials for the Sealand Youth Basketball Tournament. The design system incorporates the blue and orange color scheme representing the sea and basketball, with wave-inspired design elements.",
     media: [
       {
-        id: "sealand-logo-drafts",
+        id: "sealand-poster",
         type: "image",
-        src: sealandLogoDraftsImage,
-        caption: "Initial logo concepts exploring various visual directions for the Sealand Basketball brand identity. These sketches explore different typography, icon styles, and color combinations."
+        src: sealandPosterImage,
+        caption: "Promotional poster for the Sealand Youth Basketball Tournament, incorporating the brand identity and showcasing event details with dynamic visual elements."
       },
       {
         id: "sealand-final-logo",
@@ -583,34 +601,36 @@ const graphicProjects = [
         caption: "The finalized Sealand Basketball logo featuring a basketball with wave elements, representing the maritime heritage of the Principality of Sealand combined with basketball iconography."
       },
       {
-        id: "sealand-poster",
+        id: "sealand-logo-drafts",
         type: "image",
-        src: sealandPosterImage,
-        caption: "Promotional poster for the Sealand Youth Basketball Tournament, incorporating the brand identity and showcasing event details with dynamic visual elements."
+        src: sealandLogoDraftsImage,
+        caption: "Initial logo concepts exploring various visual directions for the Sealand Basketball brand identity. These sketches explore different typography, icon styles, and color combinations."
       }
     ]
   },
   {
     title: "Tokyo Grand Bowl Video Advertisements",
-    description: "A series of promotional videos designed for exterior display on a Tokyo bowling alley building. This project focused on creating eye-catching motion graphics that communicate the excitement of bowling through dynamic visuals and animations.",
+    image: grandBowlBuildingVideo,
+    description: "A series of promotional videos designed for exterior display on a Tokyo bowling alley building with vibrant purple-tinted visuals and dynamic sequences.",
+    fullDescription: "A series of promotional videos designed for exterior display on the Tokyo Grand Bowl building. This project focused on creating eye-catching motion graphics that communicate the excitement of bowling through dynamic visuals and animations. Using vibrant colors with purple tinting, the advertisements include slow-motion bowling sequences and celebratory moments designed to attract customers. The campaign culminated in composite renderings showing how the videos would appear on the building's exterior displays, creating an immersive visual experience for passersby.",
     media: [
       {
-        id: "grand-bowl-montage",
+        id: "grand-bowl-building",
         type: "video",
-        src: grandBowlMontageVideo,
-        caption: "A dynamic compilation of bowling footage showcasing the energy and excitement of the sport. This video was designed to attract attention from passersby with its fast-paced editing and vibrant visuals."
+        src: grandBowlBuildingVideo,
+        caption: "Composite rendering showing the advertising videos displayed on the exterior of the Grand Bowl building in Tokyo, demonstrating how the advertisements would appear in their intended context."
       },
       {
         id: "grand-bowl-strike",
         type: "video",
         src: grandBowlStrikeVideo,
-        caption: "Celebratory animation featuring green-screened reactions with animated 'Strike!' text overlay. This video captures the triumphant moment of scoring in bowling with energetic typography."
+        caption: "Celebratory sequence featuring performers green-screened against a bowling alley backdrop with animated 'Strike!' text overlay. The vibrant purple-tinted visuals capture the excitement of scoring in bowling."
       },
       {
-        id: "grand-bowl-building",
+        id: "grand-bowl-montage",
         type: "video",
-        src: grandBowlBuildingVideo,
-        caption: "Composite rendering showing both videos displayed on the exterior of the Grand Bowl building in Tokyo, demonstrating how the advertisements would appear in their intended context."
+        src: grandBowlMontageVideo,
+        caption: "A dynamic compilation showcasing bowling in slow motion - from the ball's release from the machine to its journey down the lane and the satisfying moment of the last pin falling. Enhanced with vibrant colors and purple-tinted visual styling."
       }
     ]
   }
@@ -688,21 +708,15 @@ export default function App() {
         ))}
       </CollapsibleSection>
       
-      {/* New Graphic Design & Video Projects Section */}
+      {/* Updated Graphic Design & Video Projects Section */}
       <CollapsibleSection
         id="graphic-projects"
         title="Graphic Design & Video Projects"
         description="Multimedia design projects including branding, posters, and promotional video ads."
       >
-        <div className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {graphicProjects.map((project, i) => (
-            <div key={i} className="bg-white rounded-2xl shadow-xl p-4 flex flex-col">
-              <h2 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h2>
-              <p className="text-sm text-gray-700 mb-4">{project.description}</p>
-              <ProjectMediaSlider media={project.media} />
-            </div>
-          ))}
-        </div>
+        {graphicProjects.map((project, i) => (
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
+        ))}
       </CollapsibleSection>
 
       {/* Project Modal */}
