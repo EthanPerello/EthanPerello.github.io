@@ -387,7 +387,7 @@ The game features a comprehensive character customization system with selectable
 
 Enemy AI is implemented using Unity's NavMesh system, providing goblins and skeletons with patrol patterns, chase behaviors, and attack sequences. The game also includes quests with objectives and rewards, an inventory system, and AI companion pets that follow the player and assist in gameplay.`,
     github: "https://github.com/EthanPerello/MidievalFantasyRPG",
-    play: "https://ethanperello.itch.io/midieval-fantasy-rpg"
+    play: "https://ethanperello.github.io/MidievalFantasyRPG/"
   }
 ];
 
