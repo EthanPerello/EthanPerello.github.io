@@ -1,17 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.35273d8b.css",
-    "main.js": "/static/js/main.829d7f3c.js",
+    "main.js": "/static/js/main.736498d2.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
     "static/media/grand-bowl-montage.mp4": "/static/media/grand-bowl-montage.1f08db0d211d1040a3d8.mp4",
     "static/media/grand-bowl-strike.mp4": "/static/media/grand-bowl-strike.1ccb2f57db963c74db15.mp4",
     "static/media/grand-bowl-building-preview.mp4": "/static/media/grand-bowl-building-preview.dd6d1c5cb209dc789dfe.mp4",
     "static/media/sealand-poster.png": "/static/media/sealand-poster.99b458ef5df20a8c05b6.png",
     "static/media/sealand-logo-drafts.jpg": "/static/media/sealand-logo-drafts.a79300f0c37112c726ba.jpg",
+    "static/media/bowling_thumbnail.png": "/static/media/bowling_thumbnail.739f88afb186a9bbbc49.png",
     "static/media/Space_Game.png": "/static/media/Space_Game.9c98c53d66723ada94d5.png",
     "static/media/Midieval_Fantasy_RPG.png": "/static/media/Midieval_Fantasy_RPG.4e2ac0ea8bea7a6ce91a.png",
     "static/media/match3.png": "/static/media/match3.c23c9f1f4e6583285dae.png",
     "static/media/zelda.png": "/static/media/zelda.12f19614079db230eaef.png",
+    "static/media/sealand_thumbnail.png": "/static/media/sealand_thumbnail.12316006071309ef2f1b.png",
     "static/media/City_Builder_Game.png": "/static/media/City_Builder_Game.c209010a4b25477d5eb1.png",
     "static/media/fast-food-chain.png": "/static/media/fast-food-chain.4f03e12f31588a5aa546.png",
     "static/media/email-design-system-no-code.png": "/static/media/email-design-system-no-code.6554101403c0c9c0b582.png",
@@ -39,11 +41,11 @@
     "static/media/pong.png": "/static/media/pong.d73a7e6137a838a5f520.png",
     "index.html": "/index.html",
     "main.35273d8b.css.map": "/static/css/main.35273d8b.css.map",
-    "main.829d7f3c.js.map": "/static/js/main.829d7f3c.js.map",
+    "main.736498d2.js.map": "/static/js/main.736498d2.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.35273d8b.css",
-    "static/js/main.829d7f3c.js"
+    "static/js/main.736498d2.js"
   ]
 }
