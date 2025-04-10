@@ -308,40 +308,17 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 };
 
 const ProjectCard = ({ project, onClick }) => {
-  const videoRef = useRef(null);
-  
-  // For video thumbnails, ensure they play automatically
-  useEffect(() => {
-    if (videoRef.current && project.image && typeof project.image === 'string' && project.image.includes('.mp4')) {
-      videoRef.current.play().catch(error => {
-        console.error("Video autoplay failed:", error);
-      });
-    }
-  }, [project.image]);
-
   return (
     <div 
       className="bg-white rounded-2xl shadow-xl p-4 flex flex-col transition duration-200 transform hover:scale-105 cursor-pointer"
       onClick={() => onClick(project)}
     >
       {project.image && (
-        typeof project.image === 'string' && project.image.includes('.mp4') ? (
-          <video
-            ref={videoRef}
-            src={project.image}
-            className="rounded-xl mb-4 w-full h-48 object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        ) : (
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="rounded-xl mb-4 w-full" 
-          />
-        )
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className="rounded-xl mb-4 w-full h-48 object-cover" 
+        />
       )}
       <h2 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h2>
       <p className="text-sm text-gray-700 whitespace-pre-line mb-4 line-clamp-3">{project.description}</p>
@@ -587,52 +564,52 @@ const graphicProjects = [
   {
     title: "Sealand Basketball",
     image: sealandThumbnailImage,
-    description: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand, featuring logo development and tournament promotional materials.",
-    fullDescription: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand. The project included developing a brand identity from initial concepts through finalization, logo design with maritime elements, and promotional materials for the Sealand Youth Basketball Tournament. The design system incorporates the blue and orange color scheme representing the sea and basketball, with wave-inspired design elements.",
+    description: "Brand identity development for the Principality of Sealand's basketball organization, including logo design, style guidelines, and tournament marketing materials.",
+    fullDescription: "A comprehensive brand identity system developed for the Principality of Sealand's basketball organization. The project began with extensive conceptual exploration, resulting in a cohesive visual language that balances maritime heritage with basketball iconography. The final deliverables included a primary wordmark, secondary logos, color palette specifications, typography guidelines, and promotional materials for the Youth Basketball Tournament.\n\nUsing Adobe Photoshop and After Effects, the design solution employs a strategic two-color approach with deep blue representing the sea and Sealand's naval history, paired with vibrant orange reflecting the basketball itself. Wave elements were integrated throughout the visual system to reinforce the connection to Sealand's unique offshore location while maintaining clear visual hierarchy and ensuring legibility across print and digital applications.",
     media: [
       {
         id: "sealand-poster",
         type: "image",
         src: sealandPosterImage,
-        caption: "Promotional poster for the Sealand Youth Basketball Tournament, incorporating the brand identity and showcasing event details with dynamic visual elements."
+        caption: "Promotional poster for the Sealand Youth Basketball Tournament featuring stylized player silhouettes, gymnasium perspective, and strategic application of the brand identity system."
       },
       {
         id: "sealand-final-logo",
         type: "image",
         src: sealandFinalLogoImage,
-        caption: "The finalized Sealand Basketball logo featuring a basketball with wave elements, representing the maritime heritage of the Principality of Sealand combined with basketball iconography."
+        caption: "Primary wordmark logo featuring custom typography with basketball-inspired letterforms and balanced proportions for strong brand recognition across multiple applications."
       },
       {
         id: "sealand-logo-drafts",
         type: "image",
         src: sealandLogoDraftsImage,
-        caption: "Initial logo concepts exploring various visual directions for the Sealand Basketball brand identity. These sketches explore different typography, icon styles, and color combinations."
+        caption: "Exploratory design concepts demonstrating the iterative process from initial sketches to refined logo variations, exploring different visual approaches to the brand identity."
       }
     ]
   },
   {
-    title: "Tokyo Grand Bowl Video Advertisements",
+    title: "Tokyo Grand Bowl Motion Graphics",
     image: bowlingThumbnailImage,
-    description: "A series of promotional videos designed for exterior display on a Tokyo bowling alley building with vibrant purple-tinted visuals and dynamic sequences.",
-    fullDescription: "A series of promotional videos designed for exterior display on the Tokyo Grand Bowl building. This project focused on creating eye-catching motion graphics that communicate the excitement of bowling through dynamic visuals and animations. Using vibrant colors with purple tinting, the advertisements include slow-motion bowling sequences and celebratory moments designed to attract customers. The campaign culminated in composite renderings showing how the videos would appear on the building's exterior displays, creating an immersive visual experience for passersby.",
+    description: "Dynamic motion graphics campaign for Tokyo Grand Bowl's exterior digital displays, featuring vibrant bowling sequences and celebratory moments with consistent visual styling.",
+    fullDescription: "A series of high-impact motion graphics designed for Tokyo Grand Bowl's exterior digital display system. This project required creating visually compelling content that would attract attention in Tokyo's competitive entertainment district while effectively communicating the venue's premium bowling experience.\n\nUtilizing Adobe Premiere Pro and After Effects, the campaign features three coordinated videos with consistent visual treatment, including vibrant color grading with signature purple tints, dynamic transitions, and strategic pacing. Cinematic techniques including slow-motion sequences and carefully composed shots highlight the excitement of bowling, while green screen compositing was employed to integrate performers celebrating successful strikes.\n\nThe final deliverables included optimized video files formatted specifically for the venue's unique display configuration, along with a composite rendering demonstrating how the advertisements would appear on the building's exterior, creating an immersive visual experience for pedestrians and potential customers.",
     media: [
       {
         id: "grand-bowl-building",
         type: "video",
         src: grandBowlBuildingVideo,
-        caption: "Composite rendering showing the advertising videos displayed on the exterior of the Grand Bowl building in Tokyo, demonstrating how the advertisements would appear in their intended context."
+        caption: "Architectural visualization showing the motion graphics as they appear on Tokyo Grand Bowl's exterior LED displays, demonstrating the environmental context and visibility from multiple vantage points."
       },
       {
         id: "grand-bowl-strike",
         type: "video",
         src: grandBowlStrikeVideo,
-        caption: "Celebratory sequence featuring performers green-screened against a bowling alley backdrop with animated 'Strike!' text overlay. The vibrant purple-tinted visuals capture the excitement of scoring in bowling."
+        caption: "Celebratory sequence utilizing green screen compositing techniques to integrate performers against animated bowling environments, featuring dynamic 'Strike!' typography with custom animation effects."
       },
       {
         id: "grand-bowl-montage",
         type: "video",
         src: grandBowlMontageVideo,
-        caption: "A dynamic compilation showcasing bowling in slow motion - from the ball's release from the machine to its journey down the lane and the satisfying moment of the last pin falling. Enhanced with vibrant colors and purple-tinted visual styling."
+        caption: "Cinematic bowling montage showcasing precision cinematography from ball release to pin impact, enhanced with custom color grading, dynamic pacing, and atmospheric visual effects."
       }
     ]
   }
