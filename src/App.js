@@ -388,8 +388,8 @@ Implemented systems include animation state management, collision detection for 
 The game features a comprehensive character customization system with selectable appearance options and equipment that affect gameplay stats. Combat mechanics support both melee weapons (swords) and ranged weapons (bows) with appropriate animations and projectile physics.
 
 Enemy AI is implemented using Unity's NavMesh system, providing goblins and skeletons with patrol patterns, chase behaviors, and attack sequences. The game also includes quests with objectives and rewards, an inventory system, and AI companion pets that follow the player and assist in gameplay.`,
-    github: "https://github.com/EthanPerello/MidievalFantasyRPG",
-    play: "https://ethanperello.github.io/MidievalFantasyRPG/"
+    github: "https://github.com/EthanPerello/MedievalFantasyRPG",
+    play: "https://ethanperello.github.io/MedievalFantasyRPG/"
   }
 ];
 
