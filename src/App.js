@@ -377,7 +377,7 @@ The game features NavMesh-driven enemy AI with multiple behavior states (wanderi
 
 Implemented systems include animation state management, collision detection for combat, UI elements like health bars and collectible counters, and game state transitions between menu, gameplay, win, and game over screens. Audio management includes persistent background music and contextual sound effects for player actions and enemy encounters.`,
     github: "https://github.com/EthanPerello/SpaceGame",
-    play: "https://ethanperello.itch.io/space-game",
+    play: "https://ethanperello.github.io/SpaceGame/",
     video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
   },
   {
