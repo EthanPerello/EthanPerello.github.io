@@ -34,10 +34,12 @@ import profileImage from "./images/profile-photo.jpg";
 import sealandLogoDraftsImage from "./images/sealand-logo-drafts.jpg";
 import sealandFinalLogoImage from "./images/sealand-final-logo.png";
 import sealandPosterImage from "./images/sealand-poster.png";
+import sealandThumbnailImage from "./images/sealand_thumbnail.png";
 // You'll need to create these video files in your project
 import grandBowlMontageVideo from "./videos/grand-bowl-montage.mp4";
 import grandBowlStrikeVideo from "./videos/grand-bowl-strike.mp4";
 import grandBowlBuildingVideo from "./videos/grand-bowl-building-preview.mp4";
+import bowlingThumbnailImage from "./images/bowling_thumbnail.png";
 
 // === Components ===
 const Layout = ({ children }) => {
@@ -584,7 +586,7 @@ const cs50Games = [
 const graphicProjects = [
   {
     title: "Sealand Basketball",
-    image: sealandPosterImage,
+    image: sealandThumbnailImage,
     description: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand, featuring logo development and tournament promotional materials.",
     fullDescription: "A comprehensive branding project for a fictional basketball organization based in the Principality of Sealand. The project included developing a brand identity from initial concepts through finalization, logo design with maritime elements, and promotional materials for the Sealand Youth Basketball Tournament. The design system incorporates the blue and orange color scheme representing the sea and basketball, with wave-inspired design elements.",
     media: [
@@ -610,7 +612,7 @@ const graphicProjects = [
   },
   {
     title: "Tokyo Grand Bowl Video Advertisements",
-    image: grandBowlBuildingVideo,
+    image: bowlingThumbnailImage,
     description: "A series of promotional videos designed for exterior display on a Tokyo bowling alley building with vibrant purple-tinted visuals and dynamic sequences.",
     fullDescription: "A series of promotional videos designed for exterior display on the Tokyo Grand Bowl building. This project focused on creating eye-catching motion graphics that communicate the excitement of bowling through dynamic visuals and animations. Using vibrant colors with purple tinting, the advertisements include slow-motion bowling sequences and celebratory moments designed to attract customers. The campaign culminated in composite renderings showing how the videos would appear on the building's exterior displays, creating an immersive visual experience for passersby.",
     media: [
