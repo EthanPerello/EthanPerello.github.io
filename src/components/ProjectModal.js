@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import ProjectMediaSlider from "./ProjectMediaSlider";
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
-  if (!isOpen) return null;
-  
-  // Handle ESC key to close modal
+  // Hooks must be called at the top level, before any conditional returns
   useEffect(() => {
+    // Only add the event listener and modify body style if the modal is open
+    if (!isOpen) return;
+    
     const handleEsc = (e) => {
       if (e.key === 'Escape') onClose();
     };
@@ -18,7 +19,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       window.removeEventListener('keydown', handleEsc);
       document.body.style.overflow = 'auto';
     };
-  }, [onClose]);
+  }, [isOpen, onClose]);
+  
+  // Conditional return after hooks
+  if (!isOpen || !project) return null;
   
   // Click outside to close
   const handleOutsideClick = (e) => {
