@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe78afcc.css",
-    "main.js": "/static/js/main.7bc117a3.js",
+    "main.css": "/static/css/main.0020ea28.css",
+    "main.js": "/static/js/main.11640351.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
     "static/media/grand-bowl-montage.mp4": "/static/media/grand-bowl-montage.1f08db0d211d1040a3d8.mp4",
     "static/media/grand-bowl-strike.mp4": "/static/media/grand-bowl-strike.1ccb2f57db963c74db15.mp4",
@@ -12,6 +12,7 @@
     "static/media/Space_Game.png": "/static/media/Space_Game.9c98c53d66723ada94d5.png",
     "static/media/Midieval_Fantasy_RPG.png": "/static/media/Midieval_Fantasy_RPG.4e2ac0ea8bea7a6ce91a.png",
     "static/media/match3.png": "/static/media/match3.c23c9f1f4e6583285dae.png",
+    "static/media/npc-forge.png": "/static/media/npc-forge.84e76ff6ae93fe76370f.png",
     "static/media/zelda.png": "/static/media/zelda.12f19614079db230eaef.png",
     "static/media/sealand_thumbnail.png": "/static/media/sealand_thumbnail.12316006071309ef2f1b.png",
     "static/media/City_Builder_Game.png": "/static/media/City_Builder_Game.c209010a4b25477d5eb1.png",
@@ -40,12 +41,12 @@
     "static/media/dungeon-explorer.png": "/static/media/dungeon-explorer.a843dcf579ccdd08efe7.png",
     "static/media/pong.png": "/static/media/pong.d73a7e6137a838a5f520.png",
     "index.html": "/index.html",
-    "main.fe78afcc.css.map": "/static/css/main.fe78afcc.css.map",
-    "main.7bc117a3.js.map": "/static/js/main.7bc117a3.js.map",
+    "main.0020ea28.css.map": "/static/css/main.0020ea28.css.map",
+    "main.11640351.js.map": "/static/js/main.11640351.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe78afcc.css",
-    "static/js/main.7bc117a3.js"
+    "static/css/main.0020ea28.css",
+    "static/js/main.11640351.js"
   ]
 }
