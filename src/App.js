@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import cityBuilderImage from "./images/City_Builder_Game.png";
 import spaceGameImage from "./images/Space_Game.png";
 import rpgImage from "./images/Midieval_Fantasy_RPG.png";
+import npcForgeImage from "./images/npc-forge.png"; // You'll need to add this image
 import nycImage from "./images/NYC_School_Closures.png";
 import marchMadnessImage from "./images/March_Madness_Predictor.png";
 import dungeonExplorerImage from "./images/dungeon-explorer.png";
@@ -30,12 +31,12 @@ import helicopterImage from "./images/helicopter.png";
 import pongImage from "./images/pong.png";
 // Add your profile picture import
 import profileImage from "./images/profile-photo.jpg";
-// New graphic design and video project imports
+// Graphic design and video project imports
 import sealandLogoDraftsImage from "./images/sealand-logo-drafts.jpg";
 import sealandFinalLogoImage from "./images/sealand-final-logo.png";
 import sealandPosterImage from "./images/sealand-poster.png";
 import sealandThumbnailImage from "./images/sealand_thumbnail.png";
-// You'll need to create these video files in your project
+// Video files
 import grandBowlMontageVideo from "./videos/grand-bowl-montage.mp4";
 import grandBowlStrikeVideo from "./videos/grand-bowl-strike.mp4";
 import grandBowlBuildingVideo from "./videos/grand-bowl-building-preview.mp4";
@@ -45,12 +46,11 @@ import bowlingThumbnailImage from "./images/bowling_thumbnail.png";
 const Layout = ({ children }) => {
   const sections = [
     { id: "profile", title: "About Me" },
-    { id: "featured-games", title: "Featured Game Projects" },
-    { id: "ml-projects", title: "Machine Learning & Data Science" },
-    { id: "mini-games", title: "Mini Game Projects" },
-    { id: "web-apps", title: "Web Applications & Tools" },
-    { id: "cs50-games", title: "CS50 Game Development Projects" },
-    { id: "graphic-projects", title: "Graphic Design & Video Projects" }
+    { id: "featured-projects", title: "Featured Projects" },
+    { id: "game-development", title: "Game Development" },
+    { id: "web-applications", title: "Web Applications" },
+    { id: "ml-projects", title: "ML & Data Science" },
+    { id: "graphic-projects", title: "Graphic Design & Video" }
   ];
 
   return (
@@ -120,10 +120,10 @@ const ProfileSection = () => {
           <div className="flex-1">
             <h2 className="text-2xl font-bold text-blue-800 mb-4">About Me</h2>
             <p className="text-gray-700 mb-6">
-              Hello! I'm Ethan Perello, a software engineer and game developer with a passion for creating
-              interactive experiences. I specialize in Unity development, React applications, and machine
-              learning projects. With a background in computer science and years of experience in software
-              development, I bring creative solutions to complex problems.
+              I'm a software developer specializing in game development, interactive web applications, and AI tools. 
+              With expertise in Unity, React, and Python, I create engaging experiences that combine strong 
+              technical implementation with intuitive design. My work spans from blockchain-integrated games to 
+              AI-powered web applications, always focusing on robust systems and exceptional user experience.
             </p>
             
             {/* Contact Information */}
@@ -355,30 +355,30 @@ const CollapsibleSection = ({ title, description, children, id }) => {
   );
 };
 
-const featuredGames = [
+// Featured Projects (New Section)
+const featuredProjects = [
+  {
+    title: "NPC Forge",
+    image: npcForgeImage,
+    description: `AI-powered character generator for games using Next.js, TypeScript, and OpenAI APIs. This application lets users create detailed NPCs from simple descriptions or templates.
+
+The tool uses GPT-4o-mini for generating comprehensive character profiles with personalities, backstories, and abilities, while DALL-E 3 creates matching character portraits. Features include customizable character traits, quest generation, dialogue lines, and inventory items.
+
+Built with a responsive design using Tailwind CSS and organized with React contexts for state management. Includes JSON export functionality for integration with game development workflows.`,
+    github: "https://github.com/EthanPerello/npc-forge",
+    website: "https://npc-forge-ethan-perellos-projects.vercel.app"
+  },
   {
     title: "On-Chain City Builder",
     image: cityBuilderImage,
-    description: `A blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. Originally created for a Dojo Game Jam and expanded into a full game, this project combines city simulation with blockchain technology.
+    description: `A blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. This project combines city simulation with blockchain technology for persistent data storage.
 
 Players purchase land tiles on a dynamically expanding grid and construct residential, commercial, and industrial buildings that affect resident happiness and income rates. The game features real-time economy simulation where buildings must be strategically placed adjacent to roads.
 
-All game data including player balances, tile ownership, and building states are recorded on-chain using Dojo and Starknet. The game includes comprehensive camera controls, building menus, and an interactive leaderboard where players compete for profitability in a persistent online world.`,
+All game data including player balances, tile ownership, and building states are recorded on-chain using Dojo and Starknet, ensuring verifiable ownership and persistent gameplay. The implementation includes comprehensive camera controls, building menus, and an interactive leaderboard.`,
     github: "https://github.com/EthanPerello/DojoCityBuilder",
     play: "https://ethanperello.github.io/DojoCityBuilder/",
     video: "https://www.youtube.com/watch?v=lORypXL-UwA"
-  },
-  {
-    title: "Space Adventure",
-    image: spaceGameImage,
-    description: `A 3D action-adventure game built in Unity for Harvard's edX Game Development course. This project demonstrates comprehensive Unity development with player mechanics, AI systems, and level design.
-
-The game features NavMesh-driven enemy AI with multiple behavior states (wandering, chasing, attacking) based on proximity detection. Players navigate a 3D environment, engage in real-time combat with enemies, collect gems to progress, and manage their health resources.
-
-Implemented systems include animation state management, collision detection for combat, UI elements like health bars and collectible counters, and game state transitions between menu, gameplay, win, and game over screens. Audio management includes persistent background music and contextual sound effects for player actions and enemy encounters.`,
-    github: "https://github.com/EthanPerello/SpaceGame",
-    play: "https://ethanperello.github.io/SpaceGame/",
-    video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
   },
   {
     title: "Medieval Fantasy RPG",
@@ -393,94 +393,58 @@ Enemy AI is implemented using Unity's NavMesh system, providing goblins and skel
   }
 ];
 
-
-const mlProjects = [
+// Game Development Projects
+const gameProjects = [
+  // Reuse the featured game projects
+  ...featuredProjects.filter(project => 
+    project.title === "On-Chain City Builder" || 
+    project.title === "Medieval Fantasy RPG"
+  ),
   {
-    title: "NYC School Closure Predictor",
-    image: nycImage,
-    description: `A data science project analyzing New York high school student outcomes and school closures, created in collaboration with Adam Goodman. This project explored whether performance metrics such as graduation and dropout rates could predict school closures and revealed key subgroup disparities.
-  
-Data was collected from New York State and NYC databases, focusing on graduation rates, GED attainment, and dropout percentages across race and gender. Dropout rates among male and Black/African American students emerged as strong indicators of future closures.
-  
-We used logistic regression to train a predictive model on 2015 data, achieving 99.1% accuracy in cross-validation, and applied it to 2021 school data to identify at-risk institutions.`,
-    github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
-    website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
+    title: "Space Adventure",
+    image: spaceGameImage,
+    description: `A 3D action-adventure game built in Unity for Harvard's edX Game Development course. This project demonstrates comprehensive Unity development with player mechanics, AI systems, and level design.
+
+The game features NavMesh-driven enemy AI with multiple behavior states (wandering, chasing, attacking) based on proximity detection. Players navigate a 3D environment, engage in real-time combat with enemies, collect gems to progress, and manage their health resources.
+
+Implemented systems include animation state management, collision detection for combat, UI elements like health bars and collectible counters, and game state transitions between menu, gameplay, win, and game over screens.`,
+    github: "https://github.com/EthanPerello/SpaceGame",
+    play: "https://ethanperello.github.io/SpaceGame/",
+    video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
   },
-  {
-    title: "March Madness Outcome Predictor",
-    image: marchMadnessImage,
-    description: `A machine learning project predicting NCAA March Madness basketball tournament outcomes using historical data, team stats, and betting odds.
-  
-We engineered features like seed differences, win percentages, and average margin of victory, and trained models including Logistic Regression and XGBoost. Betting odds significantly boosted accuracy by capturing market sentiment and real-world expectations.
-  
-Models were evaluated with season-by-season cross-validation and the competition's log-loss metric.`,
-    github: "https://github.com/EthanPerello/march-madness-prediction",
-    website: "https://ethanperello.github.io/march-madness-prediction/",
-    kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
-  }  
-];
-
-const miniGames = [
   {
     title: "Grid Resource Management",
     image: gridBuilderImage,
-    description: "A strategic simulation game focused on resource collection and tile management. Players interact with different tile types to harvest resources and modify the environment. Features include resource tracking, context menu interaction systems, and balanced game economy."
+    description: `A strategic simulation game focused on resource collection and tile management. Players interact with different tile types to harvest resources and modify the environment. Features include resource tracking, context menu interaction systems, and balanced game economy.`,
+    github: "https://github.com/EthanPerello/GridResourceManagement"
   },
   {
     title: "Dungeon Explorer",
     image: dungeonExplorerImage,
-    description: "A React-based roguelike featuring procedural dungeon generation and keyboard controls. Implements user authentication with secure credential storage and generated dungeon layouts that change with each playthrough."
+    description: `A React-based roguelike featuring procedural dungeon generation and keyboard controls. Implements user authentication with secure credential storage and generated dungeon layouts that change with each playthrough.`,
+    github: "https://github.com/EthanPerello/DungeonExplorer"
   },
   {
     title: "Space Shooter",
     image: spaceShooterImage,
-    description: "An arcade-style space shooter with physics-based movement and particle effects. Features include high score tracking with local storage, progressive difficulty scaling, and visual effects for explosions and weapon fire."
+    description: `An arcade-style space shooter with physics-based movement and particle effects. Features include high score tracking with local storage, progressive difficulty scaling, and visual effects for explosions and weapon fire.`,
+    github: "https://github.com/EthanPerello/SpaceShooter"
   },
   {
     title: "Matching Puzzle Game",
     image: match3Image,
-    description: "A React/TypeScript puzzle game with scoring and combo mechanics. Players match tiles to create cascading effects with multipliers for consecutive matches. Implements custom React hooks for state management with TypeScript for type safety."
+    description: `A React/TypeScript puzzle game with scoring and combo mechanics. Players match tiles to create cascading effects with multipliers for consecutive matches. Implements custom React hooks for state management with TypeScript for type safety.`,
+    github: "https://github.com/EthanPerello/MatchingPuzzle"
   },
   {
     title: "Café Dash",
     image: cafeDashImage,
-    description: "A time-management game where players serve customers and manage restaurant workflow. Features customer patience mechanics, multi-stage service processes, and progressive difficulty with increasing customer frequency."
+    description: `A time-management game where players serve customers and manage restaurant workflow. Features customer patience mechanics, multi-stage service processes, and progressive difficulty with increasing customer frequency.`,
+    github: "https://github.com/EthanPerello/CafeDash"
   }
 ];
 
-const miniWebApps = [
-  {
-    title: "Election Simulation",
-    image: electionSimImage,
-    description: "An interactive election simulator with polling and vote tabulation features. Users can create simulated elections with dynamically generated candidates for different political positions and view real-time vote counts with visual representations of results."
-  },
-  {
-    title: "User Manager Dashboard",
-    image: userManagerImage,
-    description: "A TypeScript React admin dashboard for user management with form validation and role-based access control. Features include efficient data fetching with React Query, toast notifications for operation feedback, and responsive design across device sizes."
-  },
-  {
-    title: "Restaurant Website",
-    image: restaurantImage,
-    description: "A React Router restaurant website with food menu categories, nutritional information, and location finder. Implements client-side routing for seamless navigation and accessibility-focused design adhering to WCAG guidelines."
-  },
-  {
-    title: "Fast Food Finder",
-    image: fastFoodImage,
-    description: "A restaurant interface featuring detailed menu items with nutritional information and location services. Implements responsive layouts that adapt to different screen sizes and consistent component design across the application."
-  },
-  {
-    title: "Email Design System",
-    image: emailSystemImage,
-    description: "A system for building responsive email templates with React components. Features reusable, email-client compatible components that render consistently across Gmail, Outlook, and Apple Mail with responsive design for different devices."
-  },
-  {
-    title: "Well Validation Toolkit",
-    image: wellValidationImage,
-    description: "A data visualization application for analyzing oil well measurements. Features interactive graphs with zoom capabilities, multi-well comparison functionality, and anomaly detection to identify potential issues in measurement data."
-  }
-];
-
+// CS50 games should remain as a separate collection
 const cs50Games = [
   {
     title: "Pong",
@@ -561,7 +525,88 @@ const cs50Games = [
   }
 ];
 
-// Updated Graphic Design & Video Projects
+// Web Applications
+const webProjects = [
+  // Include NPC Forge from featured projects
+  featuredProjects.find(project => project.title === "NPC Forge"),
+  {
+    title: "Election Simulation",
+    image: electionSimImage,
+    description: `An interactive election simulator built with React and D3.js for data visualization. Users can create simulated elections with dynamically generated candidates for different political positions and view real-time vote counts.
+
+Features include customizable election parameters, polling data generation, demographic voting patterns, and interactive charts showing results as they come in. The application uses React context for state management and implements complex data processing logic to simulate realistic voting behaviors based on demographic factors.`,
+    github: "https://github.com/EthanPerello/ElectionSimulation"
+  },
+  {
+    title: "User Manager Dashboard",
+    image: userManagerImage,
+    description: `A TypeScript React admin dashboard for user management with form validation and role-based access control. Features include efficient data fetching with React Query, toast notifications for operation feedback, and responsive design across device sizes.
+
+The application implements a modular component architecture with reusable UI elements, authentication flow with JWT handling, and dark/light theme support. Backend integration includes RESTful API consumption with error handling and retry logic.`,
+    github: "https://github.com/EthanPerello/UserManager"
+  },
+  {
+    title: "Restaurant Website",
+    image: restaurantImage,
+    description: `A React Router restaurant website with food menu categories, nutritional information, and location finder. Implements client-side routing for seamless navigation and accessibility-focused design adhering to WCAG guidelines.
+
+Features include dynamic menu filtering by category, dietary restrictions, and price range, along with an interactive map for finding nearby locations. The site incorporates responsive design principles and performance optimization techniques like code splitting and lazy loading.`,
+    github: "https://github.com/EthanPerello/RestaurantSite"
+  },
+  {
+    title: "Fast Food Finder",
+    image: fastFoodImage,
+    description: `A restaurant interface featuring detailed menu items with nutritional information and location services. Implements responsive layouts that adapt to different screen sizes and consistent component design across the application.
+
+The application uses geolocation APIs to find nearby restaurant locations, implements search functionality with filters, and provides detailed nutritional information for all menu items. Built with React and styled-components for consistent theming.`,
+    github: "https://github.com/EthanPerello/FastFoodFinder"
+  },
+  {
+    title: "Email Design System",
+    image: emailSystemImage,
+    description: `A system for building responsive email templates with React components. Features reusable, email-client compatible components that render consistently across Gmail, Outlook, and Apple Mail with responsive design for different devices.
+
+The system includes a visual editor for creating templates without code, a component library with drag-and-drop functionality, and preview modes for different email clients and device sizes. Implements best practices for email deliverability and accessibility.`,
+    github: "https://github.com/EthanPerello/EmailDesignSystem"
+  },
+  {
+    title: "Well Validation Toolkit",
+    image: wellValidationImage,
+    description: `A data visualization application for analyzing oil well measurements using React, D3.js, and WebGL. Features interactive graphs with zoom capabilities, multi-well comparison functionality, and anomaly detection to identify potential issues in measurement data.
+
+The toolkit processes large datasets efficiently with WebWorkers for background calculations, implements multi-layered visualizations for different data types, and provides export functionality for reports. Includes validation algorithms to verify data integrity and highlight potential measurement errors.`,
+    github: "https://github.com/EthanPerello/WellValidationToolkit"
+  }
+];
+
+// ML & Data Science Projects
+const mlProjects = [
+  {
+    title: "NYC School Closure Predictor",
+    image: nycImage,
+    description: `A data science project analyzing patterns in New York high school closures using Python, Pandas, and scikit-learn. This research identified key performance indicators that predict school closures with high accuracy.
+
+Data collection involved merging datasets from New York State and NYC databases, focusing on graduation rates, GED attainment, and dropout percentages across demographic subgroups. Statistical analysis revealed that dropout rates among male and Black/African American students were particularly strong indicators of future closures.
+
+The predictive model achieved 99.1% accuracy in cross-validation using logistic regression, with feature importance analysis highlighting the most critical factors. The project includes interactive visualizations of findings and a dashboard for exploring at-risk schools.`,
+    github: "https://github.com/EthanPerello/New-York-Student-Outcomes-and-School-Closures",
+    website: "https://ethanperello.github.io/New-York-Student-Outcomes-and-School-Closures/"
+  },
+  {
+    title: "March Madness Outcome Predictor",
+    image: marchMadnessImage,
+    description: `A machine learning project predicting NCAA basketball tournament outcomes using historical data, team statistics, and betting odds. This Kaggle competition entry explored various modeling approaches to minimize prediction error.
+
+Feature engineering incorporated seed differences, win percentages, scoring statistics, and strength-of-schedule metrics, while also leveraging betting odds as a powerful predictor that captures market sentiment. The model pipeline implemented multiple algorithms including Logistic Regression, Random Forest, and XGBoost with hyperparameter tuning.
+
+Evaluation used season-by-season cross-validation and the competition's log-loss metric to ensure robustness. The final ensemble model integrated multiple prediction approaches for optimal performance.`,
+    github: "https://github.com/EthanPerello/march-madness-prediction",
+    website: "https://ethanperello.github.io/march-madness-prediction/",
+    kaggle: "https://www.kaggle.com/competitions/march-machine-learning-mania-2023"
+  }  
+];
+
+// Graphic Design & Video Projects
 const graphicProjects = [
   {
     title: "Sealand Basketball",
@@ -636,60 +681,65 @@ export default function App() {
 
   return (
     <Layout>
-      {/* Added Profile Section */}
+      {/* Profile Section */}
       <ProfileSection />
       
+      {/* Featured Projects (New Section) */}
       <CollapsibleSection
-        id="featured-games"
-        title="Featured Game Projects"
-        description="Featured Unity and blockchain-integrated games demonstrating system design, AI, multiplayer, and polished gameplay."
+        id="featured-projects"
+        title="Featured Projects"
+        description="Highlighted projects showcasing my expertise in game development, AI integration, and web applications."
       >
-        {featuredGames.map((project, i) => (
+        {featuredProjects.map((project, i) => (
           <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
-
+      
+      {/* Game Development Projects */}
       <CollapsibleSection
-        id="ml-projects"
-        title="Machine Learning & Data Science"
-        description="Real-world data projects using predictive modeling, cross-validation, and data visualization."
+        id="game-development"
+        title="Game Development"
+        description="Games developed with Unity and other platforms, featuring system design, AI, multiplayer mechanics, and polished gameplay."
       >
-        {mlProjects.map((project, i) => (
+        {gameProjects.map((project, i) => (
           <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
-
-      <CollapsibleSection
-        id="mini-games"
-        title="Mini Game Projects"
-        description="Smaller games built with strong mechanics and fast iteration. Arcade shooters, puzzle games, and UI polish."
-      >
-        {miniGames.map((project, i) => (
-          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
-        ))}
-      </CollapsibleSection>
-
-      <CollapsibleSection
-        id="web-apps"
-        title="Web Applications & Tools"
-        description="Frontend and full-stack apps including admin tools, simulations, dashboards, and production-quality interfaces."
-      >
-        {miniWebApps.map((project, i) => (
-          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
-        ))}
-      </CollapsibleSection>
-
+      
+      {/* CS50 Game Development Projects */}
       <CollapsibleSection
         id="cs50-games"
         title="CS50 Game Development Projects"
-        description="Games built during Harvard's CS50 Game Dev course using LÖVE2D. Each game recreates core mechanics from a classic title."
+        description="Games built during Harvard's CS50 Game Dev course using LÖVE2D and Unity. Each game recreates core mechanics from a classic title."
       >
         {cs50Games.map((project, i) => (
           <ProjectCard key={i} project={project} onClick={handleProjectClick} />
         ))}
       </CollapsibleSection>
       
-      {/* Updated Graphic Design & Video Projects Section */}
+      {/* Web Applications */}
+      <CollapsibleSection
+        id="web-applications"
+        title="Web Applications"
+        description="Frontend and full-stack apps including AI tools, admin dashboards, simulations, and production-quality interfaces."
+      >
+        {webProjects.map((project, i) => (
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
+        ))}
+      </CollapsibleSection>
+      
+      {/* ML & Data Science Projects */}
+      <CollapsibleSection
+        id="ml-projects"
+        title="ML & Data Science"
+        description="Real-world data projects using predictive modeling, statistical analysis, and data visualization."
+      >
+        {mlProjects.map((project, i) => (
+          <ProjectCard key={i} project={project} onClick={handleProjectClick} />
+        ))}
+      </CollapsibleSection>
+      
+      {/* Graphic Design & Video Projects */}
       <CollapsibleSection
         id="graphic-projects"
         title="Graphic Design & Video Projects"
