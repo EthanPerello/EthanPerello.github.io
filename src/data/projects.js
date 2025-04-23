@@ -42,11 +42,11 @@ export const featuredProjects = [
   {
     title: "NPC Forge",
     image: npcForgeImage,
-    description: `AI-powered character generator for games using Next.js, TypeScript, and OpenAI APIs. This application lets users create detailed NPCs from simple descriptions or templates.
+    description: `AI-powered character generator for games using Next.js, TypeScript, and OpenAI APIs. Now at v0.2.0 with comprehensive documentation and enhanced user experience, developed from concept to working application in under two weeks.
 
 The tool uses GPT-4o-mini for generating comprehensive character profiles with personalities, backstories, and abilities, while DALL-E 3 creates matching character portraits. Features include customizable character traits, quest generation, dialogue lines, and inventory items.
 
-Built with a responsive design using Tailwind CSS and organized with React contexts for state management. Includes JSON export functionality for integration with game development workflows.`,
+Built with a responsive design using Tailwind CSS and organized with React contexts for state management. Includes a complete documentation system with navigation, user guides, and JSON export functionality for integration with game development workflows.`,
     github: "https://github.com/EthanPerello/npc-forge",
     website: "https://npc-forge-ethan-perellos-projects.vercel.app"
   },
