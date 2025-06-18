@@ -37,27 +37,31 @@ import grandBowlMontageVideo from "../videos/grand-bowl-montage.mp4";
 import grandBowlStrikeVideo from "../videos/grand-bowl-strike.mp4";
 import grandBowlBuildingVideo from "../videos/grand-bowl-building-preview.mp4";
 
-// Featured Projects
+// Flagship Project (gets its own section)
+export const flagshipProject = {
+  title: "NPC Forge",
+  image: npcForgeImage,
+  description: `Full-stack AI platform that revolutionizes character creation for game developers and storytellers. At v0.30.0 with 30+ feature releases, representing a complete ecosystem for AI character generation, interaction, and game integration.
+
+The platform orchestrates 6+ OpenAI models: GPT-4o for character generation, DALL-E 3 for portraits, image editing endpoints for AI-powered portrait modification via text prompts, and chat completion for real-time conversations. Features include interactive chat with generated characters that maintain personality consistency, comprehensive character traits with advanced filtering, JSON export for game integration, and a step-by-step wizard interface.
+
+Built specifically to solve the time-intensive process of creating rich, interactive NPCs for games and stories. Key achievements include a complete IndexedDB-based character library with full CRUD operations, automated documentation system with markdown loading, usage tracking across multiple AI model tiers, and AI-powered trait generation. The application demonstrates advanced prompt engineering, scalable React architecture, and production-ready deployment.
+
+Developed from concept to production deployment in under two weeks, then continuously enhanced with major features including interactive chat, portrait editing, developer documentation, and enhanced reliability systems.`,
+  github: "https://github.com/EthanPerello/npc-forge",
+  website: "https://npc-forge.vercel.app"
+};
+
+// Featured Projects (now focused on games)
 export const featuredProjects = [
-  {
-    title: "NPC Forge",
-    image: npcForgeImage,
-    description: `AI-powered character generator for games using Next.js, TypeScript, and OpenAI APIs. Now at v0.2.0 with comprehensive documentation and enhanced user experience, developed from concept to working application in under two weeks.
-
-The tool uses GPT-4o-mini for generating comprehensive character profiles with personalities, backstories, and abilities, while DALL-E 3 creates matching character portraits. Features include customizable character traits, quest generation, dialogue lines, and inventory items.
-
-Built with a responsive design using Tailwind CSS and organized with React contexts for state management. Includes a complete documentation system with navigation, user guides, and JSON export functionality for integration with game development workflows.`,
-    github: "https://github.com/EthanPerello/npc-forge",
-    website: "https://npc-forge-ethan-perellos-projects.vercel.app"
-  },
   {
     title: "On-Chain City Builder",
     image: cityBuilderImage,
-    description: `A blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. This project combines city simulation with blockchain technology for persistent data storage.
+    description: `A groundbreaking blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. This project combines traditional city simulation with cutting-edge blockchain technology for persistent, verifiable gameplay.
 
-Players purchase land tiles on a dynamically expanding grid and construct residential, commercial, and industrial buildings that affect resident happiness and income rates. The game features real-time economy simulation where buildings must be strategically placed adjacent to roads.
+Players purchase land tiles on a dynamically expanding grid and construct residential, commercial, and industrial buildings that affect resident happiness and income rates. The game features real-time economy simulation where buildings must be strategically placed adjacent to roads for optimal efficiency.
 
-All game data including player balances, tile ownership, and building states are recorded on-chain using Dojo and Starknet, ensuring verifiable ownership and persistent gameplay. The implementation includes comprehensive camera controls, building menus, and an interactive leaderboard.`,
+All game data including player balances, tile ownership, and building states are recorded on-chain using Dojo and Starknet, ensuring verifiable ownership and persistent gameplay across sessions. The implementation includes comprehensive camera controls, intuitive building menus, and an interactive leaderboard system for competitive multiplayer experience.`,
     github: "https://github.com/EthanPerello/DojoCityBuilder",
     play: "https://ethanperello.github.io/DojoCityBuilder/",
     video: "https://www.youtube.com/watch?v=lORypXL-UwA"
@@ -65,34 +69,31 @@ All game data including player balances, tile ownership, and building states are
   {
     title: "Medieval Fantasy RPG",
     image: rpgImage,
-    description: `A feature-rich RPG built in Unity showcasing character progression, AI systems, and custom assets. Players can battle enemies, complete quests, and level up characters in a medieval fantasy world.
+    description: `A feature-rich 3D RPG built in Unity showcasing sophisticated game systems and AI architecture. This project demonstrates mastery of character progression, inventory management, quest systems, and intelligent enemy AI in a cohesive fantasy world.
 
-The game features a comprehensive character customization system with selectable appearance options and equipment that affect gameplay stats. Combat mechanics support both melee weapons (swords) and ranged weapons (bows) with appropriate animations and projectile physics.
+The game features a comprehensive character customization system with selectable appearance options and equipment that dynamically affect gameplay stats. Combat mechanics support both melee weapons (swords) and ranged weapons (bows) with appropriate animations and realistic projectile physics.
 
-Enemy AI is implemented using Unity's NavMesh system, providing goblins and skeletons with patrol patterns, chase behaviors, and attack sequences. The game also includes quests with objectives and rewards, an inventory system, and AI companion pets that follow the player and assist in gameplay.`,
+Enemy AI is implemented using Unity's NavMesh system, providing goblins and skeletons with intelligent patrol patterns, chase behaviors, and strategic attack sequences. The game also includes a complete quest system with objectives and rewards, sophisticated inventory management, and AI companion pets that follow the player and assist in combat scenarios.`,
     github: "https://github.com/EthanPerello/MedievalFantasyRPG",
     play: "https://ethanperello.github.io/MedievalFantasyRPG/"
+  },
+  {
+    title: "Space Adventure",
+    image: spaceGameImage,
+    description: `A polished 3D action-adventure game built in Unity for Harvard's edX Game Development course. This project demonstrates comprehensive Unity development with professional game development fundamentals, polished UI, and complete game state management.
+
+The game features sophisticated NavMesh-driven enemy AI with multiple behavior states (wandering, chasing, attacking) based on proximity detection and line-of-sight mechanics. Players navigate a 3D environment, engage in real-time combat with dynamic enemies, collect gems to progress through levels, and manage health resources strategically.
+
+Implemented systems include comprehensive animation state management, precise collision detection for combat interactions, professional UI elements like health bars and collectible counters, and robust game state transitions between menu, gameplay, victory, and game over screens. The project showcases industry-standard game development practices and polished user experience.`,
+    github: "https://github.com/EthanPerello/SpaceGame",
+    play: "https://ethanperello.github.io/SpaceGame/",
+    video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
   }
 ];
 
 // Game Development Projects
 export const gameProjects = {
-  featured: [
-    featuredProjects.find(project => project.title === "On-Chain City Builder"),
-    featuredProjects.find(project => project.title === "Medieval Fantasy RPG"),
-    {
-      title: "Space Adventure",
-      image: spaceGameImage,
-      description: `A 3D action-adventure game built in Unity for Harvard's edX Game Development course. This project demonstrates comprehensive Unity development with player mechanics, AI systems, and level design.
-
-The game features NavMesh-driven enemy AI with multiple behavior states (wandering, chasing, attacking) based on proximity detection. Players navigate a 3D environment, engage in real-time combat with enemies, collect gems to progress, and manage their health resources.
-
-Implemented systems include animation state management, collision detection for combat, UI elements like health bars and collectible counters, and game state transitions between menu, gameplay, win, and game over screens.`,
-      github: "https://github.com/EthanPerello/SpaceGame",
-      play: "https://ethanperello.github.io/SpaceGame/",
-      video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
-    }
-  ],
+  featured: featuredProjects,
   other: [
     {
       title: "Grid Resource Management",
@@ -204,7 +205,7 @@ Implemented systems include animation state management, collision detection for 
 // Web Applications
 export const webProjects = {
   featured: [
-    featuredProjects.find(project => project.title === "NPC Forge")
+    // Other web projects can be featured here if needed
   ],
   other: [
     {

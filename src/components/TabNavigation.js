@@ -2,8 +2,7 @@ import React from "react";
 
 const TabNavigation = ({ activeTab, setActiveTab }) => {
   const tabs = [
-    { id: 'featured', label: 'Featured Projects' },
-    { id: 'games', label: 'Game Development' },
+    { id: 'games', label: 'Featured Games' },
     { id: 'web', label: 'Web Applications' },
     { id: 'ml', label: 'ML & Data Science' },
     { id: 'graphics', label: 'Graphic Design & Video' }

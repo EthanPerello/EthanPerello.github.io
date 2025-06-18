@@ -4,6 +4,7 @@ import './App.css';
 // Component imports
 import Layout from './components/Layout';
 import ProfileSection from './components/ProfileSection';
+import FlagshipSection from './components/sections/FlagshipSection';
 import TabNavigation from './components/TabNavigation';
 import FeaturedSection from './components/sections/FeaturedSection';
 import GameSection from './components/sections/GameSection';
@@ -12,7 +13,7 @@ import MLSection from './components/sections/MLSection';
 import GraphicSection from './components/sections/GraphicSection';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('featured');
+  const [activeTab, setActiveTab] = useState('games');
 
   useEffect(() => {
     document.title = "Ethan Perello Projects";
@@ -20,10 +21,8 @@ export default function App() {
 
   const renderActiveSection = () => {
     switch (activeTab) {
-      case 'featured':
-        return <FeaturedSection />;
       case 'games':
-        return <GameSection />;
+        return <FeaturedSection />;
       case 'web':
         return <WebSection />;
       case 'ml':
@@ -39,6 +38,9 @@ export default function App() {
     <Layout>
       {/* Profile Section */}
       <ProfileSection />
+      
+      {/* Flagship Project Section - Always Visible */}
+      <FlagshipSection />
       
       {/* Tab Navigation */}
       <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
