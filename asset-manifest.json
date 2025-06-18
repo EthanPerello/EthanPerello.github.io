@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b6339f2b.css",
-    "main.js": "/static/js/main.c3d537d8.js",
+    "main.css": "/static/css/main.52fa69b7.css",
+    "main.js": "/static/js/main.5535ad20.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
     "static/media/grand-bowl-montage.mp4": "/static/media/grand-bowl-montage.1f08db0d211d1040a3d8.mp4",
     "static/media/grand-bowl-strike.mp4": "/static/media/grand-bowl-strike.1ccb2f57db963c74db15.mp4",
@@ -41,12 +41,12 @@
     "static/media/dungeon-explorer.png": "/static/media/dungeon-explorer.a843dcf579ccdd08efe7.png",
     "static/media/pong.png": "/static/media/pong.d73a7e6137a838a5f520.png",
     "index.html": "/index.html",
-    "main.b6339f2b.css.map": "/static/css/main.b6339f2b.css.map",
-    "main.c3d537d8.js.map": "/static/js/main.c3d537d8.js.map",
+    "main.52fa69b7.css.map": "/static/css/main.52fa69b7.css.map",
+    "main.5535ad20.js.map": "/static/js/main.5535ad20.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6339f2b.css",
-    "static/js/main.c3d537d8.js"
+    "static/css/main.52fa69b7.css",
+    "static/js/main.5535ad20.js"
   ]
 }
