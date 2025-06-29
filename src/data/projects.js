@@ -3,6 +3,7 @@ import cityBuilderImage from "../images/City_Builder_Game.png";
 import spaceGameImage from "../images/Space_Game.png";
 import rpgImage from "../images/Midieval_Fantasy_RPG.png";
 import npcForgeImage from "../images/npc-forge.png";
+import detectiveGameImage from "../images/detective-game.jpeg";
 import nycImage from "../images/NYC_School_Closures.png";
 import marchMadnessImage from "../images/March_Madness_Predictor.png";
 import dungeonExplorerImage from "../images/dungeon-explorer.png";
@@ -41,7 +42,7 @@ import grandBowlBuildingVideo from "../videos/grand-bowl-building-preview.mp4";
 export const flagshipProject = {
   title: "NPC Forge",
   image: npcForgeImage,
-  description: `Full-stack AI platform that revolutionizes character creation for game developers and storytellers. At v0.30.0 with 30+ feature releases, representing a complete ecosystem for AI character generation, interaction, and game integration.
+  description: `Full-stack AI platform that revolutionizes character creation for game developers and storytellers. A complete ecosystem for AI character generation, interaction, and game integration with 30+ feature releases.
 
 The platform orchestrates 6+ OpenAI models: GPT-4o for character generation, DALL-E 3 for portraits, image editing endpoints for AI-powered portrait modification via text prompts, and chat completion for real-time conversations. Features include interactive chat with generated characters that maintain personality consistency, comprehensive character traits with advanced filtering, JSON export for game integration, and a step-by-step wizard interface.
 
@@ -52,19 +53,19 @@ Developed from concept to production deployment in under two weeks, then continu
   website: "https://npc-forge.vercel.app"
 };
 
-// Featured Projects (now focused on games)
-export const featuredProjects = [
+// Main Featured Projects (the core 3)
+export const mainFeaturedProjects = [
   {
-    title: "On-Chain City Builder",
-    image: cityBuilderImage,
-    description: `A groundbreaking blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. This project combines traditional city simulation with cutting-edge blockchain technology for persistent, verifiable gameplay.
+    title: "Detective Game",
+    image: detectiveGameImage,
+    description: `A blockchain-first murder mystery game that combines AI-powered dialogue with on-chain game mechanics. Players interrogate three AI suspects to solve a murder case, with all game progress permanently recorded on Starknet.
 
-Players purchase land tiles on a dynamically expanding grid and construct residential, commercial, and industrial buildings that affect resident happiness and income rates. The game features real-time economy simulation where buildings must be strategically placed adjacent to roads for optimal efficiency.
+Built for Dojo Game Jam 6 ($25,000 prize pool), this hybrid architecture demonstrates the potential of combining expressive AI interaction with blockchain transparency. Each suspect has a unique personality powered by GPT-4o, while critical game actions like accusations and case outcomes are recorded immutably on-chain.
 
-All game data including player balances, tile ownership, and building states are recorded on-chain using Dojo and Starknet, ensuring verifiable ownership and persistent gameplay across sessions. The implementation includes comprehensive camera controls, intuitive building menus, and an interactive leaderboard system for competitive multiplayer experience.`,
-    github: "https://github.com/EthanPerello/DojoCityBuilder",
-    play: "https://ethanperello.github.io/DojoCityBuilder/",
-    video: "https://www.youtube.com/watch?v=lORypXL-UwA"
+Features dynamic conversations that reveal clues through natural dialogue, a single-accusation mechanic that makes every question crucial, and a complete case-tracking system. The game showcases innovative integration between AI-generated content and provable on-chain logic, representing the cutting edge of blockchain gaming.`,
+    github: "https://github.com/EthanPerello/detective-game",
+    play: "https://detective-game-iota.vercel.app",
+    video: null
   },
   {
     title: "Medieval Fantasy RPG",
@@ -76,6 +77,22 @@ The game features a comprehensive character customization system with selectable
 Enemy AI is implemented using Unity's NavMesh system, providing goblins and skeletons with intelligent patrol patterns, chase behaviors, and strategic attack sequences. The game also includes a complete quest system with objectives and rewards, sophisticated inventory management, and AI companion pets that follow the player and assist in combat scenarios.`,
     github: "https://github.com/EthanPerello/MedievalFantasyRPG",
     play: "https://ethanperello.github.io/MedievalFantasyRPG/"
+  }
+];
+
+// Additional Notable Projects
+export const additionalFeaturedProjects = [
+  {
+    title: "On-Chain City Builder",
+    image: cityBuilderImage,
+    description: `A groundbreaking blockchain-integrated multiplayer city-building game developed in Unity using the Dojo engine. This project combines traditional city simulation with cutting-edge blockchain technology for persistent, verifiable gameplay.
+
+Players purchase land tiles on a dynamically expanding grid and construct residential, commercial, and industrial buildings that affect resident happiness and income rates. The game features real-time economy simulation where buildings must be strategically placed adjacent to roads for optimal efficiency.
+
+All game data including player balances, tile ownership, and building states are recorded on-chain using Dojo and Starknet, ensuring verifiable ownership and persistent gameplay across sessions. The implementation includes comprehensive camera controls, intuitive building menus, and an interactive leaderboard system for competitive multiplayer experience.`,
+    github: "https://github.com/EthanPerello/DojoCityBuilder",
+    play: "https://ethanperello.github.io/DojoCityBuilder/",
+    video: "https://www.youtube.com/watch?v=lORypXL-UwA"
   },
   {
     title: "Space Adventure",
@@ -90,6 +107,9 @@ Implemented systems include comprehensive animation state management, precise co
     video: "https://www.youtube.com/watch?v=CufS2USIR1Y"
   }
 ];
+
+// Combined featured projects for sections that want all games
+export const featuredProjects = [...mainFeaturedProjects, ...additionalFeaturedProjects];
 
 // Game Development Projects
 export const gameProjects = {
@@ -202,56 +222,51 @@ export const gameProjects = {
   ]
 };
 
-// Web Applications
-export const webProjects = {
-  featured: [
-    // Other web projects can be featured here if needed
-  ],
-  other: [
-    {
-      title: "Election Simulation",
-      image: electionSimImage,
-      description: `An interactive election simulator built with React and D3.js for data visualization. Users can create simulated elections with dynamically generated candidates for different political positions and view real-time vote counts.
+// Web Applications (removed tab structure)
+export const webProjects = [
+  {
+    title: "Election Simulation",
+    image: electionSimImage,
+    description: `An interactive election simulator built with React and D3.js for data visualization. Users can create simulated elections with dynamically generated candidates for different political positions and view real-time vote counts.
 
 Features include customizable election parameters, polling data generation, demographic voting patterns, and interactive charts showing results as they come in. The application uses React context for state management and implements complex data processing logic to simulate realistic voting behaviors based on demographic factors.`
-    },
-    {
-      title: "User Manager Dashboard",
-      image: userManagerImage,
-      description: `A TypeScript React admin dashboard for user management with form validation and role-based access control. Features include efficient data fetching with React Query, toast notifications for operation feedback, and responsive design across device sizes.
+  },
+  {
+    title: "User Manager Dashboard",
+    image: userManagerImage,
+    description: `A TypeScript React admin dashboard for user management with form validation and role-based access control. Features include efficient data fetching with React Query, toast notifications for operation feedback, and responsive design across device sizes.
 
 The application implements a modular component architecture with reusable UI elements, authentication flow with JWT handling, and dark/light theme support. Backend integration includes RESTful API consumption with error handling and retry logic.`
-    },
-    {
-      title: "Restaurant Website",
-      image: restaurantImage,
-      description: `A React Router restaurant website with food menu categories, nutritional information, and location finder. Implements client-side routing for seamless navigation and accessibility-focused design adhering to WCAG guidelines.
+  },
+  {
+    title: "Restaurant Website",
+    image: restaurantImage,
+    description: `A React Router restaurant website with food menu categories, nutritional information, and location finder. Implements client-side routing for seamless navigation and accessibility-focused design adhering to WCAG guidelines.
 
 Features include dynamic menu filtering by category, dietary restrictions, and price range, along with an interactive map for finding nearby locations. The site incorporates responsive design principles and performance optimization techniques like code splitting and lazy loading.`
-    },
-    {
-      title: "Fast Food Finder",
-      image: fastFoodImage,
-      description: `A restaurant interface featuring detailed menu items with nutritional information and location services. Implements responsive layouts that adapt to different screen sizes and consistent component design across the application.
+  },
+  {
+    title: "Fast Food Finder",
+    image: fastFoodImage,
+    description: `A restaurant interface featuring detailed menu items with nutritional information and location services. Implements responsive layouts that adapt to different screen sizes and consistent component design across the application.
 
 The application uses geolocation APIs to find nearby restaurant locations, implements search functionality with filters, and provides detailed nutritional information for all menu items. Built with React and styled-components for consistent theming.`
-    },
-    {
-      title: "Email Design System",
-      image: emailSystemImage,
-      description: `A system for building responsive email templates with React components. Features reusable, email-client compatible components that render consistently across Gmail, Outlook, and Apple Mail with responsive design for different devices.
+  },
+  {
+    title: "Email Design System",
+    image: emailSystemImage,
+    description: `A system for building responsive email templates with React components. Features reusable, email-client compatible components that render consistently across Gmail, Outlook, and Apple Mail with responsive design for different devices.
 
 The system includes a visual editor for creating templates without code, a component library with drag-and-drop functionality, and preview modes for different email clients and device sizes. Implements best practices for email deliverability and accessibility.`
-    },
-    {
-      title: "Well Validation Toolkit",
-      image: wellValidationImage,
-      description: `A data visualization application for analyzing oil well measurements using React, D3.js, and WebGL. Features interactive graphs with zoom capabilities, multi-well comparison functionality, and anomaly detection to identify potential issues in measurement data.
+  },
+  {
+    title: "Well Validation Toolkit",
+    image: wellValidationImage,
+    description: `A data visualization application for analyzing oil well measurements using React, D3.js, and WebGL. Features interactive graphs with zoom capabilities, multi-well comparison functionality, and anomaly detection to identify potential issues in measurement data.
 
 The toolkit processes large datasets efficiently with WebWorkers for background calculations, implements multi-layered visualizations for different data types, and provides export functionality for reports. Includes validation algorithms to verify data integrity and highlight potential measurement errors.`
-    }
-  ]
-};
+  }
+];
 
 // ML & Data Science Projects
 export const mlProjects = [

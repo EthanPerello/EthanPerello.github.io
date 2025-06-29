@@ -6,7 +6,6 @@ import ProjectModal from "../ProjectModal";
 const WebSection = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeSubsection, setActiveSubsection] = useState("featured");
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -27,46 +26,11 @@ const WebSection = () => {
         Frontend and full-stack apps including AI tools, admin dashboards, simulations, and production-quality interfaces.
       </p>
       
-      {/* Subsection Navigation */}
-      <div className="mb-8 bg-gray-800 rounded-lg overflow-hidden shadow-md">
-        <div className="flex flex-wrap">
-          <button
-            className={`px-5 py-3 font-medium focus:outline-none transition-colors ${
-              activeSubsection === "featured" 
-                ? "bg-gray-700 text-blue-400" 
-                : "text-gray-400 hover:text-gray-200"
-            }`}
-            onClick={() => setActiveSubsection("featured")}
-          >
-            Featured Web Apps
-          </button>
-          <button
-            className={`px-5 py-3 font-medium focus:outline-none transition-colors ${
-              activeSubsection === "other" 
-                ? "bg-gray-700 text-blue-400" 
-                : "text-gray-400 hover:text-gray-200"
-            }`}
-            onClick={() => setActiveSubsection("other")}
-          >
-            Other Web Apps
-          </button>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {webProjects.map((project, index) => (
+          <ProjectCard key={index} project={project} onClick={handleProjectClick} />
+        ))}
       </div>
-      
-      {/* Current Subsection Content */}
-      {activeSubsection === "featured" ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {webProjects.featured.map((project, index) => (
-            <ProjectCard key={index} project={project} onClick={handleProjectClick} />
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {webProjects.other.map((project, index) => (
-            <ProjectCard key={index} project={project} onClick={handleProjectClick} />
-          ))}
-        </div>
-      )}
       
       <ProjectModal 
         project={selectedProject} 

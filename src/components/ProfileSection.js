@@ -25,7 +25,7 @@ const ProfileSection = () => {
             </p>
             <p className="text-gray-300 mb-6 leading-relaxed">
               My flagship project is <strong className="text-blue-400">NPC Forge</strong>, a full-stack AI platform 
-              I built to revolutionize character creation for game developers and storytellers (v0.30.0 with 30+ releases). 
+              I built to revolutionize character creation for game developers and storytellers with 30+ feature releases. 
               It integrates 6+ OpenAI models to generate detailed characters with AI portraits, real-time chat conversations, 
               and advanced editing capabilities. I also develop games across multiple genres, from blockchain-integrated 
               multiplayer simulations to complex RPGs with AI systems.
@@ -52,17 +52,6 @@ const ProfileSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Download Resume
-              </a>
-              <a 
-                href="https://npc-forge.vercel.app" 
-                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition duration-200 flex items-center shadow-md shadow-purple-600/20"
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-                NPC Forge Demo
               </a>
               <a 
                 href="https://github.com/EthanPerello" 
