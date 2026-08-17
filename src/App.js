@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import profilePhoto from './images/profile-photo.jpg';
+import npcForgeImage from './images/npc-forge.png';
 
 const capabilities = [
   { number: '01', title: 'AI-assisted development', text: 'Building and refining practical software with AI-supported development workflows.' },
@@ -33,6 +34,18 @@ export default function App() {
         <div className="section-intro"><p className="eyebrow">What I do</p><h2 id="work-heading">Creative technology, built for real workflows.</h2></div>
         <div className="capability-list">
           {capabilities.map((item) => <article key={item.number}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
+        </div>
+      </section>
+      <section className="selected-work" aria-labelledby="selected-work-heading">
+        <p className="eyebrow">Selected work</p>
+        <a className="work-image" href="https://github.com/EthanPerello/npc-forge" aria-label="View NPC Forge on GitHub">
+          <img src={npcForgeImage} alt="NPC Forge character generation interface" />
+        </a>
+        <div className="work-copy">
+          <p className="work-type">Independent project</p>
+          <h2 id="selected-work-heading">NPC Forge</h2>
+          <p>An earlier project exploring AI-generated characters for games and storytelling. It brings structured character generation, portraits, dialogue, and editing together in one system.</p>
+          <a href="https://github.com/EthanPerello/npc-forge">View on GitHub ↗</a>
         </div>
       </section>
       <section className="about" aria-labelledby="about-heading">
