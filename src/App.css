@@ -6,8 +6,7 @@ a { color: inherit; }
 main { min-height: 100vh; }
 .nav, .hero, .capabilities, .about, footer { width: min(1380px, calc(100% - clamp(48px, 8vw, 144px))); margin: 0 auto; }
 .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
-.wordmark { display: flex; align-items: center; gap: 11px; color: var(--ink); font-size: 32px; line-height: 34px; font-weight: 700; letter-spacing: -.045em; text-decoration: none; }
-.wordmark img { width: 34px; height: 34px; display: block; flex: 0 0 34px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; filter: saturate(.8) contrast(1.03); }
+.wordmark { color: var(--ink); font-size: 24px; line-height: 1; font-weight: 700; letter-spacing: -.04em; text-decoration: none; }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { text-decoration: none; font-size: 16px; }
 .hero { padding: clamp(88px, 10vw, 148px) 0 clamp(110px, 13vw, 180px); }
@@ -34,11 +33,11 @@ h2 { max-width: 780px; margin: 0; font-size: clamp(38px, 6vw, 72px); line-height
 footer { min-height: 180px; display: flex; align-items: center; justify-content: space-between; gap: 28px; border-top: 1px solid var(--line); }
 footer p { font-size: 18px; }
 footer a { text-underline-offset: 4px; }
+.footer-contact { display: flex; align-items: center; gap: 28px; }
 @media (max-width: 760px) {
   .nav, .hero, .capabilities, .about, footer { width: calc(100% - 32px); }
   .nav { min-height: 76px; }
-  .wordmark { gap: 8px; font-size: 26px; line-height: 28px; }
-  .wordmark img { width: 28px; height: 28px; flex-basis: 28px; }
+  .wordmark { font-size: 20px; }
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 15px; }
   .hero { padding: 64px 0 84px; }
@@ -51,6 +50,7 @@ footer a { text-underline-offset: 4px; }
   .capability-list article { padding: 28px 0; }
   .portrait { width: min(76vw, 300px); margin-top: 18px; }
   footer { align-items: flex-start; flex-direction: column; justify-content: center; }
+  .footer-contact { align-items: flex-start; flex-direction: column; gap: 14px; }
 }
 
 @media (max-width: 420px) {

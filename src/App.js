@@ -14,17 +14,16 @@ export default function App() {
     <main>
       <nav className="nav" aria-label="Primary navigation">
         <a className="wordmark" href="#top">
-          <img src={profilePhoto} alt="" />
           <span>Ethan Perello</span>
         </a>
-        <div className="nav-links"><a href="#work">What I do</a><a href="mailto:ethanperello@gmail.com">Contact</a></div>
+        <div className="nav-links"><a href="#work">What I do</a><a href="#contact">Contact</a></div>
       </nav>
       <section className="hero" id="top">
         <p className="eyebrow">AI creative technologist | New York</p>
         <h1>I build AI tools for creative work.</h1>
         <p className="lede">I work where software, generative media, and animation meet, turning new AI capabilities into practical tools and production workflows.</p>
         <div className="actions">
-          <a className="primary" href="mailto:ethanperello@gmail.com">Get in touch</a>
+          <a className="primary" href="#contact">Get in touch</a>
           <a href="https://www.linkedin.com/in/ethanperello/">LinkedIn ↗</a>
           <a href="https://github.com/EthanPerello">GitHub ↗</a>
         </div>
@@ -47,7 +46,7 @@ export default function App() {
           <figcaption>Ethan Perello<br /><span>New York, New York</span></figcaption>
         </figure>
       </section>
-      <footer><p>Available for thoughtful AI and creative-technology work.</p><a href="mailto:ethanperello@gmail.com">ethanperello@gmail.com</a></footer>
+      <footer id="contact"><p>Available for thoughtful AI and creative-technology work.</p><div className="footer-contact"><a href="mailto:ethanperello@gmail.com">ethanperello@gmail.com</a><a href="https://www.linkedin.com/in/ethanperello/">LinkedIn ↗</a></div></footer>
     </main>
   );
 }
