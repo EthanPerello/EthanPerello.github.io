@@ -6,10 +6,10 @@ a { color: inherit; }
 main { min-height: 100vh; }
 .nav, .hero, .capabilities, .about, footer { width: min(1380px, calc(100% - clamp(48px, 8vw, 144px))); margin: 0 auto; }
 .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
-.wordmark { display: flex; align-items: center; gap: 13px; color: var(--ink); font-size: 24px; line-height: 1; font-weight: 700; letter-spacing: -.035em; text-decoration: none; }
-.wordmark img { width: 42px; height: 42px; display: block; border-radius: 50%; object-fit: cover; object-position: 50% 28%; filter: saturate(.8) contrast(1.03); }
+.wordmark { display: flex; align-items: center; gap: 11px; color: var(--ink); font-size: 18px; line-height: 1; font-weight: 700; letter-spacing: -.025em; text-decoration: none; }
+.wordmark img { width: 38px; height: 38px; display: block; border-radius: 50%; object-fit: cover; object-position: 50% 28%; filter: saturate(.8) contrast(1.03); }
 .nav-links { display: flex; gap: 28px; }
-.nav-links a { text-decoration: none; font-size: 14px; }
+.nav-links a { text-decoration: none; font-size: 15px; }
 .hero { padding: clamp(88px, 10vw, 148px) 0 clamp(110px, 13vw, 180px); }
 .eyebrow { margin: 0 0 24px; color: var(--signal); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 h1 { width: 100%; max-width: none; margin: 0; font-size: clamp(64px, 8.25vw, 128px); line-height: .9; letter-spacing: -.065em; }
@@ -37,10 +37,10 @@ footer a { text-underline-offset: 4px; }
 @media (max-width: 760px) {
   .nav, .hero, .capabilities, .about, footer { width: calc(100% - 32px); }
   .nav { min-height: 76px; }
-  .wordmark { gap: 9px; font-size: 19px; }
-  .wordmark img { width: 38px; height: 38px; }
+  .wordmark { gap: 8px; font-size: 16px; }
+  .wordmark img { width: 34px; height: 34px; }
   .nav-links { gap: 16px; }
-  .nav-links a { font-size: 12px; }
+  .nav-links a { font-size: 13px; }
   .hero { padding: 64px 0 84px; }
   h1 { font-size: clamp(40px, 15vw, 68px); line-height: .94; }
   .lede { margin-top: 32px; font-size: 20px; }
