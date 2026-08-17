@@ -6,19 +6,20 @@ a { color: inherit; }
 main { min-height: 100vh; }
 .nav, .hero, .capabilities, .about, footer { width: min(1380px, calc(100% - clamp(48px, 8vw, 144px))); margin: 0 auto; }
 .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
-.wordmark { width: 42px; height: 42px; display: grid; place-items: center; background: var(--ink); color: var(--paper); font-weight: 800; text-decoration: none; }
+.wordmark { display: flex; align-items: center; gap: 12px; color: var(--ink); font-size: 14px; font-weight: 700; text-decoration: none; }
+.wordmark img { width: 42px; height: 42px; display: block; border-radius: 50%; object-fit: cover; object-position: 50% 28%; filter: saturate(.8) contrast(1.03); }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { text-decoration: none; font-size: 14px; }
 .hero { padding: clamp(88px, 10vw, 148px) 0 clamp(110px, 13vw, 180px); }
 .eyebrow { margin: 0 0 24px; color: var(--signal); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-h1 { max-width: 1120px; margin: 0; font-size: clamp(64px, 8.6vw, 132px); line-height: .9; letter-spacing: -.065em; }
+h1 { width: 100%; max-width: none; margin: 0; font-size: clamp(64px, 8.25vw, 128px); line-height: .9; letter-spacing: -.065em; }
 .lede { max-width: 690px; margin: 48px 0 0; color: var(--muted); font-size: clamp(22px, 3vw, 34px); line-height: 1.28; letter-spacing: -.025em; }
 .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; margin-top: 48px; }
 .actions a { font-size: 14px; text-underline-offset: 4px; }
 .actions .primary { padding: 16px 22px; background: var(--ink); color: var(--paper); text-decoration: none; }
 .capabilities, .about { padding: clamp(84px, 9vw, 128px) 0; border-top: 1px solid var(--line); }
 .section-intro { display: grid; grid-template-columns: minmax(150px, .65fr) 2fr; gap: clamp(40px, 6vw, 90px); }
-.about { display: grid; grid-template-columns: minmax(150px, .55fr) minmax(420px, 1.55fr) minmax(230px, .65fr); gap: clamp(38px, 5vw, 76px); align-items: start; }
+.about { display: grid; grid-template-columns: minmax(150px, .55fr) minmax(420px, 2.2fr); gap: clamp(38px, 6vw, 90px); align-items: start; }
 h2 { max-width: 780px; margin: 0; font-size: clamp(38px, 6vw, 72px); line-height: .98; letter-spacing: -.05em; }
 .capability-list { margin-top: 72px; }
 .capability-list article { display: grid; grid-template-columns: minmax(120px, .65fr) 1.4fr 2fr; gap: clamp(36px, 6vw, 90px); padding: 34px 0; border-top: 1px solid var(--line); }
@@ -26,17 +27,14 @@ h2 { max-width: 780px; margin: 0; font-size: clamp(38px, 6vw, 72px); line-height
 .capability-list h3 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
 .capability-list p, .about p { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.55; }
 .about-copy p { max-width: 680px; margin-top: 28px; }
-.portrait { margin: 0; }
-.profile-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 28%; display: block; filter: saturate(.78) contrast(1.03); }
-.portrait figcaption { margin-top: 14px; color: var(--ink); font-size: 13px; line-height: 1.5; }
-.portrait figcaption span { color: var(--muted); }
 footer { min-height: 180px; display: flex; align-items: center; justify-content: space-between; gap: 28px; border-top: 1px solid var(--line); }
 footer p { font-size: 18px; }
 footer a { text-underline-offset: 4px; }
 @media (max-width: 760px) {
   .nav, .hero, .capabilities, .about, footer { width: calc(100% - 32px); }
   .nav { min-height: 76px; }
-  .wordmark { width: 38px; height: 38px; }
+  .wordmark { gap: 9px; font-size: 13px; }
+  .wordmark img { width: 38px; height: 38px; }
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 12px; }
   .hero { padding: 64px 0 84px; }
@@ -47,7 +45,6 @@ footer a { text-underline-offset: 4px; }
   .section-intro, .about, .capability-list article { grid-template-columns: 1fr; gap: 24px; }
   .capability-list { margin-top: 48px; }
   .capability-list article { padding: 28px 0; }
-  .portrait { width: min(76vw, 300px); margin-top: 18px; }
   footer { align-items: flex-start; flex-direction: column; justify-content: center; }
 }
 
@@ -58,5 +55,4 @@ footer a { text-underline-offset: 4px; }
   .section-intro { grid-template-columns: .45fr 1.55fr; }
   .capability-list article { grid-template-columns: .4fr 1.1fr 1.6fr; gap: 32px; }
   .about { grid-template-columns: .45fr 1.4fr; }
-  .portrait { grid-column: 2; width: min(320px, 70%); }
 }

@@ -13,7 +13,10 @@ export default function App() {
   return (
     <main>
       <nav className="nav" aria-label="Primary navigation">
-        <a className="wordmark" href="#top">EP</a>
+        <a className="wordmark" href="#top">
+          <img src={profilePhoto} alt="" />
+          <span>Ethan Perello</span>
+        </a>
         <div className="nav-links"><a href="#work">What I do</a><a href="mailto:ethanperello@gmail.com">Contact</a></div>
       </nav>
       <section className="hero" id="top">
@@ -38,12 +41,7 @@ export default function App() {
           <h2 id="about-heading">Technical thinking with a visual point of view.</h2>
           <p>I am currently a freelance Junior AI Technician at Hornet. My work is grounded in understanding how models, applications, infrastructure, production software, and creative tools fit together.</p>
           <p>Before moving into creative AI, I worked across game development, full-stack applications, data science, animation, and production. That range shapes how I approach AI systems and production workflows today.</p>
-          <p>I have also participated in multiple game jams and completed Curious Refuge’s AI Filmmaking course in 2025.</p>
         </div>
-        <figure className="portrait">
-          <img className="profile-photo" src={profilePhoto} alt="Ethan Perello" />
-          <figcaption>Ethan Perello<br /><span>New York, New York</span></figcaption>
-        </figure>
       </section>
       <footer><p>Available for thoughtful AI and creative-technology work.</p><a href="mailto:ethanperello@gmail.com">ethanperello@gmail.com</a></footer>
     </main>
