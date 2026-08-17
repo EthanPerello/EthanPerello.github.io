@@ -42,6 +42,10 @@ export default function App() {
           <p>I am currently a freelance Junior AI Technician at Hornet. My work is grounded in understanding how models, applications, infrastructure, production software, and creative tools fit together.</p>
           <p>Before moving into creative AI, I worked across game development, full-stack applications, data science, animation, and production. That range shapes how I approach AI systems and production workflows today.</p>
         </div>
+        <figure className="portrait">
+          <img className="profile-photo" src={profilePhoto} alt="Ethan Perello" />
+          <figcaption>Ethan Perello<br /><span>New York, New York</span></figcaption>
+        </figure>
       </section>
       <footer><p>Available for thoughtful AI and creative-technology work.</p><a href="mailto:ethanperello@gmail.com">ethanperello@gmail.com</a></footer>
     </main>

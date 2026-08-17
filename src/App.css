@@ -19,7 +19,7 @@ h1 { width: 100%; max-width: none; margin: 0; font-size: clamp(64px, 8.25vw, 128
 .actions .primary { padding: 16px 22px; background: var(--ink); color: var(--paper); text-decoration: none; }
 .capabilities, .about { padding: clamp(84px, 9vw, 128px) 0; border-top: 1px solid var(--line); }
 .section-intro { display: grid; grid-template-columns: minmax(150px, .65fr) 2fr; gap: clamp(40px, 6vw, 90px); }
-.about { display: grid; grid-template-columns: minmax(150px, .55fr) minmax(420px, 2.2fr); gap: clamp(38px, 6vw, 90px); align-items: start; }
+.about { display: grid; grid-template-columns: minmax(150px, .55fr) minmax(420px, 1.55fr) minmax(230px, .65fr); gap: clamp(38px, 5vw, 76px); align-items: start; }
 h2 { max-width: 780px; margin: 0; font-size: clamp(38px, 6vw, 72px); line-height: .98; letter-spacing: -.05em; }
 .capability-list { margin-top: 72px; }
 .capability-list article { display: grid; grid-template-columns: minmax(120px, .65fr) 1.4fr 2fr; gap: clamp(36px, 6vw, 90px); padding: 34px 0; border-top: 1px solid var(--line); }
@@ -27,6 +27,10 @@ h2 { max-width: 780px; margin: 0; font-size: clamp(38px, 6vw, 72px); line-height
 .capability-list h3 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
 .capability-list p, .about p { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.55; }
 .about-copy p { max-width: 680px; margin-top: 28px; }
+.portrait { margin: 0; }
+.profile-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 28%; display: block; filter: saturate(.78) contrast(1.03); }
+.portrait figcaption { margin-top: 14px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+.portrait figcaption span { color: var(--muted); }
 footer { min-height: 180px; display: flex; align-items: center; justify-content: space-between; gap: 28px; border-top: 1px solid var(--line); }
 footer p { font-size: 18px; }
 footer a { text-underline-offset: 4px; }
@@ -45,7 +49,13 @@ footer a { text-underline-offset: 4px; }
   .section-intro, .about, .capability-list article { grid-template-columns: 1fr; gap: 24px; }
   .capability-list { margin-top: 48px; }
   .capability-list article { padding: 28px 0; }
+  .portrait { width: min(76vw, 300px); margin-top: 18px; }
   footer { align-items: flex-start; flex-direction: column; justify-content: center; }
+}
+
+@media (max-width: 420px) {
+  .nav-links a:first-child { display: none; }
+  .actions .primary { flex: 0 0 100%; width: 100%; text-align: center; }
 }
 
 @media (min-width: 761px) and (max-width: 1040px) {
@@ -55,4 +65,5 @@ footer a { text-underline-offset: 4px; }
   .section-intro { grid-template-columns: .45fr 1.55fr; }
   .capability-list article { grid-template-columns: .4fr 1.1fr 1.6fr; gap: 32px; }
   .about { grid-template-columns: .45fr 1.4fr; }
+  .portrait { grid-column: 2; width: min(320px, 70%); }
 }
