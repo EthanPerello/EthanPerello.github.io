@@ -14,6 +14,7 @@ export default function App() {
     <main>
       <nav className="nav" aria-label="Primary navigation">
         <a className="wordmark" href="#top">
+          <span className="monogram" aria-hidden="true">EP</span>
           <span>Ethan Perello</span>
         </a>
         <div className="nav-links"><a href="#work">What I do</a><a href="#contact">Contact</a></div>
