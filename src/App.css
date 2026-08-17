@@ -6,7 +6,7 @@ a { color: inherit; }
 main { min-height: 100vh; }
 .nav, .hero, .capabilities, .about, footer { width: min(1380px, calc(100% - clamp(48px, 8vw, 144px))); margin: 0 auto; }
 .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
-.wordmark { display: flex; align-items: center; gap: 12px; color: var(--ink); font-size: 14px; font-weight: 700; text-decoration: none; }
+.wordmark { display: flex; align-items: center; gap: 13px; color: var(--ink); font-size: 24px; line-height: 1; font-weight: 700; letter-spacing: -.035em; text-decoration: none; }
 .wordmark img { width: 42px; height: 42px; display: block; border-radius: 50%; object-fit: cover; object-position: 50% 28%; filter: saturate(.8) contrast(1.03); }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { text-decoration: none; font-size: 14px; }
@@ -34,7 +34,7 @@ footer a { text-underline-offset: 4px; }
 @media (max-width: 760px) {
   .nav, .hero, .capabilities, .about, footer { width: calc(100% - 32px); }
   .nav { min-height: 76px; }
-  .wordmark { gap: 9px; font-size: 13px; }
+  .wordmark { gap: 9px; font-size: 19px; }
   .wordmark img { width: 38px; height: 38px; }
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 12px; }
