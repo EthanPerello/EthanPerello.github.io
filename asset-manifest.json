@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.1577d312.css",
-    "main.js": "/static/js/main.a34afd29.js",
+    "main.css": "/static/css/main.a6ad0e60.css",
+    "main.js": "/static/js/main.a66f942b.js",
     "static/js/453.534db5b8.chunk.js": "/static/js/453.534db5b8.chunk.js",
+    "static/media/npc-forge.png": "/static/media/npc-forge.84e76ff6ae93fe76370f.png",
     "static/media/profile-photo.jpg": "/static/media/profile-photo.0669f183876896125c82.jpg",
     "index.html": "/index.html",
-    "main.1577d312.css.map": "/static/css/main.1577d312.css.map",
-    "main.a34afd29.js.map": "/static/js/main.a34afd29.js.map",
+    "main.a6ad0e60.css.map": "/static/css/main.a6ad0e60.css.map",
+    "main.a66f942b.js.map": "/static/js/main.a66f942b.js.map",
     "453.534db5b8.chunk.js.map": "/static/js/453.534db5b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1577d312.css",
-    "static/js/main.a34afd29.js"
+    "static/css/main.a6ad0e60.css",
+    "static/js/main.a66f942b.js"
   ]
 }
