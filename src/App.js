@@ -6,7 +6,7 @@ const capabilities = [
   { number: '01', title: 'AI-assisted development', text: 'Building and refining practical software with AI-supported development workflows.' },
   { number: '02', title: 'Generative media', text: 'Working with image, video, and multimodal systems for creative production.' },
   { number: '03', title: 'Systems and infrastructure', text: 'Connecting models, applications, APIs, cloud infrastructure, and production software.' },
-  { number: '04', title: 'Creative tooling', text: 'Developing workflow automation, animation pipeline tools, and DCC integrations.' }
+  { number: '04', title: 'Creative tooling', text: 'Developing workflow automation, animation pipeline tools, and integrations with creative production software.' }
 ];
 
 export default function App() {
