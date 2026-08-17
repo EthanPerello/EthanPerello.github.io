@@ -47,7 +47,8 @@ h2 { max-width: 780px; margin: 0; font-size: var(--section-title); line-height: 
 .work-copy .work-type { margin: 0 0 18px; color: var(--signal); font-size: 11px; line-height: 1.2; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .work-copy h2 { font-size: clamp(34px, 4vw, 56px); }
 .work-copy > p:not(.work-type) { margin: 26px 0 0; color: var(--muted); font-size: var(--body); line-height: 1.6; }
-.work-copy a { display: inline-block; margin-top: 28px; font-size: 14px; font-weight: 600; text-underline-offset: 4px; }
+.work-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 28px; }
+.work-links a { font-size: 14px; font-weight: 600; text-underline-offset: 4px; }
 .about-copy p { max-width: 680px; margin-top: 28px; }
 .portrait { margin: 0; }
 .profile-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 28%; display: block; filter: saturate(.78) contrast(1.03); }

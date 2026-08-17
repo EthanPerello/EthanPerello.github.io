@@ -38,14 +38,17 @@ export default function App() {
       </section>
       <section className="selected-work" aria-labelledby="selected-work-heading">
         <p className="eyebrow">Selected work</p>
-        <a className="work-image" href="https://github.com/EthanPerello/npc-forge" aria-label="View NPC Forge on GitHub">
+        <a className="work-image" href="https://npc-forge.vercel.app" aria-label="View the live NPC Forge site">
           <img src={npcForgeImage} alt="NPC Forge character generation interface" />
         </a>
         <div className="work-copy">
           <p className="work-type">Independent project</p>
           <h2 id="selected-work-heading">NPC Forge</h2>
           <p>An earlier project exploring AI-generated characters for games and storytelling. It brings structured character generation, portraits, dialogue, and editing together in one system.</p>
-          <a href="https://github.com/EthanPerello/npc-forge">View on GitHub ↗</a>
+          <div className="work-links">
+            <a href="https://npc-forge.vercel.app">View live site ↗</a>
+            <a href="https://github.com/EthanPerello/npc-forge">GitHub ↗</a>
+          </div>
         </div>
       </section>
       <section className="about" aria-labelledby="about-heading">
