@@ -55,7 +55,8 @@ export default function App() {
         <p className="eyebrow">Current direction</p>
         <div className="about-copy">
           <h2 id="about-heading">Technical thinking with a visual point of view.</h2>
-          <p>I am currently a freelance Junior AI Technician at Hornet. My work is grounded in understanding how models, applications, infrastructure, production software, and creative tools fit together.</p>
+          <p>I currently work as a freelance Junior AI Technician at Hornet.</p>
+          <p>My broader technical background is grounded in understanding how models, applications, infrastructure, production software, and creative tools fit together.</p>
           <p>Before moving into creative AI, I worked across game development, full-stack applications, data science, animation, and production. That range shapes how I approach AI systems and production workflows today.</p>
         </div>
         <figure className="portrait">
